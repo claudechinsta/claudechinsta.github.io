@@ -6,7 +6,7 @@
  *
  */
 
-let colorStops_source = [
+var colorStops_source = [
     [-1,    '#040605'],
     [0,    "#f05bff"],
     [1,    '#ffe600']
