@@ -80,15 +80,15 @@ function init(map){
         };
 
         // Setting the url for the Topic 1
-        let viewUrl = "http://admin:admin@130.56.249.106:8080/sa_lga_tweets_db/_design/view_tweets_activities_sa/_view/new-view?reduce=true&group=true";
-        let aurinUrl = "http://130.56.249.106:8080/aurin_data_sa/_all_docs?include_docs=true&conflicts=true";
+        let viewUrl = "../data/sa2_view.json";
+        let aurinUrl = "../data/sa2_aurin.json";
         let boundType = "sa2";
         let boundUrl = boundList[boundType]['url'];
         let boundIndex = boundList[boundType]['index'];
         let boundName = boundList[boundType]['name'];
 
-        $.get(viewUrl, function (view) {
-            $.get(aurinUrl, function (aurin_sa2) {
+        $.getJSON(viewUrl, function (view) {
+            $.getJSON(aurinUrl, function (aurin_sa2) {
                 $.getJSON(boundUrl, function (bound_features) {
 
                     // console.log(view_sent);
