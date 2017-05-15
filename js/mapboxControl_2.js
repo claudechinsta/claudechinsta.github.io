@@ -6,7 +6,7 @@
  *
  */
 
-var colorStops_source = [
+let colorStops_source = [
     [-1,    '#040605'],
     [0,    "#f05bff"],
     [1,    '#ffe600']
@@ -71,8 +71,8 @@ function init(map){
         };
 
         // Setting the url for the Topic 1
-        let viewUrl = "http://130.56.249.106:8080/sa_lga_tweets_db/_design/view_tweets_activities_lga/_view/new-view?reduce=true&group=true";
-        let aurinUrl = "http://130.56.249.106:8080/aurin_data_lga/_all_docs?include_docs=true&conflicts=true";
+        let viewUrl = "../data/lga_view.json";
+        let aurinUrl = "../data/lga_aurin.json";
         let boundType = "lga";
         let boundUrl = boundList[boundType]['url'];
         let boundIndex = boundList[boundType]['bound_index'];
@@ -480,11 +480,6 @@ function getLabelColor(value) {
 function getMaxIndex(list){
     return Math.max(...list) > 0 ? list.indexOf(Math.max(...list)) : -1
 }
-
-/*
- * Functions Definations
- *
- * */
 
 function propertiesToHtml(properties, showList){
     let html = "";

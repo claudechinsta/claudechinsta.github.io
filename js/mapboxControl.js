@@ -8,7 +8,7 @@
 let colorStops_source = [
     [-1,    '#040605'],
     [0,    "#f05bff"],
-    [1,    '#ffe600'],
+    [1,    '#ffe600']
 ];
 let colorStops_time = [
     [-1,    '#040605'],
