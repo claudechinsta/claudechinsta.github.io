@@ -46,11 +46,7 @@ function init(map){
     // map.scrollZoom.disable();
     map.on('mousemove', function (e) {
         document.getElementById('info').style.display = 'block';
-        let lng = e.lngLat.lng.toFixed(4);
-        let lat = e.lngLat.lat.toFixed(4);
-        document.getElementById('info').innerHTML = "<h3>Analysis of Tweets in Victoria</h3>" +
-            '<div> ------------------------------ </div>' +
-            "<div>"+ lng + "\t" + lat +"</div>"
+        document.getElementById('info').innerHTML = "<h4>Analysis of Tweets in Victoria</h4>";
         // console.log(e)
     });
     map.on('load', function () {
@@ -211,16 +207,14 @@ function init(map){
                         document.getElementById('info').innerHTML = "<h4>"+feature.properties[boundName]+"</h4>" +
                             '<div> Instagram: ' + feature.properties['source_ins'] + " </div>" +
                             '<div> Android: ' + feature.properties['source_and'] + " </div>" +
-                            '<div> iPhone: ' + feature.properties['source_iph'] + " </div>" +
-                            '<div> ------------------------------ </div>' +
-                            "<div>"+ lng + "\t" + lat +"</div>"
+                            '<div> iPhone: ' + feature.properties['source_iph'] + " </div>";
                         // console.log(e)
                     });
                     map.on('click', layerList[0], function (e) {
                         let feature = e.features[0];
                         let lng = e.lngLat.lng.toFixed(4);
                         let lat = e.lngLat.lat.toFixed(4);
-                        new mapboxgl.Popup()
+                        new mapboxgl.Popup({anchor: 'bottom'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
                                 '<div> Area Name: ' + feature.properties[boundIndex] + " </div>" +
@@ -278,23 +272,19 @@ function init(map){
                     map.on('mousemove', layerList[1], function (e) {
                         document.getElementById('info').style.display = 'block';
                         let feature = e.features[0];
-                        let lng = e.lngLat.lng.toFixed(4);
-                        let lat = e.lngLat.lat.toFixed(4);
                         document.getElementById('info').innerHTML = "<h4>"+feature.properties[boundName]+"</h4>" +
                             '<div> 5 AM ~ 10 AM: ' + feature.properties['time_5_10'] + " </div>" +
                             '<div> 10 AM ~ 3 PM: ' + feature.properties['time_10_15'] + " </div>" +
                             '<div> 3 PM ~ 8 PM: ' + feature.properties['time_15_20'] + " </div>" +
                             '<div> 8 PM ~ 12 AM: ' + feature.properties['time_8_0'] + " </div>" +
-                            '<div> 12 AM ~ 6 AM: ' + feature.properties['time_0_5'] + " </div>" +
-                            '<div> ------------------------------ </div>' +
-                            "<div>"+ lng + "\t" + lat +"</div>"
+                            '<div> 12 AM ~ 6 AM: ' + feature.properties['time_0_5'] + " </div>";
                         // console.log(e)
                     });
                     map.on('click', layerList[1], function (e) {
                         let feature = e.features[0];
                         let lng = e.lngLat.lng.toFixed(4);
                         let lat = e.lngLat.lat.toFixed(4);
-                        new mapboxgl.Popup()
+                        new mapboxgl.Popup({anchor: 'bottom'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
                                 '<div> Area Code: ' + feature.properties[boundIndex] + " </div>" +
@@ -351,22 +341,18 @@ function init(map){
                     map.on('mousemove', layerList[2], function (e) {
                         document.getElementById('info').style.display = 'block';
                         let feature = e.features[0];
-                        let lng = e.lngLat.lng.toFixed(4);
-                        let lat = e.lngLat.lat.toFixed(4);
                         document.getElementById('info').innerHTML = "<h4>"+feature.properties[boundName]+"</h4>" +
                             '<div> Accident: ' + feature.properties['topic_acc'] + " </div>" +
                             '<div> Party: ' + feature.properties['topic_par'] + " </div>" +
                             '<div> Tourism: ' + feature.properties['topic_tou'] + " </div>" +
-                            '<div> Transportation: ' + feature.properties['topic_tra'] + " </div>" +
-                            '<div> ------------------------------ </div>' +
-                            "<div>"+ lng + "\t" + lat +"</div>"
+                            '<div> Transportation: ' + feature.properties['topic_tra'] + " </div>";
                         // console.log(e)
                     });
                     map.on('click', layerList[2], function (e) {
                         let feature = e.features[0];
                         let lng = e.lngLat.lng.toFixed(4);
                         let lat = e.lngLat.lat.toFixed(4);
-                        new mapboxgl.Popup()
+                        new mapboxgl.Popup({anchor: 'bottom'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
                                 '<div> Area Code: ' + feature.properties[boundIndex] + " </div>" +
@@ -423,21 +409,17 @@ function init(map){
                     map.on('mousemove', layerList[3], function (e) {
                         document.getElementById('info').style.display = 'block';
                         let feature = e.features[0];
-                        let lng = e.lngLat.lng.toFixed(4);
-                        let lat = e.lngLat.lat.toFixed(4);
                         document.getElementById('info').innerHTML = "<h4>"+feature.properties[boundName]+"</h4>" +
                             '<div> Positive: ' + feature.properties['sent_pos'] + " </div>" +
                             '<div> Negative: ' + feature.properties['sent_neg'] + " </div>" +
-                            '<div> Positive Ratio:'+feature.properties['sent_sum']+'</div>'+
-                            '<div> ------------------------------ </div>' +
-                            "<div>"+ lng + "\t" + lat +"</div>"
+                            '<div> Positive Ratio:'+feature.properties['sent_sum']+'</div>';
                         // console.log(e)
                     });
                     map.on('click', layerList[3], function (e) {
                         let feature = e.features[0];
                         let lng = e.lngLat.lng.toFixed(4);
                         let lat = e.lngLat.lat.toFixed(4);
-                        new mapboxgl.Popup()
+                        new mapboxgl.Popup({anchor: 'bottom'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
                                 '<div> Area Name: ' + feature.properties[boundIndex] + " </div>" +

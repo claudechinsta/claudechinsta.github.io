@@ -6,11 +6,13 @@
 */
 /* Menu button*/
 /* You can customize to your needs  */
+
 .mapboxgl-popup {
-    opacity: 0.9;
+    font: 10px 'pt sans', Arial, Helvetica, sans-serif;
+    z-index: 2;
+    padding: 20px;
     color: black;
 }
-
 
 #menu-box {
     font-family: 'Titillium Web', sans-serif;
