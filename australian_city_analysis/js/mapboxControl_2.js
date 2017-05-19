@@ -53,12 +53,12 @@ function init(map){
 
         let boundList = {
             "sa2": {
-                'url': "../data/victoria_sa2.json",
+                'url': "data/victoria_sa2.json",
                 'index': "SA2_MAIN11",
                 'name': "SA2_NAME11"
             },
             "lga": {
-                'url': "../data/victoria_lga.json",
+                'url': "data/victoria_lga.json",
                 'aurin_index': "lga_code06",
                 'bound_index': "LGA_CODE11",
                 'bound_name': "LGA_NAME11",
@@ -67,8 +67,8 @@ function init(map){
         };
 
         // Setting the url for the Topic 1
-        let viewUrl = "../data/lga_view.json";
-        let aurinUrl = "../data/lga_aurin.json";
+        let viewUrl = "data/lga_view.json";
+        let aurinUrl = "data/lga_aurin.json";
         let boundType = "lga";
         let boundUrl = boundList[boundType]['url'];
         let boundIndex = boundList[boundType]['bound_index'];
@@ -168,7 +168,7 @@ function init(map){
                         feat.properties['aurin_cd_ostf'] = aurinLgaObj.hasOwnProperty(code) ? aurinLgaObj[code]['Chronic Disease']['Osteoporosis (Female)'].toFixed(2) : null;
                         feat.properties['aurin_cd_rhe'] = aurinLgaObj.hasOwnProperty(code) ? aurinLgaObj[code]['Chronic Disease']['Rheumatoid'].toFixed(2) : null;
                     });
-                    console.log(bound_features);
+                    // console.log(bound_features);
 
                     //////////////////////////////////////////////////
                     // Layer 1 "Sources of Tweets"
