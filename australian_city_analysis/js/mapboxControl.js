@@ -62,12 +62,12 @@ function init(map){
 
         let boundList = {
             "sa2": {
-                'url': "../data/victoria_sa2.json",
+                'url': "data/victoria_sa2.json",
                 'index': "SA2_MAIN11",
                 'name': "SA2_NAME11"
             },
             "lga": {
-                'url': "../data/victoria_lga.json",
+                'url': "data/victoria_lga.json",
                 'aurin_index': "lga_code06",
                 'bound_index': "LGA_CODE11",
                 'bound_name': "LGA_NAME11",
@@ -76,8 +76,8 @@ function init(map){
         };
 
         // Setting the url for the Topic 1
-        let viewUrl = "../data/sa2_view.json";
-        let aurinUrl = "../data/sa2_aurin.json";
+        let viewUrl = "data/sa2_view.json";
+        let aurinUrl = "data/sa2_aurin.json";
         let boundType = "sa2";
         let boundUrl = boundList[boundType]['url'];
         let boundIndex = boundList[boundType]['index'];
