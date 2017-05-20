@@ -10,7 +10,6 @@
 .mapboxgl-popup {
     font: 10px 'pt sans', Arial, Helvetica, sans-serif;
     z-index: 2;
-    padding: 20px;
     color: black;
 }
 

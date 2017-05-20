@@ -7,20 +7,31 @@
 /* Menu button*/
 /* You can customize to your needs  */
 
+body {
+
+}
+
 #wikiEmbed {
     display: none;
     overflow-y: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
 }
-
+.mapboxgl-popup {
+    border-radius: 5px;
+}
 .mapboxgl-popup-content {
-    font: 13px 'pt sans', Arial, Helvetica, sans-serif;
-    z-index: 2;
+    box-shadow: 0px 0px 10px #999999;
+    font-family: 'Pt Sans', Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    z-index: 3;
     text-align: center;
     color: black;
 }
 
 #menu-box {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 0px 20px;
     border: solid 1px #f5f5f5;
@@ -44,36 +55,8 @@
 #menu-box button{
     font-size: small;
     width: 100px;
-    margin: 5px 0;
-}
-
-.legend {
-    background-color: #fff;
-    opacity: 0.8;
-    transition: opacity 0.1s ease-in-out;
-    border-radius: 3px;
-    bottom: 30px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    font: 12px/20px 'pt sans', Arial, Helvetica, sans-serif;
-    padding: 10px 13px;
-    position: absolute;
-    right: 10px;
-    z-index: 1;
-}
-.legend h4 {
-    text-align: center;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-.legend div span {
-    border-radius: 50%;
-    display: inline-block;
-    height: 10px;
-    margin-right: 5px;
-    width: 10px;
-}
-#legend:hover {
-    opacity: 1;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #menu_overmap {
@@ -84,19 +67,21 @@
 }
 
 #info {
-    font-family: 'Titillium Web', sans-serif;
-    display: none;
-    position: relative;
-    margin: 0px auto;
-    top: 5px;
-    width: 30%;
-    padding: 5px;
+    font-family: 'open sans', Arial, Helvetica, sans-serif;
+    transition: all 0.5s ease;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     font-size: 11px;
     text-align: center;
-    color: #222;
-    background: rgba(255, 244, 246, 0.7);
+
+    color: #262626;
+    box-shadow: 0px 0px 15px #aaaaaa;
+    background: #fffbf7;
 }
 
 
