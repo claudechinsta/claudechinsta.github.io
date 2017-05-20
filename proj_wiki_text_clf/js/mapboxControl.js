@@ -49,7 +49,7 @@ function init(map) {
                             [10, 5]
                         ]
                     },
-                    'circle-color': "rgba(50, 104, 45, 0.7)"
+                    'circle-color': "#de4509"
                 }
             });
 
@@ -65,7 +65,7 @@ function init(map) {
                 },
                 'paint': {
                     'circle-radius': 20,
-                    'circle-color': "rgba(50, 104, 45, 0.3)",
+                    'circle-color': "rgba(222, 69, 6, 0.3)",
                     'circle-opacity': 0.4
                 },
                 "filter": ["==", "name", ""]
@@ -74,14 +74,14 @@ function init(map) {
             // Interaction Setting
             map.on('mousemove', layerID, function (e) {
                 let feature = e.features[0];
-
                 var ent_type = feature.properties['type'].split(" ");
                 var tp = "";
                 ent_type.forEach(function (data) {
                     tp += "#"+data+" "
                 });
                 document.getElementById('info').style.display = 'block';
-                document.getElementById('info').innerHTML = "<h2>"+feature.properties["name"]+"<h5>" + tp + "</h5></h2>";
+                document.getElementById('info').innerHTML = "<h3>"+feature.properties["name"]+"</h3><h4>" + tp + "</h4>"+
+                    "<div style='height: 10px'></div>"
                 // console.log(e)
             });
 
@@ -98,8 +98,8 @@ function init(map) {
                 new mapboxgl.Popup({"anchor": "bottom-left"})
                     .setLngLat(e.lngLat)
                     .setHTML("<h3 style='margin-left: 20px; margin-right: 20px'>" + feature.properties["name"] + "</h3>" +
-                        '<button id="wikibtn" class="btn btn-default btn-sm" onclick=toggleWiki() style="margin-bottom: 10px;">Wikipedia</button>' +
-                        '<iframe id="wikiEmbed" frameborder="no" width=450 height=300 src="' + wiki_url + '"></iframe>')
+                        '<iframe id="wikiEmbed" frameborder="no" width=400 height=300 src="' + wiki_url + '"></iframe>' +
+                        '<label id="wikibtn" onclick=toggleWiki() style="margin-bottom: 10px;">wikipedia page</label>')
                     .addTo(map);
             });
 

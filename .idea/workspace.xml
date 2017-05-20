@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c15e0778-279d-4136-b006-ab290315037e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/australian_city_analysis/css/menu_btn_popup.css" afterPath="$PROJECT_DIR$/australian_city_analysis/css/menu_btn_popup.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proj_wiki_text_clf/js/mapboxControl_2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/proj_wiki_text_clf/js/moment.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj_wiki_text_clf/css/menu_btn_popup.css" afterPath="$PROJECT_DIR$/proj_wiki_text_clf/css/menu_btn_popup.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj_wiki_text_clf/index.html" afterPath="$PROJECT_DIR$/proj_wiki_text_clf/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proj_wiki_text_clf/js/mapboxControl.js" afterPath="$PROJECT_DIR$/proj_wiki_text_clf/js/mapboxControl.js" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proj_wiki_text_clf/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="75" lean-forward="false" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+            <state relative-caret-position="256">
+              <caret line="72" column="46" lean-forward="false" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -36,8 +38,8 @@
       <file leaf-file-name="menu_btn_popup.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proj_wiki_text_clf/css/menu_btn_popup.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="69" column="50" lean-forward="true" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
+            <state relative-caret-position="149">
+              <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -46,11 +48,12 @@
       <file leaf-file-name="mapboxControl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/proj_wiki_text_clf/js/mapboxControl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="827">
-              <caret line="101" column="74" lean-forward="false" selection-start-line="101" selection-start-column="74" selection-end-line="101" selection-end-column="74" />
+            <state relative-caret-position="501">
+              <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
               <folding>
-                <marker date="1495282897000" expanded="true" signature="3369:3406" ph="..." />
-                <marker date="1495282897000" expanded="true" signature="3556:3576" ph="..." />
+                <marker date="1495292590000" expanded="true" signature="2640:2652" ph="..." />
+                <marker date="1495292590000" expanded="true" signature="3407:3444" ph="..." />
+                <marker date="1495292590000" expanded="true" signature="3684:3704" ph="..." />
               </folding>
             </state>
           </provider>
@@ -81,10 +84,10 @@
         <option value="$PROJECT_DIR$/australian_city_analysis/js/mapboxControl_2.js" />
         <option value="$PROJECT_DIR$/australian_city_analysis/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/australian_city_analysis/css/menu_btn_popup.css" />
-        <option value="$PROJECT_DIR$/proj_wiki_text_clf/index.html" />
         <option value="$PROJECT_DIR$/proj_wiki_text_clf/css/menu_btn_popup.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/proj_wiki_text_clf/index.html" />
         <option value="$PROJECT_DIR$/proj_wiki_text_clf/js/mapboxControl.js" />
       </list>
     </option>
@@ -191,7 +194,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,12 +364,12 @@
       <workItem from="1495077351192" duration="3720000" />
       <workItem from="1495096908481" duration="524000" />
       <workItem from="1495170412084" duration="4989000" />
-      <workItem from="1495199484524" duration="16910000" />
+      <workItem from="1495199484524" duration="21528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27970000" />
+    <option name="totallyTimeSpent" value="32588000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -381,15 +384,15 @@
     <frame x="0" y="0" width="1486" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16928327" sideWeight="0.56435645" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16928327" sideWeight="0.5619469" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36766335" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16928327" sideWeight="0.43564355" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16928327" sideWeight="0.4380531" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24931075" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40273973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4019802" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -623,52 +626,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495170961000" expanded="true" signature="12394:12401" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="12590:12597" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="12791:12798" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="12976:12983" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="13179:13186" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="13360:13367" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="17242:17249" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="17438:17445" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="17639:17646" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="17823:17830" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="18026:18033" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="18207:18214" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="21981:21988" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="22177:22184" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="22378:22385" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="22562:22569" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="22765:22772" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="22946:22953" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="26621:26628" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="26816:26823" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="27016:27023" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="27200:27207" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="27402:27409" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="27583:27590" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="31065:31083" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="31172:31190" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="31277:31295" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="31541:31559" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="31649:31667" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="31757:31775" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="31864:31882" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="31972:31990" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="32242:32260" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="32348:32366" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="32451:32469" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="32556:32574" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="32822:32840" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="32927:32945" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="33035:33053" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="33143:33161" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="33251:33269" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="33359:33377" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="33467:33485" ph="..." />
-            <marker date="1495170961000" expanded="true" signature="33575:33593" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -696,37 +654,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proj_wiki_text_clf/css/menu_btn_popup.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="69" column="50" lean-forward="true" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="78" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/proj_wiki_text_clf/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="75" lean-forward="false" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+        <state relative-caret-position="256">
+          <caret line="72" column="46" lean-forward="false" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proj_wiki_text_clf/css/menu_btn_popup.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/proj_wiki_text_clf/js/mapboxControl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="101" column="74" lean-forward="false" selection-start-line="101" selection-start-column="74" selection-end-line="101" selection-end-column="74" />
+        <state relative-caret-position="501">
+          <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
           <folding>
-            <marker date="1495282897000" expanded="true" signature="3369:3406" ph="..." />
-            <marker date="1495282897000" expanded="true" signature="3556:3576" ph="..." />
+            <marker date="1495292590000" expanded="true" signature="2640:2652" ph="..." />
+            <marker date="1495292590000" expanded="true" signature="3407:3444" ph="..." />
+            <marker date="1495292590000" expanded="true" signature="3684:3704" ph="..." />
           </folding>
         </state>
       </provider>
