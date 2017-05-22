@@ -139,10 +139,8 @@ function init(map) {
 
             map.on('click', layerID, function (e) {
                 let feature = e.features[0];
+                // console.log(feature.properties.sentences);
                 let feature_type = feature.properties['type'];
-                console.log(colorMap_dict[feature['properties']['e_type']]);
-                // let lng = e.lngLat.lng.toFixed(8);
-                // let lat = e.lngLat.lat.toFixed(8);
                 let coord = feature['geometry']['coordinates'];
                 let wiki_url = "https://en.wikipedia.org/wiki/"+feature.properties["name"]+"?mobileaction=toggle_view_mobile";
                 let sentence = feature['properties'].hasOwnProperty("geo_sent") ? feature['properties']["geo_sent"] : "[No, Desciption]";
@@ -151,9 +149,11 @@ function init(map) {
                     .setHTML("<h3 style='font-size:28px; margin-left: 20px; margin-right: 20px'>" + feature.properties["name"] + "</h3>" +
                         '<h4>'+feature_type+'</h4>' +
                         '<p id="popupSent">'+sentence+'</p>' +
+                        '<div class="wikibtn" onclick=toggleSents('+ feature.properties.sentences +') style="margin-bottom: 5px;">MORE</div>' +
+                        '<div></div>' +
                         '<iframe id="wikiEmbed" frameborder="no" width=400 height=300 src="' + wiki_url + '"></iframe>' +
-                        '<label id="wikibtn" onclick=toggleWiki() style="margin-bottom: 5px;">WIKIPEDIA PAGE</label>' +
-                        '<div><label id="wikibtn" onclick=flyTo('+coord+')>FLY HERE!</label></div>')
+                        '<div class="wikibtn" onclick=toggleWiki() style="margin-bottom: 5px;">WIKIPEDIA PAGE</div>' +
+                        '<div class="wikibtn" onclick=flyTo('+coord+')>FLY HERE!</div>')
                     .addTo(map);
                 $("div.mapboxgl-popup-content").find("h3, h4").css("color", colorMap_dict[feature['properties']['e_type']])
             });
@@ -189,8 +189,7 @@ function getEntType(data){
         //Amenity Covering an assortment of community facilities including toilets, telephones, banks,
         // pharmacies and schools.
         return "amenity";
-    }
-    else if (data.indexOf("aeroway") !== -1) {
+    }    else if (data.indexOf("aeroway") !== -1) {
         // Describes the fixed physical infrastructure associated with the air travel, including airports,
         //runways, helipads, and terminal buildings.
         return "aeroway";
@@ -221,6 +220,10 @@ function toggleWiki() {
     console.log(ifDisplay);
     let result = ifDisplay==="none" ? "block" : "none";
     $("#wikiEmbed").css({"display": result});
+}
+
+function toggleSents(data) {
+    $("#popupSent").html(data)
 }
 
 function flyTo(coordx, coordy) {

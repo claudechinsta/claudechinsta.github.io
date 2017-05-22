@@ -23,15 +23,17 @@
     box-shadow: 0px 0px 7px #aaaaaa;
 }
 
-#wikibtn {
-    font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+.wikibtn {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 2px;
+    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
     font-size: small;
-    color: #0f0f0f;
-    transition: color 0.1s ease, font-size 0.1s ease;
+    color: #215482;
+    transition: all 0.1s linear;
 }
-#wikibtn:hover {
-    color: #2b669a;
-    font-size: 14px;
+.wikibtn:hover {
+    background: #f2f2f2;
     cursor: pointer;
 }
 
@@ -46,28 +48,37 @@
     font-family: 'Lobster Two', Helvetica, Arial, sans-serif;
 }
 
-#menuback {
-    font-family: 'Titillium Web', Helvetica, sans-serif;
+.menuback {
+    padding: 4px 8px;
+    padding-top: 6px;
+    border-radius: 4px;
+    /*background: #eee;*/
+    font-family: 'Fjalla One', Helvetica, sans-serif;
+    font-size: 16px;
     position: absolute;
     z-index: 999;
-    top: 15px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
+    transition: all 0.2s ease;
+}
+.menuback:hover {
+    background: #e8eaec;
+    cursor: pointer;
 }
 
 #info {
-    font-family: 'open sans', Arial, Helvetica, sans-serif;
+    font-family: 'Fjalla One', Arial, Helvetica, sans-serif;
     transition: all 0.5s ease;
     position: absolute;
-    left: 15px;
-    top: 15px;
-    padding-left: 20px;
+    left: 10px;
+    top: 10px;
+    padding-left: 15px;
     padding-right: 20px;
     border: none;
     border-radius: 5px;
     font-size: 11px;
     text-align: left;
     color: #262626;
-    box-shadow: 0px 0px 15px #aaaaaa;
     background: #fffbf7;
 }
 #info:hover {
@@ -80,7 +91,7 @@
     transition: opacity 0.1s ease-in-out;
     border-radius: 5px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    font: 13px 'open sans', Arial, Helvetica, sans-serif;
+    font: 13px 'Fjalla One', Arial, Helvetica, sans-serif;
     padding: 14px;
     position: absolute;
     left: 10px;
@@ -98,7 +109,21 @@
     width: 12px;
     margin-right: 5px;
     margin-top: 10px;
+}
 
+#helpPanel {
+    display: none;
+    font: 13px 'Fjalla One', Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    z-index: 999;
+    border-radius: 3px;
+    background: rgba(238, 238, 238, 0.8);
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 54px;
 }
 
 
