@@ -65,7 +65,17 @@ function init(map) {
             data.features.forEach(function(feat){
                 feat["properties"]["e_type"] = getEntType(feat["properties"]["type"]);
                 if (feat['properties'].hasOwnProperty("sentences")){
-                    feat['properties']['geo_sent'] = feat['properties']['sentences'].length > 0 ? feat['properties']['sentences'][0] : " -- "
+                    // feat['properties']['geo_sent'] = feat['properties']['sentences'].length > 0 ? feat['properties']['sentences'][0] : " -- ";
+                    sent_with_located = "";
+                    feat['properties']['sentences'].forEach(function (sent) {
+                        if(sent.indexOf("located") !== -1){
+                            sent_with_located = sent
+                        }
+                    });
+                    if (sent_with_located === ""){
+                        sent_with_located = feat['properties']['sentences'][0]
+                    }
+                    feat['properties']['geo_sent'] = sent_with_located;
                     feat['properties']['has_sent'] = "true";
                     features_with_sents.push(feat)
                 }
@@ -139,7 +149,6 @@ function init(map) {
 
             map.on('click', layerID, function (e) {
                 let feature = e.features[0];
-                // console.log(feature.properties.sentences);
                 let feature_type = feature.properties['type'];
                 let coord = feature['geometry']['coordinates'];
                 let wiki_url = "https://en.wikipedia.org/wiki/"+feature.properties["name"]+"?mobileaction=toggle_view_mobile";
@@ -149,10 +158,10 @@ function init(map) {
                     .setHTML("<h3 style='font-size:28px; margin-left: 20px; margin-right: 20px'>" + feature.properties["name"] + "</h3>" +
                         '<h4>'+feature_type+'</h4>' +
                         '<p id="popupSent">'+sentence+'</p>' +
-                        '<div class="wikibtn" onclick=toggleSents('+ feature.properties.sentences +') style="margin-bottom: 5px;">MORE</div>' +
+                        // '<div class="wikibtn" onclick=toggleSents(feature[""]["sentences"]) style="margin-bottom: 5px;">MORE</div>' +
                         '<div></div>' +
                         '<iframe id="wikiEmbed" frameborder="no" width=400 height=300 src="' + wiki_url + '"></iframe>' +
-                        '<div class="wikibtn" onclick=toggleWiki() style="margin-bottom: 5px;">WIKIPEDIA PAGE</div>' +
+                        '<div class="wikibtn" onclick=toggleWiki()>WIKIPEDIA PAGE</div>' +
                         '<div class="wikibtn" onclick=flyTo('+coord+')>FLY HERE!</div>')
                     .addTo(map);
                 $("div.mapboxgl-popup-content").find("h3, h4").css("color", colorMap_dict[feature['properties']['e_type']])
@@ -216,14 +225,15 @@ function getEntType(data){
 }
 
 function toggleWiki() {
-    var ifDisplay = $("#wikiEmbed").css("display");
+    let ifDisplay = $("#wikiEmbed").css("display");
     console.log(ifDisplay);
     let result = ifDisplay==="none" ? "block" : "none";
     $("#wikiEmbed").css({"display": result});
 }
 
 function toggleSents(data) {
-    $("#popupSent").html(data)
+    document.getElementById("popupSent").innerHTML = data;
+    // $("#popupSent").text(data);
 }
 
 function flyTo(coordx, coordy) {
