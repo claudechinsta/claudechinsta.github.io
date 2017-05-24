@@ -15,7 +15,6 @@
     text-align: center;
     width: 200px;
 }
-
 #wikiEmbed {
     display: none;
     /*width: 0;*/
@@ -24,7 +23,6 @@
     margin: 25px;
     box-shadow: 0 0 7px #aaaaaa;
 }
-
 .wikibtn {
     padding-top: 2px;
     padding-bottom: 2px;
@@ -34,12 +32,10 @@
     color: #215482;
     transition: all 0.1s linear;
 }
-
 .wikibtn:hover {
     background: #f2f2f2;
     cursor: pointer;
 }
-
 .mapboxgl-popup-content {
     font-family: 'Pt Sans', Arial, Helvetica, sans-serif;
     font-size: 13px;
@@ -50,8 +46,14 @@
 .mapboxgl-popup-content h3{
     font-family: 'Lobster Two', Helvetica, Arial, sans-serif;
 }
-
 .menuback {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+
     padding: 4px 8px;
     padding-top: 6px;
     border-radius: 4px;
@@ -65,10 +67,9 @@
     transition: all 0.2s ease;
 }
 .menuback:hover {
-    background: #e8eaec;
+    background: rgba(137, 166, 185, 0.7);
     cursor: pointer;
 }
-
 #info {
     font-family: 'Fjalla One', Arial, Helvetica, sans-serif;
     transition: all 0.5s ease;
@@ -113,7 +114,6 @@
     margin-right: 5px;
     margin-top: 10px;
 }
-
 #helpPanel {
     display: none;
     font: 13px 'Fjalla One', Arial, Helvetica, sans-serif;

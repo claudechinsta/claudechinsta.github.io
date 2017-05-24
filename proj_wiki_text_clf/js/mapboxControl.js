@@ -7,14 +7,14 @@
  */
 
 let colorMap_dict = {
-    "place": "#a56d00",
+    "place": "#e2df00",
     "building": "#a53545",
     "leisure": "#b3398b",
     "amenity": "#7349a4",
     "aeroway": "#4f94d3",
     "waterway": "#004ca4",
-    "public_transport": "#00adad",
-    "route": "#2f3254",
+    "public_transport": "#00c1c1",
+    "route": "#153a6b",
     "natural": "#009d1a",
     "landuse": "#1f4b00",
     "other": "#414141"
@@ -65,17 +65,19 @@ function init(map) {
             data.features.forEach(function(feat){
                 feat["properties"]["e_type"] = getEntType(feat["properties"]["type"]);
                 if (feat['properties'].hasOwnProperty("sentences")){
-                    // feat['properties']['geo_sent'] = feat['properties']['sentences'].length > 0 ? feat['properties']['sentences'][0] : " -- ";
-                    sent_with_located = "";
-                    feat['properties']['sentences'].forEach(function (sent) {
-                        if(sent.indexOf("located") !== -1){
-                            sent_with_located = sent
-                        }
-                    });
-                    if (sent_with_located === ""){
-                        sent_with_located = feat['properties']['sentences'][0]
-                    }
-                    feat['properties']['geo_sent'] = sent_with_located;
+                    feat['properties']['geo_sent'] = feat['properties']['sentences'].length > 0 ? feat['properties']['sentences'][0] : " -- ";
+
+                    // sent_with_located = "";
+                    // feat['properties']['sentences'].forEach(function (sent) {
+                    //     if(sent.indexOf("located") !== -1){
+                    //         sent_with_located = sent
+                    //     }
+                    // });
+                    // if (sent_with_located === ""){
+                    //     sent_with_located = feat['properties']['sentences'][0]
+                    // }
+                    // feat['properties']['geo_sent'] = sent_with_located;
+
                     feat['properties']['has_sent'] = "true";
                     features_with_sents.push(feat)
                 }
@@ -115,23 +117,23 @@ function init(map) {
                 }
             });
 
-            map.addLayer({
-                'id': layerID+"_hover",
-                'type': 'circle',
-                'source': {
-                    'type': 'geojson',
-                    'data': data
-                },
-                'layout': {
-                    'visibility': 'visible'
-                },
-                'paint': {
-                    'circle-radius': 20,
-                    'circle-color': "rgba(22, 22, 22, 0.3)",
-                    'circle-opacity': 0.4
-                },
-                "filter": ["==", "name", ""]
-            });
+            // map.addLayer({
+            //     'id': layerID+"_hover",
+            //     'type': 'circle',
+            //     'source': {
+            //         'type': 'geojson',
+            //         'data': data
+            //     },
+            //     'layout': {
+            //         'visibility': 'visible'
+            //     },
+            //     'paint': {
+            //         'circle-radius': 20,
+            //         'circle-color': "rgba(22, 22, 22, 0.3)",
+            //         'circle-opacity': 0.4
+            //     },
+            //     "filter": ["==", "name", ""]
+            // });
 
             // Interaction Setting
             map.on('mousemove', layerID, function (e) {
