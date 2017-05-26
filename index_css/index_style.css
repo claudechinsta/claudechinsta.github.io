@@ -4,7 +4,8 @@
     margin: 0 auto;
     padding-top: 2cm;
 }
-#header {
+
+.header {
     position: fixed;
     font-family: "Fjalla One", Helvetica, Arial, sans-serif;
     width: 100%;
@@ -12,7 +13,22 @@
     background: rgba(255, 255, 255, 0.98);
     /*box-shadow: 0 0 10px #363636;*/
 }
-#content {
+.header h5{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    font-size: 16px;
+    transition: all 0.1s ease;
+}
+.header a {
+    color: #436ea5;
+    text-decoration: none;
+}
+.header a:hover{
+    cursor: pointer;
+}
+
+.content {
     font-family: "Titillium Web", Helvetica, Arial, sans-serif;
     color: #323131;
     text-align: center;
@@ -58,17 +74,22 @@
     cursor: pointer;
     background: #f4f4f4;
 }
-#header h5{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-top: 5px;
-    font-size: 16px;
-    transition: all 0.1s ease;
+
+
+/* Css Stylesheets for Project Page*/
+.thumbnail_proj {
+    box-shadow: 0 0 1px #404040;
+    transition: all 0.15s ease;
+    border-radius: 8px;
+    margin: 10px;
 }
-#header a {
-    color: #436ea5;
-    text-decoration: none;
-}
-#header a:hover{
+.thumbnail_proj:hover{
+    padding: 5px;
+    box-shadow: 0 0 10px #404040;
     cursor: pointer;
+}
+.thumbnail_proj_label{
+    margin-top: 5px;
+    font-size: 12px;
+    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
 }

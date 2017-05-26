@@ -3,7 +3,7 @@
 
 <head>
     <meta charset = "UTF-8">
-    <title>Soulsmatic Productions - Projects</title>
+    <title>Soulsmatic Productions - proj</title>
 </head>
 
 <link href='ext_js/bootstrap.css' rel='stylesheet' />
@@ -20,21 +20,27 @@
 
 <body>
 
-<!--MENU CONTENT-->
-<div id="header">
+<div class="header">
     <div style="float: left; width: 80px; height: 100%"></div>
-    <div class="head_btn" onclick="location.href='#'"><b>主頁</b><div style="font-size: 12px">INDEX</div></div>
+    <div class="head_btn" onclick="location.href='./index'"><b>主頁</b><div style="font-size: 12px">INDEX</div></div>
     <div class="head_btn" onclick="location.href='#'"><b>音樂</b><div style="font-size: 12px">MUSIC</div></div>
-    <div class="head_btn" onclick="location.href='#'"><b>項目</b><div style="font-size: 12px">PROJECT</div></div>
+    <div class="head_btn" onclick="location.href='./index_proj'"><b>項目</b><div style="font-size: 12px">PROJECT</div></div>
     <div class="head_btn" onclick="location.href='#'"><b>畫廊</b><div style="font-size: 12px">GALLERY</div></div>
     <div class="head_btn" onclick="location.href='#'"><b>關於</b><div style="font-size: 12px">ABOUT</div></div>
-<div id="content">
-    <h3 style="margin-top: 80px">Projects Links</h3>
-    <h4>项目链接</h4>
-    <div style="height: 10px;"></div>
-    <div class ="my_btn" onclick="location.href='#'"> Australian City Analytics</div>
-    <div class = "my_btn" onclick="location.href='./proj_wiki_text_clf/'">Wikipedia Text Classifier</div>
-    <!--澳大利亚城市大数据分析 / 维基百科内容分类器 -->
+</div>
+<div class="content">
+    <div style="padding-top: 100px"></div>
+
+    <img class="thumbnail_proj" src="imgs/proj_1.png" alt="Smiley face" width="200"
+         onclick="location.href='./proj_australian_city_analysis'">
+    <div class="thumbnail_proj_label">Australian City Analytics - 2017</div>
+
+    <div style="height: 40px"></div>
+
+    <img class="thumbnail_proj" src="imgs/proj_2.png" alt="Smiley face" width="200"
+         onclick="location.href='./proj_wiki_text_clf/'">
+    <div class="thumbnail_proj_label">Wikipedia Text Classifier - 2017</div>
+
     <div style="height: 70px;"></div>
     <label style="font-family: 'Fjalla One', Helvetica, Arial, sans-serif">Soulsmatic Productions, All Rights Reserved. 2017</label>
 </div>
