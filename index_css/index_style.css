@@ -5,6 +5,12 @@
     padding-top: 2cm;
 }
 
+.content {
+    font-family: "open sans", Helvetica, Arial, sans-serif;
+    color: #323131;
+    text-align: center;
+}
+
 .header {
     position: fixed;
     font-family: "Fjalla One", Helvetica, Arial, sans-serif;
@@ -26,12 +32,6 @@
 }
 .header a:hover{
     cursor: pointer;
-}
-
-.content {
-    font-family: "Titillium Web", Helvetica, Arial, sans-serif;
-    color: #323131;
-    text-align: center;
 }
 
 .head_btn {
@@ -75,7 +75,6 @@
     background: #f4f4f4;
 }
 
-
 /* Css Stylesheets for Project Page*/
 .thumbnail_proj {
     box-shadow: 0 0 1px #404040;
@@ -84,7 +83,6 @@
     margin: 10px;
 }
 .thumbnail_proj:hover{
-    padding: 5px;
     box-shadow: 0 0 10px #404040;
     cursor: pointer;
 }
@@ -92,4 +90,38 @@
     margin-top: 5px;
     font-size: 12px;
     font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+}
+
+/* Css Stylesheets for Gallery Page*/
+.gal_title {
+
+}
+.gal_artist_entry {
+    background: url("../imgs/Daz-profile.jpeg") no-repeat fixed;
+    background-size: 100%;
+    padding-bottom: 140px;
+    transition: all 0.3s ease;
+    filter: brightness(100%);
+}
+.gal_artist_entry:hover {
+    filter: brightness(110%);
+    cursor: pointer;
+}
+.gal_img_content h1{
+    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+    font-size: 90px;
+    text-align: left;
+    color: #efefef;
+    /*text-align: left;*/
+    margin: 0;
+    padding: 5% 0 0 60px;
+}
+.gal_img_content h2{
+    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    text-align: left;
+    color: #efefef;
+    /*text-align: left;*/
+    margin: 0;
+    padding: 0 0 0 68px;
 }

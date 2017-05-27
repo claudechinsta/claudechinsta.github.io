@@ -7,20 +7,23 @@
 /* Menu button*/
 /* You can customize to your needs  */
 
-.mapboxgl-popup {
-    font: 10px 'pt sans', Arial, Helvetica, sans-serif;
+.mapboxgl-popup-content {
+    font: 11px 'Raleway', Arial, Helvetica, sans-serif;
     z-index: 2;
     color: black;
 }
+.mapboxgl-popup-content h4,h5 {
+    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+}
 
 #menu-box {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     text-align: center;
-    padding: 0px 20px;
+    padding: 0 20px;
     border: solid 1px #f5f5f5;
     background-color: #ffffff;
     border-radius: 4px;
-    opacity: 0.1;
+    opacity: 0.9;
     transition: opacity 0.1s ease-in-out;
     width:150px;
     float: right;   
@@ -30,13 +33,11 @@
     margin-right: 10px;
     z-index: 99999;
 }
-
 #menu-box:hover {
     opacity: 1;
 }
-
-#menu-box button{
-    font-size: small;
+#menu-box button {
+    font-size: 15px;
     width: 100px;
     margin: 5px 0;
 }
@@ -78,19 +79,19 @@
 }
 
 #info {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     display: none;
     position: relative;
-    margin: 0px auto;
+    margin-left: 60px;
     top: 5px;
     width: 30%;
-    padding: 5px;
+    padding: 10px;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     font-size: 11px;
-    text-align: center;
+    text-align: left;
     color: #222;
-    background: rgba(255, 244, 246, 0.7);
+    background: rgba(255, 244, 246, 0.9);
 }
 
 

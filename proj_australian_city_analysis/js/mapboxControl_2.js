@@ -46,11 +46,12 @@ function init(map){
     // map.scrollZoom.disable();
     map.on('mousemove', function (e) {
         document.getElementById('info').style.display = 'block';
-        document.getElementById('info').innerHTML = "<h4>Analysis of Tweets in Victoria</h4>";
+        document.getElementById('info').innerHTML = "<h4>Analysis of Tweets in Victoria</h4>" +
+            "<h5>Local Government Association</h5>";
         // console.log(e)
     });
-    map.on('load', function () {
-
+    map.on('load', function ()
+    {
         let boundList = {
             "sa2": {
                 'url': "data/victoria_sa2.json",
@@ -214,11 +215,10 @@ function init(map){
                         let feature = e.features[0];
                         let lng = e.lngLat.lng.toFixed(4);
                         let lat = e.lngLat.lat.toFixed(4);
-                        new mapboxgl.Popup({anchor: 'bottom'})
+                        new mapboxgl.Popup({anchor: 'bottom-left'})
                             .setLngLat(e.lngLat)
-                            .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
+                            .setHTML("<h4>"+feature.properties[boundName] + "</h4>" +
                                 '<div> Area Name: ' + feature.properties[boundIndex] + " </div>" +
-                                '<div> ------------------------------ </div>' +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_awb_dev'])+'\'><b> Adequate Worklife Balance: </b>' + feature.properties['aurin_awb'] + " %</div>" +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_fsmpw_dev'])+'\'><b> Family Share Meal Per Week: </b>' + feature.properties['aurin_fsmpw'] + " %</div>" +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_is_dev'])+'\'><b> Inadequate Sleep: </b>' + feature.properties['aurin_is'] + " %</div>" +
@@ -282,13 +282,10 @@ function init(map){
                     });
                     map.on('click', layerList[1], function (e) {
                         let feature = e.features[0];
-                        let lng = e.lngLat.lng.toFixed(4);
-                        let lat = e.lngLat.lat.toFixed(4);
-                        new mapboxgl.Popup({anchor: 'bottom'})
+                        new mapboxgl.Popup({anchor: 'bottom-left'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
                                 '<div> Area Code: ' + feature.properties[boundIndex] + " </div>" +
-                                '<div> ------------------------------ </div>' +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_awb_dev'])+'\'><b> Adequate Worklife Balance: </b>' + feature.properties['aurin_awb'] + " %</div>" +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_fsmpw_dev'])+'\'><b> Family Share Meal Per Week: </b>' + feature.properties['aurin_fsmpw'] + " %</div>" +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_is_dev'])+'\'><b> Inadequate Sleep: </b>' + feature.properties['aurin_is'] + " </div>" +
@@ -350,13 +347,10 @@ function init(map){
                     });
                     map.on('click', layerList[2], function (e) {
                         let feature = e.features[0];
-                        let lng = e.lngLat.lng.toFixed(4);
-                        let lat = e.lngLat.lat.toFixed(4);
-                        new mapboxgl.Popup({anchor: 'bottom'})
+                        new mapboxgl.Popup({anchor: 'bottom-left'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
                                 '<div> Area Code: ' + feature.properties[boundIndex] + " </div>" +
-                                '<div> ------------------------------ </div>' +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_awb_dev'])+'\'><b> Adequate Worklife Balance: </b>' + feature.properties['aurin_awb'] + " %</div>" +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_fsmpw_dev'])+'\'><b> Family Share Meal Per Week: </b>' + feature.properties['aurin_fsmpw'] + " %</div>" +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_is_dev'])+'\'><b> Inadequate Sleep: </b>' + feature.properties['aurin_is'] + " </div>" +
@@ -417,13 +411,10 @@ function init(map){
                     });
                     map.on('click', layerList[3], function (e) {
                         let feature = e.features[0];
-                        let lng = e.lngLat.lng.toFixed(4);
-                        let lat = e.lngLat.lat.toFixed(4);
-                        new mapboxgl.Popup({anchor: 'bottom'})
+                        new mapboxgl.Popup({anchor: 'bottom-left'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
                                 '<div> Area Name: ' + feature.properties[boundIndex] + " </div>" +
-                                '<div> ------------------------------ </div>' +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_awb_dev'])+'\'><b> Adequate Worklife Balance: </b>' + feature.properties['aurin_awb'] + " </div>" +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_fsmpw_dev'])+'\'><b> Family Share Meal Per Week: </b>' + feature.properties['aurin_fsmpw'] + " </div>" +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_is_dev'])+'\'><b> Inadequate Sleep: </b>' + feature.properties['aurin_is'] + " </div>" +
@@ -431,10 +422,10 @@ function init(map){
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_tp_dev'])+'\'><b> Time Pressure: </b>' + feature.properties['aurin_tp'] + " </div>" +
                                 '<div style=\'color: '+getLabelColor(feature.properties['aurin_vtgspw_dev'])+'\'><b> Visit To Green Space Per Week: </b>' + feature.properties['aurin_vtgspw'] + " </div>" +
                                 '<h5> Chronic Disease: </h5>' +
-                                '<div> <b>Mood Problem: </b>' + feature.properties['aurin_cd_mp'] + " </div>" +
-                                '<div> <b>Osteoporosis (Female): </b>' + feature.properties['aurin_cd_ostf'] + " </div>" +
-                                '<div> <b>Rheumatoid: </b>' + feature.properties['aurin_cd_rhe'] + " </div>" +
-                                '<div> <b>Osteoarthritis: </b>' + feature.properties['aurin_cd_ost'] + " </div>")
+                                '<div><b>Mood Problem: </b>' + feature.properties['aurin_cd_mp'] + " </div>" +
+                                '<div><b>Osteoporosis (Female): </b>' + feature.properties['aurin_cd_ostf'] + " </div>" +
+                                '<div><b>Rheumatoid: </b>' + feature.properties['aurin_cd_rhe'] + " </div>" +
+                                '<div><b>Osteoarthritis: </b>' + feature.properties['aurin_cd_ost'] + " </div>")
                             .addTo(map);
                     });
                     map.on('mouseout', layerList[3], function (e) {
@@ -442,6 +433,10 @@ function init(map){
                         document.getElementById('info').style.display = 'none';
                         // console.log(e)
                     });
+
+                    layerList.forEach(function(layer){
+                        cursorChange(layer);
+                    })
                 });
             });
         });

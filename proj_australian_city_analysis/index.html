@@ -19,6 +19,7 @@
 <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 
 <!-- Mapbox GL JS -->
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
@@ -77,9 +78,10 @@
 <!--MENU CONTENT-->
 <div id="menu-box">
     <div id="menuSubBtn">
-        <button id="menuback" class="btn btn-default" onclick="location='../index.html'">Back To Index</button>
+        <div style="height: 20px"></div>
+        <button id="menuback" class="btn btn-default" onclick="location='../'">Back To Index</button>
         <h5>Area</h5>
-        <button id="menuTopic1" class="btn btn-default" onclick="location='./index.html'">SA2</button>
+        <button id="menuTopic1" class="btn btn-default" onclick="location='#'">SA2</button>
         <button id="menuTopic2" class="btn btn-default" onclick="location='./index_2.html'">LGA</button>
         <h5>Switch Layers</h5>
         <button id="menuSwitchLayer1" class="btn btn-default" onclick="toggleBound(0)">Source</button>
@@ -95,7 +97,7 @@
 <!-- add html elements to the legend !-->
 <div id='legend' class='legend'>
     <h4>Major Source</h4>
-    <div><span style='background-color: #f05bff'></span>Instagram</div>
+    <div><span style='background-color: #559fff'></span>Instagram</div>
     <div><span style='background-color: #ffe600'></span>Android&Iphone</div>
 </div>
 <pre id='info'></pre>

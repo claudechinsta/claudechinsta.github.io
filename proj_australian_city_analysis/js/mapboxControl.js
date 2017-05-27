@@ -7,7 +7,7 @@
  */
 let colorStops_source = [
     [-1,    '#040605'],
-    [0,    "#f05bff"],
+    [0,    "#559fff"],
     [1,    '#ffe600']
 ];
 let colorStops_time = [
@@ -35,16 +35,6 @@ let colorStops_sentiment = [
     [0.9,    '#4dffa3'],
     [0.95,    '#007eff']
 ];
-// let colorStops_sentiment = [
-//     [-1,    '#040605'],
-//     [0.5,    "#af0029"],
-//     [0.6,    "#ff4d48"],
-//     [0.7,    "#ff7b80"],
-//     [0.8,    '#d1fcff'],
-//     [0.85,    '#70d3ff'],
-//     [0.9,    '#00aaff'],
-//     [0.95,    '#007eff']
-// ];
 
 let layerList = ["layer_source", "layer_time", "layer_topics", "layer_sent"];
 
@@ -55,7 +45,8 @@ function init(map){
     // map.scrollZoom.disable();
     map.on('mousemove', function (e) {
         document.getElementById('info').style.display = 'block';
-        document.getElementById('info').innerHTML = "<h4>Analysis of Tweets in Victoria</h4>";
+        document.getElementById('info').innerHTML = "<h4> Analysis of Tweets in Victoria</h4>" +
+            "<h5>Statistical Area Level 2</h5>";
         // console.log(e)
     });
     map.on('load', function () {
@@ -173,7 +164,6 @@ function init(map){
 
                     let layerList = ["layer_source", "layer_time", "layer_topics", "layer_sent"];
 
-
                     //////////////////////////////////////////////////
                     // Layer 1 "Sources of Tweets"
                     //////////////////////////////////////////////////
@@ -220,10 +210,9 @@ function init(map){
                         let feature = e.features[0];
                         let lng = e.lngLat.lng.toFixed(4);
                         let lat = e.lngLat.lat.toFixed(4);
-                        new mapboxgl.Popup({anchor: 'left'})
+                        new mapboxgl.Popup({anchor: 'bottom-left'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
-                                '<div> ------------------------------ </div>' +
                                 '<div><b> Community Strength: </b>' + feature.properties['aurin_cs'] + " %</div>" +
                                 '<div><b> Death Rate: </b>' + feature.properties['aurin_da'] + " %</div>" +
                                 '<h5>Life Satisfaction in 3 Groups</h5>' +
@@ -291,10 +280,9 @@ function init(map){
                     });
                     map.on('click', layerList[1], function (e) {
                         let feature = e.features[0];
-                        new mapboxgl.Popup({anchor: 'left'})
+                        new mapboxgl.Popup({anchor: 'bottom-left'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
-                                '<div> ------------------------------ </div>' +
                                 '<div><b> Community Strength: </b>' + feature.properties['aurin_cs'] + " %</div>" +
                                 '<div><b> Death Rate: </b>' + feature.properties['aurin_da'] + " %</div>" +
                                 '<h5>Life Satisfaction in 3 Groups</h5>' +
@@ -359,10 +347,9 @@ function init(map){
                     });
                     map.on('click', layerList[2], function (e) {
                         let feature = e.features[0];
-                        new mapboxgl.Popup({anchor: 'left'})
+                        new mapboxgl.Popup({anchor: 'bottom-left'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
-                                '<div> ------------------------------ </div>' +
                                 '<div><b> Community Strength: </b>' + feature.properties['aurin_cs'] + " %</div>" +
                                 '<div><b> Death Rate: </b>' + feature.properties['aurin_da'] + " %</div>" +
                                 '<h5>Life Satisfaction in 3 Groups</h5>' +
@@ -422,14 +409,13 @@ function init(map){
                         document.getElementById('info').innerHTML = "<h4>"+feature.properties[boundName]+"</h4>" +
                             '<div> Positive: ' + feature.properties['sent_pos'] + " </div>" +
                             '<div> Negative: ' + feature.properties['sent_neg'] + " </div>" +
-                            '<div> Positive Ratio:'+feature.properties['sent_sum']+'</div>';
+                            '<div> Positive Ratio:' + feature.properties['sent_sum'] + '</div>';
                     });
                     map.on('click', layerList[3], function (e) {
                         let feature = e.features[0];
-                        new mapboxgl.Popup({anchor: 'left'})
+                        new mapboxgl.Popup({anchor: 'bottom-left'})
                             .setLngLat(e.lngLat)
                             .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
-                                '<div> ------------------------------ </div>' +
                                 '<div><b> Community Strength: </b>' + feature.properties['aurin_cs'] + " %</div>" +
                                 '<div><b> Death Rate: </b>' + feature.properties['aurin_da'] + " %</div>" +
                                 '<h5>Life Satisfaction in 3 Groups</h5>' +
@@ -453,7 +439,9 @@ function init(map){
                         // console.log(e)
                     });
 
-
+                    layerList.forEach(function(layer){
+                        cursorChange(layer);
+                    })
                 });
             });
         });
