@@ -56,7 +56,7 @@
 </style>
 
 
-<body>
+<body  style="overflow-x: hidden; overflow-y: hidden">
 <!-- Map Container -->
 <div id="mapLayout">
     <!-- Deprecated Leaflet Method-->
@@ -80,6 +80,20 @@
 <div class="menuback" onclick="location='../'">INDEX</div>
 <div class="menuback" style="margin-right: 55px" onclick="toggleHelp()">MORE</div>
 <div id="helpPanel">
+    <h3>QUICK INSTRUCTION</h3>
+    <div id="instruction_content">
+        <p>This Web-app is the demo for my research project, the "Geolocation Knowledge Base - Text classification",
+        in 2017.</p>
+        <p>In this demo web application, you can click any points display on the
+        map to get a popup of a short sentence about the chosen entity's geolocation information. You can also click the
+        "WIKIPEDIA PAGE" button on the popup to get a embedded wikipedia page. Button "FLY HERE" is used for quickly
+        zoom in the entity</p>
+    </div>
+    <div><img style="margin: 20px 0; box-shadow: 0 0 5px #333333" src="./imgs/popup_demo.png" width="220"></div>
+
+    <h3>GITHUB SOURCE CODE</h3>
+    <div class="wikibtn" style="margin-top: 20px;" onclick="location.href='https://github.com/claudechinsta/claudechinsta.github.io/tree/master/proj_wiki_text_clf'">LINK HERE</div>
+
     <h3>IPYTHON NOTEBOOK</h3>
     <div class="wikibtn" style="margin-top: 20px;" onclick="location.href='https://github.com/claudechinsta/claudechinsta.github.io/blob/master/notebookes/GBK_Text_Classification.ipynb'">BOW + Ngram + POS tagging ipynb</div>
     <div class="wikibtn" style="margin-top: 5px;" onclick="location.href='https://github.com/claudechinsta/claudechinsta.github.io/blob/master/notebookes/GKB_Word2vec.ipynb'">Word2Vec ipynh</div>
@@ -87,8 +101,12 @@
 
 <script>
     function toggleHelp(){
-        $("#helpPanel").fadeToggle("fast");
+        $("#helpPanel").fadeIn(100)
+            .scrollTop(0);
     }
+    $("#mapLayout").click(function () {
+        $("#helpPanel").fadeOut(100);
+    })
 </script>
 
 <!-- add html elements to the legend !-->

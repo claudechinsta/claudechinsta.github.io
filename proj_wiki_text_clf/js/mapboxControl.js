@@ -66,25 +66,9 @@ function init(map) {
                 feat["properties"]["e_type"] = getEntType(feat["properties"]["type"]);
                 if (feat['properties'].hasOwnProperty("sentences")){
                     feat['properties']['geo_sent'] = feat['properties']['sentences'].length > 0 ? feat['properties']['sentences'][0] : " -- ";
-
-                    // sent_with_located = "";
-                    // feat['properties']['sentences'].forEach(function (sent) {
-                    //     if(sent.indexOf("located") !== -1){
-                    //         sent_with_located = sent
-                    //     }
-                    // });
-                    // if (sent_with_located === ""){
-                    //     sent_with_located = feat['properties']['sentences'][0]
-                    // }
-                    // feat['properties']['geo_sent'] = sent_with_located;
-
                     feat['properties']['has_sent'] = "true";
                     features_with_sents.push(feat)
                 }
-                // else{
-                //     feat['properties']['has_sent'] = "false";
-                //     delete feat;
-                // }
             });
             data.features = features_with_sents;
             console.log(data);
@@ -259,5 +243,6 @@ function cursorChange(layerID){
         map.getCanvas().style.cursor = '';
     });
 }
+
 
 

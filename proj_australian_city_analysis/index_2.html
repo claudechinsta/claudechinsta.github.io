@@ -62,14 +62,15 @@
     <script language="javascript">
         // MapBox API Initialization
         mapboxgl.accessToken = 'pk.eyJ1IjoiY2hpbnN0YSIsImEiOiJjaW15ZnFyN3cwNDN5dm9sdWJ2am5xNmdlIn0.vG5mqJyfSX3JBSQ3UQ6ORw';
-        let initZoom = 6.5;
+        let initZoom = 6;
         let initCenter = [145.2117, -36.7828];
         // Initialize the map
         let map = new mapboxgl.Map({
             container: 'mapLayout',
             center: initCenter,
             zoom: initZoom,
-            style: 'mapbox://styles/mapbox/streets-v9',
+            minZoom: 6,
+            style: 'mapbox://styles/mapbox/bright-v9',
         });
         window.onload = init(map);
     </script>
@@ -79,7 +80,7 @@
 <div id="menu-box">
     <div id="menuSubBtn">
         <div style="height: 20px"></div>
-        <button id="menuback" class="btn btn-default" onclick="location='../'">Back To Index</button>
+        <button id="menuback" class="btn btn-default" onclick="location='../index_proj.html">INDEX</button>
         <h5>Area</h5>
         <button id="menuTopic1" class="btn btn-default" onclick="location='./index.html'">SA2</button>
         <button id="menuTopic2" class="btn btn-default" onclick="location='./index_2.html'">LGA</button>
@@ -97,7 +98,7 @@
 <!-- add html elements to the legend !-->
 <div id='legend' class='legend'>
     <h4>Major Source</h4>
-    <div><span style='background-color: #f05bff'></span>Instagram</div>
+    <div><span style='background-color: #559fff'></span>Instagram</div>
     <div><span style='background-color: #ffe600'></span>Android&iPhone</div>
 </div>
 <pre id='info'></pre>

@@ -36,6 +36,9 @@
     background: #f2f2f2;
     cursor: pointer;
 }
+.mapboxgl-popup {
+    z-index: 1000;
+}
 .mapboxgl-popup-content {
     font-family: 'Pt Sans', Arial, Helvetica, sans-serif;
     font-size: 13px;
@@ -88,6 +91,7 @@
 #info:hover {
     cursor: pointer;
     color: #2f79b9;
+    background: rgba(0,0,0,0);
 }
 .legend {
     background-color: #fff;
@@ -115,18 +119,26 @@
     margin-top: 10px;
 }
 #helpPanel {
+    overflow-y: scroll;
     display: none;
     font: 13px 'Fjalla One', Arial, Helvetica, sans-serif;
     text-align: center;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 450px;
     z-index: 999;
-    border-radius: 3px;
-    background: rgba(238, 238, 238, 0.8);
+    border-radius: 5px;
+    border: solid 10px #ffffff;
+    background: #ffffff;
     padding: 10px;
     position: absolute;
     right: 10px;
     top: 54px;
+}
+#instruction_content{
+    font-family: "pt sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding: 0 20px;
+    text-align: justify;
 }
 
 

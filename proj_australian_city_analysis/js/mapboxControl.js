@@ -5,6 +5,7 @@
  * Description: Initiate the map and handle events
  *
  */
+
 let colorStops_source = [
     [-1,    '#040605'],
     [0,    "#559fff"],
@@ -160,7 +161,6 @@ function init(map){
 
 
                     });
-                    // console.log(bound_features);
 
                     let layerList = ["layer_source", "layer_time", "layer_topics", "layer_sent"];
 
@@ -193,50 +193,6 @@ function init(map){
                         }
                     });
 
-                    // Interaction Setting
-                    map.on('mousemove', layerList[0], function (e) {
-                        document.getElementById('info').style.display = 'block';
-                        let feature = e.features[0];
-                        let lng = e.lngLat.lng.toFixed(4);
-                        let lat = e.lngLat.lat.toFixed(4);
-                        document.getElementById('info').innerHTML = "<h4>"+feature.properties[boundName]+"</h4>" +
-                            '<div> Instagram: ' + feature.properties['source_ins'] + " </div>" +
-                            '<div> Android: ' + feature.properties['source_and'] + " </div>" +
-                            '<div> iPhone: ' + feature.properties['source_iph'] + " </div>" +
-                            '<div> iPhone&Android: ' + feature.properties['source_a_i'] + " </div>";
-                        // console.log(e)
-                    });
-                    map.on('click', layerList[0], function (e) {
-                        let feature = e.features[0];
-                        let lng = e.lngLat.lng.toFixed(4);
-                        let lat = e.lngLat.lat.toFixed(4);
-                        new mapboxgl.Popup({anchor: 'bottom-left'})
-                            .setLngLat(e.lngLat)
-                            .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
-                                '<div><b> Community Strength: </b>' + feature.properties['aurin_cs'] + " %</div>" +
-                                '<div><b> Death Rate: </b>' + feature.properties['aurin_da'] + " %</div>" +
-                                '<h5>Life Satisfaction in 3 Groups</h5>' +
-                                '<div><b> < 60: </b>' + feature.properties['aurin_lsi3g_lt60'] + " %</div>" +
-                                '<div><b> = 70: </b>' + feature.properties['aurin_lsi3g_eq70'] + " %</div>" +
-                                '<div><b> > 80: </b>' + feature.properties['aurin_lsi3g_gt80'] + " %</div>" +
-                                '<h5>Method Of Travel To Work</h5>' +
-                                '<div><b> bike: </b>' + feature.properties['autin_mottwbs_bike'] + " %</div>" +
-                                '<div><b> bus: </b>' + feature.properties['autin_mottwbs_bus'] + " %</div>" +
-                                '<div><b> car: </b>' + feature.properties['autin_mottwbs_car'] + " %</div>" +
-                                '<div><h5> Registered Marital Rate: </h5>' + feature.properties['aurin_rms'] + " %</div>" +
-                                '<h5>Weekly Rent</h5>' +
-                                '<div><b> < $200: </b>' + feature.properties['aurin_rwblt_lt200'] + " %</div>" +
-                                '<div><b> $200 ~ $450: </b>' + feature.properties['aurin_rwblt_200_450'] + " %</div>" +
-                                '<div><b> > $450: </b>' + feature.properties['aurin_rwblt_gt450'] + " %</div>")
-                            .addTo(map);
-                    });
-                    map.on('mouseout', layerList[0], function (e) {
-                        document.getElementById('info').innerHTML = '';
-                        document.getElementById('info').style.display = 'none';
-                        // console.log(e)
-                    });
-
-
                     //////////////////////////////////////////////////
                     // Layer 2 "Time of Tweets"
                     //////////////////////////////////////////////////
@@ -264,46 +220,6 @@ function init(map){
                             'fill-outline-color': '#232623',
                             'fill-opacity': 0.6
                         }
-                    });
-
-                    // Interaction Setting
-                    map.on('mousemove', layerList[1], function (e) {
-                        document.getElementById('info').style.display = 'block';
-                        let feature = e.features[0];
-                        document.getElementById('info').innerHTML = "<h4>"+feature.properties[boundName]+"</h4>" +
-                            '<div> 5 AM ~ 10 AM: ' + feature.properties['time_5_10'] + " </div>" +
-                            '<div> 10 AM ~ 3 PM: ' + feature.properties['time_10_15'] + " </div>" +
-                            '<div> 3 PM ~ 8 PM: ' + feature.properties['time_15_20'] + " </div>" +
-                            '<div> 8 PM ~ 12 AM: ' + feature.properties['time_8_0'] + " </div>" +
-                            '<div> 12 AM ~ 6 AM: ' + feature.properties['time_0_5'] + " </div>";
-                        // console.log(e)
-                    });
-                    map.on('click', layerList[1], function (e) {
-                        let feature = e.features[0];
-                        new mapboxgl.Popup({anchor: 'bottom-left'})
-                            .setLngLat(e.lngLat)
-                            .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
-                                '<div><b> Community Strength: </b>' + feature.properties['aurin_cs'] + " %</div>" +
-                                '<div><b> Death Rate: </b>' + feature.properties['aurin_da'] + " %</div>" +
-                                '<h5>Life Satisfaction in 3 Groups</h5>' +
-                                '<div><b> < 60: </b>' + feature.properties['aurin_lsi3g_lt60'] + " %</div>" +
-                                '<div><b> = 70: </b>' + feature.properties['aurin_lsi3g_eq70'] + " %</div>" +
-                                '<div><b> > 80: </b>' + feature.properties['aurin_lsi3g_gt80'] + " %</div>" +
-                                '<h5>Method Of Travel To Work</h5>' +
-                                '<div><b> bike: </b>' + feature.properties['autin_mottwbs_bike'] + " %</div>" +
-                                '<div><b> bus: </b>' + feature.properties['autin_mottwbs_bus'] + " %</div>" +
-                                '<div><b> car: </b>' + feature.properties['autin_mottwbs_car'] + " %</div>" +
-                                '<div><h5> Registered Marital Rate: </h5>' + feature.properties['aurin_rms'] + " %</div>" +
-                                '<h5>Weekly Rent</h5>' +
-                                '<div><b> < $200: </b>' + feature.properties['aurin_rwblt_lt200'] + " %</div>" +
-                                '<div><b> $200 ~ $450: </b>' + feature.properties['aurin_rwblt_200_450'] + " %</div>" +
-                                '<div><b> > $450: </b>' + feature.properties['aurin_rwblt_gt450'] + " %</div>")
-                            .addTo(map);
-                    });
-                    map.on('mouseout', layerList[1], function (e) {
-                        document.getElementById('info').innerHTML = '';
-                        document.getElementById('info').style.display = 'none';
-                        // console.log(e)
                     });
 
                     //////////////////////////////////////////////////
@@ -335,43 +251,6 @@ function init(map){
                         }
                     });
 
-                    // Interaction Setting
-                    map.on('mousemove', layerList[2], function (e) {
-                        document.getElementById('info').style.display = 'block';
-                        let feature = e.features[0];
-                        document.getElementById('info').innerHTML = "<h4>"+feature.properties[boundName]+"</h4>" +
-                            '<div> Accident: ' + feature.properties['topic_acc'] + " </div>" +
-                            '<div> Party: ' + feature.properties['topic_par'] + " </div>" +
-                            '<div> Tourism: ' + feature.properties['topic_tou'] + " </div>" +
-                            '<div> Transportation: ' + feature.properties['topic_tra'] + " </div>";
-                    });
-                    map.on('click', layerList[2], function (e) {
-                        let feature = e.features[0];
-                        new mapboxgl.Popup({anchor: 'bottom-left'})
-                            .setLngLat(e.lngLat)
-                            .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
-                                '<div><b> Community Strength: </b>' + feature.properties['aurin_cs'] + " %</div>" +
-                                '<div><b> Death Rate: </b>' + feature.properties['aurin_da'] + " %</div>" +
-                                '<h5>Life Satisfaction in 3 Groups</h5>' +
-                                '<div><b> < 60: </b>' + feature.properties['aurin_lsi3g_lt60'] + " %</div>" +
-                                '<div><b> = 70: </b>' + feature.properties['aurin_lsi3g_eq70'] + " %</div>" +
-                                '<div><b> > 80: </b>' + feature.properties['aurin_lsi3g_gt80'] + " %</div>" +
-                                '<h5>Method Of Travel To Work</h5>' +
-                                '<div><b> bike: </b>' + feature.properties['autin_mottwbs_bike'] + " %</div>" +
-                                '<div><b> bus: </b>' + feature.properties['autin_mottwbs_bus'] + " %</div>" +
-                                '<div><b> car: </b>' + feature.properties['autin_mottwbs_car'] + " %</div>" +
-                                '<div><h5> Registered Marital Rate: </h5>' + feature.properties['aurin_rms'] + " %</div>" +
-                                '<h5>Weekly Rent</h5>' +
-                                '<div><b> < $200: </b>' + feature.properties['aurin_rwblt_lt200'] + " %</div>" +
-                                '<div><b> $200 ~ $450: </b>' + feature.properties['aurin_rwblt_200_450'] + " %</div>" +
-                                '<div><b> > $450: </b>' + feature.properties['aurin_rwblt_gt450'] + " %</div>")
-                            .addTo(map);
-                    });
-                    map.on('mouseout', layerList[2], function (e) {
-                        document.getElementById('info').innerHTML = '';
-                        document.getElementById('info').style.display = 'none';
-                        // console.log(e)
-                    });
                     //////////////////////////////////////////////////
                     // Layer 4 "Sentiments of Tweets"
                     //////////////////////////////////////////////////
@@ -400,73 +279,55 @@ function init(map){
                         }
                     });
 
-                    // Interaction Setting
-                    map.on('mousemove', layerList[3], function (e) {
-                        document.getElementById('info').style.display = 'block';
-                        let feature = e.features[0];
-                        let lng = e.lngLat.lng.toFixed(4);
-                        let lat = e.lngLat.lat.toFixed(4);
-                        document.getElementById('info').innerHTML = "<h4>"+feature.properties[boundName]+"</h4>" +
-                            '<div> Positive: ' + feature.properties['sent_pos'] + " </div>" +
-                            '<div> Negative: ' + feature.properties['sent_neg'] + " </div>" +
-                            '<div> Positive Ratio:' + feature.properties['sent_sum'] + '</div>';
-                    });
-                    map.on('click', layerList[3], function (e) {
-                        let feature = e.features[0];
-                        new mapboxgl.Popup({anchor: 'bottom-left'})
-                            .setLngLat(e.lngLat)
-                            .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
-                                '<div><b> Community Strength: </b>' + feature.properties['aurin_cs'] + " %</div>" +
-                                '<div><b> Death Rate: </b>' + feature.properties['aurin_da'] + " %</div>" +
-                                '<h5>Life Satisfaction in 3 Groups</h5>' +
-                                '<div><b> < 60: </b>' + feature.properties['aurin_lsi3g_lt60'] + " %</div>" +
-                                '<div><b> = 70: </b>' + feature.properties['aurin_lsi3g_eq70'] + " %</div>" +
-                                '<div><b> > 80: </b>' + feature.properties['aurin_lsi3g_gt80'] + " %</div>" +
-                                '<h5>Method Of Travel To Work</h5>' +
-                                '<div><b> bike: </b>' + feature.properties['autin_mottwbs_bike'] + " %</div>" +
-                                '<div><b> bus: </b>' + feature.properties['autin_mottwbs_bus'] + " %</div>" +
-                                '<div><b> car: </b>' + feature.properties['autin_mottwbs_car'] + " %</div>" +
-                                '<div><h5> Registered Marital Rate: </h5>' + feature.properties['aurin_rms'] + " %</div>" +
-                                '<h5>Weekly Rent</h5>' +
-                                '<div><b> < $200: </b>' + feature.properties['aurin_rwblt_lt200'] + " %</div>" +
-                                '<div><b> $200 ~ $450: </b>' + feature.properties['aurin_rwblt_200_450'] + " %</div>" +
-                                '<div><b> > $450: </b>' + feature.properties['aurin_rwblt_gt450'] + " %</div>")
-                            .addTo(map);
-                    });
-                    map.on('mouseout', layerList[3], function (e) {
-                        document.getElementById('info').innerHTML = '';
-                        document.getElementById('info').style.display = 'none';
-                        // console.log(e)
-                    });
-
                     layerList.forEach(function(layer){
                         cursorChange(layer);
+                        // Interaction Setting
+                        map.on('mousemove', layer, function (e) {
+                            document.getElementById('info').style.display = 'block';
+                            let feature = e.features[0];
+                            document.getElementById('info').innerHTML = "<h4>"+feature.properties[boundName]+"</h4>" +
+                                '<div> Instagram: ' + feature.properties['source_ins'] + " </div>" +
+                                '<div> Android: ' + feature.properties['source_and'] + " </div>" +
+                                '<div> iPhone: ' + feature.properties['source_iph'] + " </div>" +
+                                '<div> iPhone&Android: ' + feature.properties['source_a_i'] + " </div>";
+                            // console.log(e)
+                        });
+                        map.on('click', layer, function (e) {
+                            let feature = e.features[0];
+                            new mapboxgl.Popup({anchor: 'bottom-left'})
+                                .setLngLat(e.lngLat)
+                                .setHTML("<h4>"+feature.properties[boundName]+"</h4>" +
+                                    '<div><b> Community Strength: </b>' + feature.properties['aurin_cs'] + " %</div>" +
+                                    '<div><b> Death Rate: </b>' + feature.properties['aurin_da'] + " %</div>" +
+                                    '<h5>Life Satisfaction in 3 Groups</h5>' +
+                                    '<div><b> < 60: </b>' + feature.properties['aurin_lsi3g_lt60'] + " %</div>" +
+                                    '<div><b> = 70: </b>' + feature.properties['aurin_lsi3g_eq70'] + " %</div>" +
+                                    '<div><b> > 80: </b>' + feature.properties['aurin_lsi3g_gt80'] + " %</div>" +
+                                    '<h5>Method Of Travel To Work</h5>' +
+                                    '<div><b> bike: </b>' + feature.properties['autin_mottwbs_bike'] + " %</div>" +
+                                    '<div><b> bus: </b>' + feature.properties['autin_mottwbs_bus'] + " %</div>" +
+                                    '<div><b> car: </b>' + feature.properties['autin_mottwbs_car'] + " %</div>" +
+                                    '<div><h5> Registered Marital Rate: </h5>' + feature.properties['aurin_rms'] + " %</div>" +
+                                    '<h5>Weekly Rent</h5>' +
+                                    '<div><b> < $200: </b>' + feature.properties['aurin_rwblt_lt200'] + " %</div>" +
+                                    '<div><b> $200 ~ $450: </b>' + feature.properties['aurin_rwblt_200_450'] + " %</div>" +
+                                    '<div><b> > $450: </b>' + feature.properties['aurin_rwblt_gt450'] + " %</div>")
+                                .addTo(map);
+                        });
+                        map.on('mouseout', layer, function (e) {
+                            document.getElementById('info').innerHTML = '';
+                            document.getElementById('info').style.display = 'none';
+                            // console.log(e)
+                        });
                     })
                 });
             });
         });
     });
-
-    // Display the legend
 }
-
 function getMaxIndex(list){
     return Math.max(...list) > 0 ? list.indexOf(Math.max(...list)) : -1
 }
-
-/*
- * Functions Definations
- *
- * */
-
-function propertiesToHtml(properties, showList){
-    let html = "";
-    showList.forEach(function (item) {
-        html += '<div> '+item+': ' + properties[item] + " </div>"
-    });
-    return html;
-}
-
 function cursorChange(layerID){
     // Change the cursor to a pointer when the mouse is over the places layer.
     map.on('mouseenter', layerID, function () {
@@ -478,7 +339,6 @@ function cursorChange(layerID){
         map.getCanvas().style.cursor = '';
     });
 }
-
 function toggleBound(flag){
     if(flag === 0){
         map.setLayoutProperty(layerList[0], 'visibility', 'visible');
@@ -503,7 +363,6 @@ function toggleBound(flag){
     }
     toggleLegend(flag);
 }
-
 function toggleLegend(flag){
     if(flag === 0){
         $(function() {
@@ -546,7 +405,6 @@ function toggleLegend(flag){
         });
     }
 }
-
 function flyIn() {
     map.flyTo({
         center: [144.9631, -37.8136],
@@ -556,13 +414,12 @@ function flyIn() {
         zoom: 10
     })
 }
-
 function flyOut() {
     map.flyTo({
         center: [145.2117, -36.7828],
         curve: 1.4,
         pitch: 0,
         duration: 2000,
-        zoom: 6.5
+        zoom: 6
     })
 }
