@@ -12,10 +12,10 @@
     margin-bottom: 20px;
     font-family: "pt sans", Helvetica, Arial, sans-serif;
     font-size: 15px;
-    text-align: center;
+    text-align: justify;
     width: 200px;
 }
-#wikiEmbed {
+.wikiEmbed {
     display: none;
     /*width: 0;*/
     /*height: 0;*/
@@ -141,9 +141,15 @@
     text-align: justify;
 }
 
-
-
-
-
-
-
+#searchBar{
+    font-family: 'pt sans', Arial, Helvetica, sans-serif;
+    position: absolute;
+    z-index: 9999;
+    top: -50px;
+    right: 190px;
+    width: 350px;
+    height: 20px;
+}
+.input-group button{
+    font-family: 'Fjalla One', Arial, Helvetica, sans-serif;
+}

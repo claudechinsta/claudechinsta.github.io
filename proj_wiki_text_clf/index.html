@@ -11,8 +11,9 @@
 <script src="js/jquery-3.0.0.js"></script>
 <script src="js/jquery-migrate-3.0.0.js"></script>
 
+<script src="js/bootstrap.js"></script>
 <link href="css/bootstrap.css" rel="stylesheet"/>
-<link href="css/menu_btn_popup.css" rel="stylesheet">
+<link href="css/styleSheets.css" rel="stylesheet">
 
 <!-- Import the Google Font Stylesheet -->
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
@@ -56,7 +57,7 @@
 </style>
 
 
-<body  style="overflow-x: hidden; overflow-y: hidden">
+<body style="overflow-x: hidden; overflow-y: hidden">
 <!-- Map Container -->
 <div id="mapLayout">
     <!-- Deprecated Leaflet Method-->
@@ -78,7 +79,22 @@
 
 <!--MENU CONTENT-->
 <div class="menuback" onclick="location='../'">INDEX</div>
-<div class="menuback" style="margin-right: 55px" onclick="toggleHelp()">MORE</div>
+<div class="menuback" style="margin-right: 55px" onclick="toggleHelp()">INFO</div>
+<div class="menuback" style="margin-right: 105px" onclick="toggleSearch()">SEARCH</div>
+<div id="searchBar">
+    <div class="input-group">
+        <input id="searchContent" type="text" class="form-control" placeholder="Search for... e.g., 'melbourne university'">
+        <span class="input-group-btn">
+        <button id="searchBtn" class="btn btn-default" type="button">Go</button>
+      </span>
+    </div>
+    <script>
+        function searchEvent(){
+            data = $("#searchContent").val();
+            console.log(data);
+        }
+    </script>
+</div>
 <div id="helpPanel">
     <h3>QUICK INSTRUCTION</h3>
     <div id="instruction_content">
@@ -103,6 +119,15 @@
     function toggleHelp(){
         $("#helpPanel").fadeIn(100)
             .scrollTop(0);
+    }
+    function toggleSearch(){
+        if($("#searchBar").css("top") !== '10px'){
+            $("#searchBar").animate({"top": '10px'}, 200);
+        }else{
+            $("#searchBar").animate({"top": '-50px'}, 200);
+        }
+
+        $("#searchContent").val("")
     }
     $("#mapLayout").click(function () {
         $("#helpPanel").fadeOut(100);

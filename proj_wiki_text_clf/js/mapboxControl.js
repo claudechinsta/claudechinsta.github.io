@@ -7,7 +7,7 @@
  */
 
 let colorMap_dict = {
-    "place": "#e2df00",
+    "place": "#a99d00",
     "building": "#a53545",
     "leisure": "#b3398b",
     "amenity": "#7349a4",
@@ -36,13 +36,11 @@ let colorMap = [
     ["other", colorMap_dict["other"]]
 ];
 
-
-
-
 function init(map) {
 
     // Add zoom and rotation controls to the map.
     // map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+    map.addControl(new mapboxgl.FullscreenControl(), 'bottom-right');
     // map.scrollZoom.disable();
     map.on('mousemove', function (e) {
 
@@ -60,6 +58,14 @@ function init(map) {
         $.getJSON(geojsonUrl, function (data) {
 
             console.log(data);
+
+            keyIsNameObj = {};
+            data.features.forEach(function(item){
+                if(item.properties.hasOwnProperty("name")){
+                    keyIsNameObj[item.properties.name.toLowerCase()] = item;
+                }
+            });
+
             // Re-format the data, Only show the entities with "topic" sentences
             features_with_sents = [];
             data.features.forEach(function(feat){
@@ -98,6 +104,28 @@ function init(map) {
                             type: "categorical",
                             stops: colorMap
                         }
+                }
+            });
+
+            // Adding 3d Building Extrusions
+            map.addLayer({
+                'id': '3d-buildings',
+                'source': 'composite',
+                'source-layer': 'building',
+                'filter': ['==', 'extrude', 'true'],
+                'type': 'fill-extrusion',
+                'minzoom': 13,
+                'paint': {
+                    'fill-extrusion-color': '#aaa',
+                    'fill-extrusion-height': {
+                        'type': 'identity',
+                        'property': 'height'
+                    },
+                    'fill-extrusion-base': {
+                        'type': 'identity',
+                        'property': 'min_height'
+                    },
+                    'fill-extrusion-opacity': .6
                 }
             });
 
@@ -146,28 +174,78 @@ function init(map) {
                         '<p id="popupSent">'+sentence+'</p>' +
                         // '<div class="wikibtn" onclick=toggleSents(feature[""]["sentences"]) style="margin-bottom: 5px;">MORE</div>' +
                         '<div></div>' +
-                        '<iframe id="wikiEmbed" frameborder="no" width=400 height=300 src="' + wiki_url + '"></iframe>' +
+                        '<iframe class="wikiEmbed" frameborder="no" width=400 height=300 src="' + wiki_url + '"></iframe>' +
                         '<div class="wikibtn" onclick=toggleWiki()>WIKIPEDIA PAGE</div>' +
                         '<div class="wikibtn" onclick=flyTo('+coord+')>FLY HERE!</div>')
                     .addTo(map);
                 $("div.mapboxgl-popup-content").find("h3, h4").css("color", colorMap_dict[feature['properties']['e_type']])
             });
 
-            // Set Filter Circus
-            map.on('mouseover', layerID, function (e) {
-                if(map.getZoom() > 8){
-                    map.setFilter(layerID+"_hover", ["==", "name", e.features[0].properties.name]);
+            $("#searchBtn").click(function () {
+                let query = $("#searchContent").val().toLowerCase();
+                if(query === ""){
+                    return 0;
                 }
-
+                result = searchEngine(query, keyIsNameObj);
+                if(result === undefined){
+                    alert("no results!")
+                }else{
+                    $(".mapboxgl-popup-content").css("display", "none");
+                    let feature = result;
+                    let feature_type = feature.properties['type'];
+                    let coord = feature['geometry']['coordinates'];
+                    let wiki_url = "https://en.wikipedia.org/wiki/"+feature.properties["name"]+"?mobileaction=toggle_view_mobile";
+                    let sentence = feature['properties'].hasOwnProperty("geo_sent") ? feature['properties']["geo_sent"] : "[No, Desciption]";
+                    new mapboxgl.Popup({"anchor": "bottom-left"})
+                        .setLngLat(coord)
+                        .setHTML("<h3 style='font-size:28px; margin-left: 20px; margin-right: 20px'>" + feature.properties["name"] + "</h3>" +
+                            '<h4>'+feature_type+'</h4>' +
+                            '<p id="popupSent">'+sentence+'</p>' +
+                            // '<div class="wikibtn" onclick=toggleSents(feature[""]["sentences"]) style="margin-bottom: 5px;">MORE</div>' +
+                            '<div></div>' +
+                            '<iframe class="wikiEmbed" frameborder="no" width=400 height=300 src="' + wiki_url + '"></iframe>' +
+                            '<div class="wikibtn" onclick=toggleWiki()>WIKIPEDIA PAGE</div>' +
+                            '<div class="wikibtn" onclick=flyTo('+coord+')>FLY HERE!</div>')
+                        .addTo(map);
+                    $("div.mapboxgl-popup-content").find("h3, h4").css("color", colorMap_dict[feature['properties']['e_type']])
+                    map.flyTo({
+                        duration: 1000,
+                        center:coord
+                    })
+                }
             });
 
-            map.on("mouseleave", layerID, function() {
-                map.setFilter(layerID+"_hover", ["==", "name", ""]);
-            });
+            // // Set Filter Circus
+            // map.on('mouseover', layerID, function (e) {
+            //     if(map.getZoom() > 8){
+            //         map.setFilter(layerID+"_hover", ["==", "name", e.features[0].properties.name]);
+            //     }
+            // });
+            //
+            // map.on("mouseleave", layerID, function() {
+            //     map.setFilter(layerID+"_hover", ["==", "name", ""]);
+            // });
 
             cursorChange(layerID);
         });
     });
+}
+
+function searchEngine(query, dict){
+    if(dict.hasOwnProperty(query)){
+        return dict[query]
+    }else{
+        nameList = Object.keys(dict);
+        var foundName = "";
+        nameList.forEach(function (name) {
+            if (new RegExp('\\b('+query+')\\b').test(name)) {
+                foundName = name
+            }
+        });
+        // console.log(foundName);
+        return dict[foundName];
+
+    }
 }
 
 function getEntType(data){
@@ -211,10 +289,10 @@ function getEntType(data){
 }
 
 function toggleWiki() {
-    let ifDisplay = $("#wikiEmbed").css("display");
+    let ifDisplay = $(".wikiEmbed").css("display");
     console.log(ifDisplay);
     let result = ifDisplay==="none" ? "block" : "none";
-    $("#wikiEmbed").css({"display": result});
+    $(".wikiEmbed").css({"display": result});
 }
 
 function toggleSents(data) {
