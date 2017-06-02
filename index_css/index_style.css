@@ -78,12 +78,13 @@
 /* Css Stylesheets for Project Page*/
 .thumbnail_proj {
     box-shadow: 0 0 1px #404040;
-    transition: all 0.15s ease;
+    transition: all 0.2s ease;
     border-radius: 8px;
     margin: 10px;
 }
 .thumbnail_proj:hover{
-    box-shadow: 0 0 10px #404040;
+    filter: brightness(105%);
+    box-shadow: 0 5px 20px #636363;
     cursor: pointer;
 }
 .thumbnail_proj_label{
