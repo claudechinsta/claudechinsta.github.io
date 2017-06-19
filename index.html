@@ -6,8 +6,11 @@
     <title>Soulsmatic Productions</title>
 </head>
 
-<link href='ext_js/bootstrap.css' rel='stylesheet' />
-<link href='ext_js/bootstrap-theme.css' rel='stylesheet' />
+<!--<link href='ext_js/bootstrap.css' rel='stylesheet' />-->
+<!--<link href='ext_js/bootstrap-theme.css' rel='stylesheet' />-->
+<!--bootstrap 4-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <link href='index_css/index_style.css' rel='stylesheet' />
 
 <!-- Import the Google Font Stylesheet -->
@@ -21,42 +24,60 @@
 <body>
 
 <!--MENU CONTENT-->
-<div class="header">
+<div class="header" id="header-nav">
     <div style="float: left; width: 80px; height: 100%"></div>
-    <div class="head_btn" onclick="location.href='./'"><b>主頁</b><div style="font-size: 12px">INDEX</div></div>
-    <div class="head_btn" onclick="location.href='#'"><b>音樂</b><div style="font-size: 12px">MUSIC</div></div>
-    <div class="head_btn" onclick="location.href='./index_proj'"><b>項目</b><div style="font-size: 12px">PROJECT</div></div>
-    <div class="head_btn" onclick="location.href='./index_gallery'"><b>畫廊</b><div style="font-size: 12px">GALLERY</div></div>
-    <div class="head_btn" onclick="location.href='#'"><b>關於</b><div style="font-size: 12px">ABOUT</div></div>
+    <div class="head_btn" onclick="location.href='#'"><b>主页</b><div style="font-size: 12px">INDEX</div></div>
+    <div class="head_btn" onclick="location.href='#content-music'"><b>音乐</b><div style="font-size: 12px">MUSIC</div></div>
+    <div class="head_btn" onclick="location.href='#content-project'"><b>项目</b><div style="font-size: 12px">PROJECT</div></div>
+    <!--<div class="head_btn" onclick="location.href='#content-gal'"><b>画廊</b><div style="font-size: 12px">GALLERY</div></div>-->
+    <!--<div class="head_btn" onclick="location.href='#content-about'"><b>关于</b><div style="font-size: 12px">ABOUT</div></div>-->
 </div>
-<div class="content">
-    <div style="padding-top: 85px"></div>
-    <h2>Welcome to Claude Chen's Github Page</h2>
-    <!--<h3>歡迎訪問我的主頁</h3>-->
-    <img src="imgs/github-mark.png" alt="Smiley face" width="400">
-    <!--<div style="padding: 3px;">-->
-    <!--<iframe style="box-shadow: none" frameborder="no" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=31149240&auto=0&height=32"></iframe>-->
-    <!--</div>-->
-
-    <!--<h3>Websites</h3>-->
-    <!--<h4>个人简介</h4>-->
-    <!--<div style="height: 10px;"></div>-->
-    <!--<div class = "btn_back" onclick="location.href='https://sites.google.com/view/claudechen/'">个人简介 Personal Website</div>-->
-
-    <h3 id="#link-ms">Music Productions</h3>
-    <h4>音乐作品</h4>
-    <div style="height: 10px;"></div>
-    <div class = "my_btn" onclick="location.href='https://play.spotify.com/artist/5xuhSWFgY8VIzptSR69QTf?play=true&utm_source=open.spotify.com&utm_medium=open'">Spotify</div>
-    <!--<div class = "btn_back" onclick="location.href='http://music.163.com/#/artist?id=818622'">Netease Music</div>-->
-    <div class = "my_btn" onclick="location.href='http://music.163.com/#/artist?id=818622'">Netease Music</div>
-    <div class = "my_btn" onclick="location.href='http://i.xiami.com/chinsta'">Xiami Music</div>
-    <div class = "my_btn" onclick="location.href='http://chinsta.bandcamp.com'">Bandcamp</div>
-    <div class = "my_btn" onclick="location.href='https://soundcloud.com/chinstamusic'">SoundCloud</div>
-    <!--<div class = "btn_back" onclick="location.href='http://i.xiami.com/chinsta'">虾米音乐 Xiami Music</div>-->
-
-    <div style="height: 70px;"></div>
-    <label style="font-family: 'Fjalla One', Helvetica, Arial, sans-serif">Soulsmatic Productions, All Rights Reserved. 2017</label>
+<div class="content" id="content-intro">
+    <div class="content-inner">
+        <h1>Welcome to Claude Chen's Github Page</h1>
+        <img src="imgs/github-mark.png" alt="Smiley face" width="400">
+    </div>
 </div>
+<div class="content" id="content-music">
+    <div class="content-inner">
+        <h1>Music Productions</h1>
+        <h4>音乐作品</h4>
+        <div style="height: 10px;"></div>
+        <div class = "my_btn" onclick="location.href='https://play.spotify.com/artist/5xuhSWFgY8VIzptSR69QTf?play=true&utm_source=open.spotify.com&utm_medium=open'">Spotify</div>
+        <!--<div class = "btn_back" onclick="location.href='http://music.163.com/#/artist?id=818622'">Netease Music</div>-->
+        <div class = "my_btn" onclick="location.href='http://music.163.com/#/artist?id=818622'">Netease Music</div>
+        <div class = "my_btn" onclick="location.href='http://i.xiami.com/chinsta'">Xiami Music</div>
+        <div class = "my_btn" onclick="location.href='http://chinsta.bandcamp.com'">Bandcamp</div>
+        <div class = "my_btn" onclick="location.href='https://soundcloud.com/chinstamusic'">SoundCloud</div>
+        <h4 style="padding: 20px 0">Newest Single and Album</h4>
+        <div><img src="http://p4.music.126.net/QQ5bkSepQr_JbSCaOYby5Q==/109951162945500791.jpg?param=310y310"></div>
+        <div>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+                    src="//music.163.com/outchain/player?type=2&id=483446378&auto=0&height=66"></iframe>
+        </div>
+
+    </div>
+</div>
+<div class="content" id="content-project">
+    <div class="content-inner">
+        <h1>IT Projects</h1>
+        <h4>IT 项目</h4>
+
+        <img class="thumbnail_proj" src="imgs/proj_1.png" alt="Smiley face" width="200"
+             onclick="location.href='./proj_australian_city_analysis'">
+        <div class="thumbnail_proj_label">Australian City Analytics</div>
+        <div class="thumbnail_proj_label">澳大利亚城市数据分析</div>
+        <div class="thumbnail_proj_label">2017</div>
+
+        <img class="thumbnail_proj" src="imgs/proj_2.png" alt="Smiley face" width="200"
+             onclick="location.href='./proj_wiki_text_clf/'">
+        <div class="thumbnail_proj_label">Wikipedia Text Classifier</div>
+        <div class="thumbnail_proj_label">基于Wikipedia的文本分类</div>
+        <div class="thumbnail_proj_label">2017</div>
+    </div>
+</div>
+
+<div class="footer">Soulsmatic Productions, All Rights Reserved. 2017</div>
 
 </body>
 </html>

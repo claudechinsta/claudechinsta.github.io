@@ -129,24 +129,6 @@ function init(map) {
                 }
             });
 
-            // map.addLayer({
-            //     'id': layerID+"_hover",
-            //     'type': 'circle',
-            //     'source': {
-            //         'type': 'geojson',
-            //         'data': data
-            //     },
-            //     'layout': {
-            //         'visibility': 'visible'
-            //     },
-            //     'paint': {
-            //         'circle-radius': 20,
-            //         'circle-color': "rgba(22, 22, 22, 0.3)",
-            //         'circle-opacity': 0.4
-            //     },
-            //     "filter": ["==", "name", ""]
-            // });
-
             // Interaction Setting
             map.on('mousemove', layerID, function (e) {
                 let feature = e.features[0];
@@ -214,17 +196,6 @@ function init(map) {
                     })
                 }
             });
-
-            // // Set Filter Circus
-            // map.on('mouseover', layerID, function (e) {
-            //     if(map.getZoom() > 8){
-            //         map.setFilter(layerID+"_hover", ["==", "name", e.features[0].properties.name]);
-            //     }
-            // });
-            //
-            // map.on("mouseleave", layerID, function() {
-            //     map.setFilter(layerID+"_hover", ["==", "name", ""]);
-            // });
 
             cursorChange(layerID);
         });
@@ -310,7 +281,7 @@ function flyTo(coordx, coordy) {
     })
 }
 
-function cursorChange(layerID){
+function cursorChange(layerID) {
     // Change the cursor to a pointer when the mouse is over the places layer.
     map.on('mouseenter', layerID, function () {
         map.getCanvas().style.cursor = 'pointer';
@@ -321,6 +292,3 @@ function cursorChange(layerID){
         map.getCanvas().style.cursor = '';
     });
 }
-
-
-
