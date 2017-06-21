@@ -4,6 +4,7 @@
     margin: 0 auto;
 }
 .content {
+    /*max-width: 800px;*/
     font-family: "Raleway", Helvetica, Arial, sans-serif;
     color: #323131;
     text-align: center;
@@ -140,7 +141,9 @@
 }
 .footer{
     background: #dee2e0;
-    padding: 18px;
+    padding-top: 30px;
+    padding-bottom: 18px;
     font-family: 'open sans', Helvetica, Arial, sans-serif;
+    font-size: 13px;
     text-align: center
 }
