@@ -12,8 +12,7 @@
     padding-bottom: 40px;
 }
 .content-inner {
-    padding-top: 60px;
-    padding-bottom: 60;
+    padding-top: 40px;
 }
 
 #content-intro {
@@ -85,6 +84,17 @@
     background: #f4f4f4;
 }
 
+/* Logo Animation */
+#img_logo {
+    animation: myframes 2s ease-in-out 0s infinite;;
+}
+@keyframes myframes {
+    50%{
+        transform: translate(0px, 10px);
+    }
+}
+
+
 /* Css Stylesheets for Project Page*/
 .thumbnail_proj {
     box-shadow: 0 0 1px #404040;
@@ -141,7 +151,7 @@
 }
 .footer{
     background: #dee2e0;
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 18px;
     font-family: 'open sans', Helvetica, Arial, sans-serif;
     font-size: 13px;

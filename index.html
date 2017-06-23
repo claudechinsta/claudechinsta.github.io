@@ -7,12 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<!--<link href='ext_js/bootstrap.css' rel='stylesheet' />-->
-<!--<link href='ext_js/bootstrap-theme.css' rel='stylesheet' />-->
+<!--JQuery-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<!--------------->
 <!--bootstrap 4-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<!--------------->
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+<!--Customised CSS-->
 <link href='index_css/index_style.css' rel='stylesheet' />
+
+
 
 <!-- Import the Google Font Stylesheet -->
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
@@ -22,21 +35,42 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 
+<script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $("#btn_index").on('click', function(event) {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 300);
+        });
+        $("#btn_music").on('click', function(event) {
+            $("html, body").animate({
+                scrollTop: $("#content-music").offset().top
+            }, 300);
+        });
+        $("#btn_project").on('click', function(event) {
+            $("html, body").animate({
+                scrollTop: $("#content-project").offset().top
+            }, 300);
+        });
+    });
+</script>
+
 <body>
 
 <!--MENU CONTENT-->
 <div class="header" id="header-nav">
     <div style="float: left; width: 80px; height: 100%"></div>
-    <div class="head_btn" onclick="location.href='#'"><b>主页</b><div style="font-size: 12px">INDEX</div></div>
-    <div class="head_btn" onclick="location.href='#content-music'"><b>音乐</b><div style="font-size: 12px">MUSIC</div></div>
-    <div class="head_btn" onclick="location.href='#content-project'"><b>项目</b><div style="font-size: 12px">PROJECT</div></div>
+    <div class="head_btn" id="btn_index"><b>主页</b><div style="font-size: 12px">INDEX</div></div>
+    <div class="head_btn" id="btn_music" ><b>音乐</b><div style="font-size: 12px">MUSIC</div></div>
+    <div class="head_btn" id="btn_project" ><b>项目</b><div style="font-size: 12px">PROJECT</div></div>
     <!--<div class="head_btn" onclick="location.href='#content-gal'"><b>画廊</b><div style="font-size: 12px">GALLERY</div></div>-->
     <!--<div class="head_btn" onclick="location.href='#content-about'"><b>关于</b><div style="font-size: 12px">ABOUT</div></div>-->
 </div>
 <div class="content" id="content-intro">
     <div class="content-inner">
         <h1>Welcome to Claude Chen's Github Page</h1>
-        <img src="imgs/github-mark.png" alt="Smiley face" width="400">
+        <img id="img_logo" src="imgs/github-mark.png" alt="Smiley face" width="500">
     </div>
 </div>
 <div class="content" id="content-music">
@@ -76,9 +110,13 @@
         <div class="thumbnail_proj_label">基于Wikipedia的文本分类</div>
         <div class="thumbnail_proj_label">2017</div>
     </div>
+
 </div>
 
-<div class="footer">Soulsmatic Productions, All Rights Reserved. 2017</div>
+<div class="footer">
+    <h5>Power By Github</h5>
+    <a>Soulsmatic Productions, All Rights Reserved. 2017</a>
+</div>
 
 </body>
 </html>
