@@ -88,6 +88,15 @@
 #img_logo {
     animation: myframes 2s ease-in-out 0s infinite;;
 }
+@media screen and (max-width: 700px){
+    .content h1{
+        font-size: 30px;
+    }
+    #img_logo {
+        position: relative;
+        width: 100%;
+    }
+}
 @keyframes myframes {
     50%{
         transform: translate(0px, 10px);
