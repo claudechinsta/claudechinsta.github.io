@@ -1,71 +1,79 @@
-.container-fluid{
+.container-fluid {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
 }
-.content {
-    /*max-width: 800px;*/
-    font-family: "Raleway", Helvetica, Arial, sans-serif;
-    color: #323131;
-    text-align: center;
-    padding-top:    50px;
-    padding-bottom: 40px;
-}
-.content-inner {
-    padding-top: 40px;
+
+h1{
+    font-family: "Lobster"
 }
 
-#content-intro {
-    padding-top: 70px;
+.content {
+    /*max-width: 800px;*/
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #323131;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.content-topOverlay {
+    padding: 0;
+    margin: 0;
+    margin: 30px 0;
+}
+
+.content-inner {
+    padding-top: 40px;
 }
 
 .header {
     z-index: 99999;
     position: fixed;
-    font-family: "Fjalla One", "STXihei",  Helvetica, Arial, sans-serif;
+    font-family: "Fjalla One";
     width: 100%;
     height: 80px;
-    background: rgba(255, 255, 255, 0.95);
-    /*box-shadow: 0 0 10px #363636;*/
+    background: rgba(247, 247, 247, 0.95);
+    padding: 5px 40px;
+    border-bottom: 1px solid #dddddd;
 }
-.header h5{
+
+.header h5 {
     margin-top: 5px;
     margin-bottom: 5px;
-    padding-top: 5px;
     font-size: 16px;
     transition: all 0.1s ease;
 }
+
 .header a {
     color: #436ea5;
     text-decoration: none;
-}
-.header a:hover{
-    cursor: pointer;
 }
 
 .head_btn {
     float: left;
     text-align: center;
     font-size: 18px;
-    padding-top: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
-    /*width: 90px;*/
+    padding: 13px 20px 8px 20px;
+    border-radius: 3px;
     height: 100%;
-    color : #212121;
+    color: #212121;
     -webkit-transition: all 0.1s ease;
     -moz-transition: all 0.1s ease;
     -o-transition: all 0.1s ease;
     transition: all 0.1s ease;
 }
+
 .head_btn:hover {
-    /*box-shadow: 0 0 10px #0f0f0f;*/
-    /*background: inherit;*/
-    /*height: 105%;*/
+    background-color: #436ea5;
+    color: white;
     cursor: pointer;
-    color: #1a518b;
 }
-.my_btn{
+
+.head_btn:active {
+    background-color: #395d8d;
+}
+
+.my_btn {
     font-family: "Fjalla One", Helvetica, Arial, sans-serif;
     color: #436ea5;
     font-size: 15px;
@@ -73,23 +81,61 @@
     padding-bottom: 2px;
     border-radius: 1px;
     /*background: #d7d7d7;*/
-    height:30px;
+    height: 30px;
     width: 300px;
     margin-left: auto;
     margin-right: auto;
     transition: background 0.1s ease;
 }
+
 .my_btn:hover {
     cursor: pointer;
     background: #f4f4f4;
 }
 
+
 /* Logo Animation */
+
 #img_logo {
-    animation: myframes 2s ease-in-out 0s infinite;;
+    animation: myframes 2s ease-in-out 0s infinite;
+    ;
 }
-@media screen and (max-width: 700px){
-    .content h1{
+
+
+/* Css Stylesheets for Project Page*/
+
+.thumbnail_proj {
+    box-shadow: 0 0 1px #404040;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.thumbnail_proj:hover {
+    transform: scale(1.04);
+    filter: brightness(105%);
+    box-shadow: 0 5px 20px #636363;
+    cursor: pointer;
+}
+
+.thumbnail_proj_label {
+    margin-top: 5px;
+    font-size: 12px;
+    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+}
+
+
+/* Animation */
+
+@media screen and (max-width: 700px) {
+    .content-topOverlay {
+        margin: 15px 0;
+    }
+    .header{
+        padding: 2px;
+        align-items: center;
+    }
+    .content h1 {
         font-size: 30px;
     }
     #img_logo {
@@ -97,72 +143,9 @@
         width: 100%;
     }
 }
+
 @keyframes myframes {
-    50%{
+    50% {
         transform: translate(0px, 10px);
     }
-}
-
-
-/* Css Stylesheets for Project Page*/
-.thumbnail_proj {
-    box-shadow: 0 0 1px #404040;
-    transition: all 0.2s ease;
-    border-radius: 8px;
-    margin: 10px;
-}
-.thumbnail_proj:hover{
-    transform: scale(1.04);
-    filter: brightness(105%);
-    box-shadow: 0 5px 20px #636363;
-    cursor: pointer;
-}
-.thumbnail_proj_label{
-    margin-top: 5px;
-    font-size: 12px;
-    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
-}
-
-/* Css Stylesheets for Gallery Page*/
-.gal_title {
-
-}
-.gal_artist_entry {
-    background: url("../imgs/Daz-profile.jpeg") no-repeat fixed;
-    background-size: 100%;
-    padding-bottom: 140px;
-    transition: all 0.3s ease;
-    filter: brightness(100%);
-}
-.gal_artist_entry:hover{
-    filter: brightness(110%);
-    /*transform: scale(1.1);*/
-    cursor: pointer;
-}
-
-.gal_img_content h1{
-    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
-    font-size: 90px;
-    text-align: left;
-    color: #efefef;
-    /*text-align: left;*/
-    margin: 0;
-    padding: 5% 0 0 60px;
-}
-.gal_img_content h2{
-    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
-    font-size: 50px;
-    text-align: left;
-    color: #efefef;
-    /*text-align: left;*/
-    margin: 0;
-    padding: 0 0 0 68px;
-}
-.footer{
-    background: #dee2e0;
-    padding-top: 50px;
-    padding-bottom: 18px;
-    font-family: 'open sans', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    text-align: center
 }

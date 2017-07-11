@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome to Overlized | 歡迎光臨 Overlized</title>
+<html lang = "en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Overliez</title>
+    </head>
 
-    <!--Font Resources-->
+    <link href='ext_js/bootstrap.css' rel='stylesheet' />
+    <link href='ext_js/bootstrap-theme.css' rel='stylesheet' />
+    <link href='index_css/index_style.css' rel='stylesheet' />
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- Import the Google Font Stylesheet -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
@@ -12,67 +21,113 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 
-    <!--bootstrap-->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-
-    <!--JQuery-->
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
-</head>
-<style>
-    body{
-        background: #000000;
-        color: white;
-    }
-    .header {
-        text-align: center;
-        font-family: "open sans", Helvetica, Arial, sans-serif;
-    }
-    .body{
-        text-align: center;
-        font-family: "Fjalla One", "STXihei", Helvetica, Arial, sans-serif;
-    }
-    .body-footer{
-        padding: 20px 0;
-    }
-    #img-logo{
-        padding-top: 20px;
-        opacity: 0.6;
-        animation: myframes 2s ease-in-out 0s infinite;
-    }
-    @keyframes myframes {
-        50%{
-            transform: translate(0px, -10px);
-            opacity: 1;
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: "Titillium Web", sans-serif;
         }
-    }
-</style>
-<body>
-    <div class="body">
-        <div class="body_container">
-            <!--<div><img src="imgs/profile.png" id="img-profile"></div>-->
-            <div style="padding:400px 0 50px"><img src="imgs/overliez_logo_2000.png" id="img-logo"></div>
-            <div class="body-footer">
-                <div style="font-size: 64px; color: #525252; font-style: italic">In Construction ...</div>
-                <div style="font-size: 32px; color: #525252; font-style: italic">Coming Soon</div>
-            </div>
-        </div>
-    </div>
-    <script>
-        $("#img-logo").css("width", "66%");
-        $("#img-profile")
-            .css("width", "100%")
-    </script>
+        header{
+            font-family: "Lobster", sans-serif;
+            font-size: 3em;
+            background: #27557b;
+            width: 100%;
+            padding: 40px 0;
+            color: white;
+            text-align: center;
+        }
+        nav a{
+            text-decoration: none;
+            color: inherit;
+        }
+        nav ul{
+            margin: 0;
+            background-color: steelblue;
+            overflow: hidden;
+            color: aliceblue;
+            padding: 0;
+            padding-left: 20px;
+            text-align: left;
+            transition: max-height 0.4s ease;
+        }
+        nav ul li{
+            display: inline-block;
+            padding: 20px;
+        }
+        nav ul li:hover{
+            color: aliceblue;
+            background-color: #27557b;
+            cursor: pointer;
+        }
+        .handle{
+            width: 100%;
+            background: #27557b;
+            text-align: left;
+            box-sizing: border-box;
+            padding: 15px;
+            cursor: pointer;
+            color: aliceblue;
+            display: none;
+        }
+        @media screen and (max-width: 670px){
+            header{
+                font-size: 2em;
+            }
+            nav ul{
+                padding-left: 0;
+                max-height: 0;
+            }
+            .showing{
+                max-height: 30em;
+            }
+            nav ul li{
+                box-sizing: border-box;
+                width: 100%;
+                padding: 15px;
+                text-align: left;
+            }
+            .handle{
+                display: block;
+            }
+        }
+        article{
+            padding: 20px;
+        }
+        article h2{
+            text-align: center;
+        }
+        article p{
+            text-align: justify;
+        }
+        
+    </style>    
 
-</body>
+    <body>
+        <header>Welcome to Overliez</header>
+        <nav>
+            <ul>
+                <a href="#"><li>Home</li></a>
+                <a href="#"><li>About</li></a>
+                <a href="#"><li>Shop</li></a>
+                <a href="#"><li>Gallery</li></a>
+                <a href="#"><li>Contact</li></a>
+            </ul>
+            <div class="handle">Menu</div>
+        </nav>
+        <section>
+            <article>
+                <h2>Home</h2>
+                <p>Fashion is a popular style or practice, especially in clothing, footwear, accessories, makeup, body, or furniture. Fashion is a distinctive and often constant trend in the style in which a person dresses. It is the prevailing styles in behaviour and the newest creations of textile designers. Because the more technical term costume is regularly linked to the term "fashion", the use of the former has been relegated to special senses like fancy dress or masquerade wear, while "fashion" generally means clothing, including the study of it. Although aspects of fashion can be feminine or masculine, some trends are androgynous.</p>
+            </article>
+        </section>
+        <script>
+            $(".handle").on('click', function(){
+                $('nav ul').toggleClass('showing');
+            })
+            $("nav ul").on('click',function(){
+                $('nav ul').toggleClass('showing');
+            })
+        </script>
+
+    </body>
 </html>

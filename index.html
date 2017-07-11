@@ -1,119 +1,153 @@
 <!DOCTYPE html>
-<html lang = "en">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+<html lang="en">
+
 <head>
-    <meta charset = "UTF-8">
-    <title>Soulsmatic Productions</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulsmatic Productions</title>
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!--------------->
+    <!--bootstrap 4-->
+    <!--------------->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!--Customised CSS-->
+    <link href='index_css/index_style.css' rel='stylesheet' />
+    <!-- Import the Google Font Stylesheet -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <script>
+        $(document).ready(function() {
+            // Add smooth scrolling to all links
+            $("#btn_index").on('click', function(event) {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 300);
+            });
+            $("#btn_music").on('click', function(event) {
+                $("html, body").animate({
+                    scrollTop: $("#content-music").offset().top - 20
+                }, 300);
+            });
+            $("#btn_project").on('click', function(event) {
+                $("html, body").animate({
+                    scrollTop: $("#content-project").offset().top - 20
+                }, 300);
+            });
+        });
+
+    </script>
+    <style>
+        #content-inner h1,
+        h2,
+        h3 {
+            font-size: 40px;
+            padding: 20px;
+        }
+        
+        .content-inner-proj {
+            display: inline-block;
+            margin: 30px;
+        }
+        
+        #content-inner article {
+            display: inline-block;
+            clear: left;
+            align-items: center;
+            text-align: center;
+            margin: 30px;
+        }
+        
+        .footer {
+            color: #666;
+            font-size: 8px;
+            text-align: center;
+            padding: 10px;
+        }
+
+    </style>
 </head>
 
-<!--JQuery-->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-
-<!--------------->
-<!--bootstrap 4-->
-<!--------------->
-<link rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-        crossorigin="anonymous"></script>
-
-<!--Customised CSS-->
-<link href='index_css/index_style.css' rel='stylesheet' />
-
-<!-- Import the Google Font Stylesheet -->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-
-<script>
-    $(document).ready(function(){
-        // Add smooth scrolling to all links
-        $("#btn_index").on('click', function(event) {
-            $("html, body").animate({
-                scrollTop: 0
-            }, 300);
-        });
-        $("#btn_music").on('click', function(event) {
-            $("html, body").animate({
-                scrollTop: $("#content-music").offset().top
-            }, 300);
-        });
-        $("#btn_project").on('click', function(event) {
-            $("html, body").animate({
-                scrollTop: $("#content-project").offset().top
-            }, 300);
-        });
-    });
-</script>
-
 <body>
-
-<!--MENU CONTENT-->
-<div class="header" id="header-nav">
-    <div class="head_btn" id="btn_index"><b>主页</b><div style="font-size: 12px">INDEX</div></div>
-    <div class="head_btn" id="btn_music" ><b>音乐</b><div style="font-size: 12px">MUSIC</div></div>
-    <div class="head_btn" id="btn_project" ><b>项目</b><div style="font-size: 12px">PROJECT</div></div>
-    <!--<div class="head_btn" onclick="location.href='#content-gal'"><b>画廊</b><div style="font-size: 12px">GALLERY</div></div>-->
-    <!--<div class="head_btn" onclick="location.href='#content-about'"><b>关于</b><div style="font-size: 12px">ABOUT</div></div>-->
-</div>
-    
-
-    
-<div class="content" id="content-music">
-    <div class="content-inner">
-        <h1>Welcome to Claude Chen's Github Page</h1>
-        <img id="img_logo" src="imgs/github-mark.png" alt="Smiley face" width="500">
-    </div>
-    <div class="content-inner">
-        <h1>Music Productions</h1>
-        <h4>音乐作品</h4>
-        <div style="height: 10px;"></div>
-        <div class = "my_btn" onclick="location.href='https://play.spotify.com/artist/5xuhSWFgY8VIzptSR69QTf?play=true&utm_source=open.spotify.com&utm_medium=open'">Spotify</div>
-        <!--<div class = "btn_back" onclick="location.href='http://music.163.com/#/artist?id=818622'">Netease Music</div>-->
-        <div class = "my_btn" onclick="location.href='http://music.163.com/#/artist?id=818622'">Netease Music</div>
-        <div class = "my_btn" onclick="location.href='http://i.xiami.com/chinsta'">Xiami Music</div>
-        <div class = "my_btn" onclick="location.href='http://chinsta.bandcamp.com'">Bandcamp</div>
-        <div class = "my_btn" onclick="location.href='https://soundcloud.com/chinstamusic'">SoundCloud</div>
-        <h4 style="padding: 20px 0">Newest Single and Album</h4>
-        <div><img src="http://p4.music.126.net/QQ5bkSepQr_JbSCaOYby5Q==/109951162945500791.jpg?param=310y310"></div>
-        <div>
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-                    src="//music.163.com/outchain/player?type=2&id=483446378&auto=0&height=66"></iframe>
+    <!--MENU CONTENT-->
+    <div class="header" id="header-nav">
+        <div class="head_btn" id="btn_index"><b>主页</b>
+            <div style="font-size: 12px">INDEX</div>
+        </div>
+        <div class="head_btn" id="btn_music"><b>音乐</b>
+            <div style="font-size: 12px">MUSIC</div>
+        </div>
+        <div class="head_btn" id="btn_project"><b>项目</b>
+            <div style="font-size: 12px">PROJECT</div>
         </div>
     </div>
-</div>
-<div class="content" id="content-project">
-    <div class="content-inner">
-        <h1>IT Projects</h1>
-        <h4>IT 项目</h4>
-
-        <img class="thumbnail_proj" src="imgs/proj_1.png" alt="Smiley face" width="200"
-             onclick="location.href='./proj_australian_city_analysis'">
-        <div class="thumbnail_proj_label">Australian City Analytics</div>
-        <div class="thumbnail_proj_label">澳大利亚城市数据分析</div>
-        <div class="thumbnail_proj_label">2017</div>
-
-        <img class="thumbnail_proj" src="imgs/proj_2.png" alt="Smiley face" width="200"
-             onclick="location.href='./proj_wiki_text_clf/'">
-        <div class="thumbnail_proj_label">Wikipedia Text Classifier</div>
-        <div class="thumbnail_proj_label">基于Wikipedia的文本分类</div>
-        <div class="thumbnail_proj_label">2017</div>
+    <div class="content" id="content-topOverlay">
+    </div>
+    <div class="content" id="content-inner">
+        <h1>Welcome to My Homepage</h1>
+        <a href="https://github.com/claudechinsta"><img id="img_logo" src="imgs/github-mark.png" alt="logo-icon" width="500"></a>
+        <article>
+            <h3>陈博雅</h3>
+            <p>
+                <br><b>Boya (Claude) Chen A.k.a Chinsta</b>
+                <br>From Chongqing, China, Now at Melbourne, Australia
+                <br>Master of Information Technology
+                <br><b>E-mail:</b> claudechinsta@gmail.com | boyac@student.unimelb.edu.au
+                <br><b>Phone:</b> +61 0413 448 518
+                <br><a href="http://sites.google.com/view/claudechen">More about me</a>
+            </p>
+        </article>
     </div>
 
-</div>
+    <div class="content" id="content-music">
+        <div class="content-inner">
+            <h1>Music Productions</h1>
+            <h4>音乐作品</h4>
+            <div style="height: 10px;"></div>
+            <div class="my_btn" onclick="location.href='https://play.spotify.com/artist/5xuhSWFgY8VIzptSR69QTf?play=true&utm_source=open.spotify.com&utm_medium=open'">Spotify</div>
+            <!--<div class = "btn_back" onclick="location.href='http://music.163.com/#/artist?id=818622'">Netease Music</div>-->
+            <div class="my_btn" onclick="location.href='http://music.163.com/#/artist?id=818622'">Netease Music</div>
+            <div class="my_btn" onclick="location.href='http://i.xiami.com/chinsta'">Xiami Music</div>
+            <div class="my_btn" onclick="location.href='http://chinsta.bandcamp.com'">Bandcamp</div>
+            <div class="my_btn" onclick="location.href='https://soundcloud.com/chinstamusic'">SoundCloud</div>
+            <h4 style="padding: 20px 0">Newest Single and Album</h4>
+            <div><img src="http://p4.music.126.net/Tla4K7bqzH52mKM_qa87dg==/109951162961963631.jpg?param=310y310"></div>
+            <div>
+<!--                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=487713408&auto=0&height=66"></iframe>-->
+            </div>
+        </div>
+    </div>
 
-<div class="footer">
-    <a>Soulsmatic Productions, All Rights Reserved. 2017</a>
-</div>
+    <div class="content" id="content-project">
+        <div class="content-inner">
+            <h1>IT Projects</h1>
+            <h4>IT 项目</h4>
+            <div class="content-inner-proj">
+                <img class="thumbnail_proj" src="imgs/proj_1.png" alt="Smiley face" width="200" onclick="location.href='./proj_australian_city_analysis'">
+                <div class="thumbnail_proj_label">Australian City Analytics</div>
+                <div class="thumbnail_proj_label">澳大利亚城市数据分析</div>
+                <div class="thumbnail_proj_label">2017</div>
+            </div>
+
+            <div class="content-inner-proj">
+                <img class="thumbnail_proj" src="imgs/proj_2.png" alt="Smiley face" width="200" onclick="location.href='./proj_wiki_text_clf/'">
+                <div class="thumbnail_proj_label">Wikipedia Text Classifier</div>
+                <div class="thumbnail_proj_label">基于Wikipedia的文本分类</div>
+                <div class="thumbnail_proj_label">2017</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <a>Copyright © 2017 Soulsmatic Productions All Rights Reserved.</a>
+    </div>
 
 </body>
+
 </html>

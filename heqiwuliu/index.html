@@ -1,273 +1,296 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
-        <meta charset = "UTF-8">
-        <title>合祺物流 | 首页</title>
-    </head>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href='ext_js/bootstrap.css' rel='stylesheet' />
-    <link href='ext_js/bootstrap-theme.css' rel='stylesheet' />
-    <link href='index_css/index_style.css' rel='stylesheet' />
+<head>
+    <meta charset="UTF-8">
+    <title>合祺物流 | 首页</title>
+</head>
 
-    <!--JQuery-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
+<link href='ext_js/bootstrap.css' rel='stylesheet' />
+<link href='ext_js/bootstrap-theme.css' rel='stylesheet' />
+<link href='index_css/index_style.css' rel='stylesheet' />
 
-    <!--  Font Awesome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--JQuery-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-    <!-- Import the Google Font Stylesheet -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+<!--  Font Awesome  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: "Raleway", "微软雅黑", sans-serif;
-        }
-        table{
-            table-layout: fixed;
+<!-- Import the Google Font Stylesheet -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 
-        }
-        .header-wrapper{
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            position: fixed;
-        }
-        header{
-            font-family: "微软雅黑";
-            font-size: 30px;
-            text-align: left;
-            width: 100%;
-            padding: 10px 30px;
-            color: #3b5998;
-            background: rgba(255, 255, 255, 0.97);
-        }
-        a{
-            text-decoration: none;
-            color: inherit;
-        }
-        .overlay-handle{
-            padding: 80px 0;
-        }
-        nav ul{
-            padding-right: 20px;
-            margin: 0;
-            color: #3b5998;
-            background: rgba(255, 255, 255, 0.97);
-            overflow: hidden;
-            text-align: right;
-            transition: max-height 0.2s ease-in-out;
-            border-bottom: 1px solid #e2e2e2;
-        }
-        nav ul li{
-            display: inline-block;
-            padding: 15px 10px;
-            transition: color 0.1s ease-in-out;
-        }
-        nav ul li:hover{
-            color: rgba(59, 89, 152, 0.69);
-            cursor: pointer;
-        }
-        nav ul li:active{
-            color: grey;
-        }
-        .handle{
-            justify-content: center;
-            font-size: 12px;
-            width: 100%;
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", "微软雅黑", sans-serif;
+    }
+    
+    table {
+        table-layout: fixed;
+    }
+    
+    .header-wrapper {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        position: fixed;
+    }
+    
+    header {
+        font-family: "微软雅黑";
+        font-size: 30px;
+        text-align: left;
+        width: 100%;
+        padding: 10px 30px;
+        color: #3b5998;
+        background: rgba(255, 255, 255, 0.97);
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .overlay-handle {
+        padding: 80px 0;
+    }
+    
+    nav ul {
+        padding-right: 20px;
+        margin: 0;
+        color: #3b5998;
+        background: rgba(255, 255, 255, 0.97);
+        overflow: hidden;
+        text-align: right;
+        transition: max-height 0.2s ease-in-out;
+        border-bottom: 1px solid #e2e2e2;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        padding: 15px 10px;
+        transition: color 0.1s ease-in-out;
+    }
+    
+    nav ul li:hover {
+        color: rgba(59, 89, 152, 0.69);
+        cursor: pointer;
+    }
+    
+    nav ul li:active {
+        color: grey;
+    }
+    
+    .handle {
+        justify-content: center;
+        font-size: 12px;
+        width: 100%;
+        background: #3b5998;
+        text-align: left;
+        box-sizing: border-box;
+        padding: 15px;
+        cursor: pointer;
+        color: aliceblue;
+        display: none;
+        border-bottom: 1px solid #bababa;
+    }
+    
+    .handle i {
+        float: right;
+        display: inline-flex;
+        height: 100%;
+    }
+    
+    article h1 {
+        padding: 30px 0;
+        margin: 0;
+        color: #3b5998;
+        font-size: 35px;
+        text-align: center;
+    }
+    
+    article p {
+        padding: 0 50px;
+        font-size: 18px;
+        text-align: justify;
+    }
+    /* Special Section for the footer */
+    
+    #section-contact {
+        padding: 30px 20px;
+        background-color: #3b5998;
+        color: aliceblue;
+    }
+    
+    #section-contact h1 {
+        padding-left: 20px;
+        text-align: left;
+        font-size: 30px;
+        color: aliceblue;
+    }
+    
+    #section-contact p {
+        margin: 0;
+        padding: 0;
+        padding-left: 20px;
+        text-align: left;
+        font-size: 13px;
+    }
+    
+    #map-frame {
+        align-content: center;
+        padding: 30px 20px;
+    }
+    /*   移动端css样式    */
+    /*   CSS settings for Mobile Side    */
+    
+    @media screen and (max-width: 800px) {
+        header {
             background: #3b5998;
-            text-align: left;
-            box-sizing: border-box;
-            padding: 15px;
-            cursor: pointer;
             color: aliceblue;
-            display: none;
-            border-bottom: 1px solid #bababa;
-        }
-        .handle i{
-            float: right;
-            display: inline-flex;
-            height: 100%;
-        }
-        article h1{
-            padding: 30px 0;
+            padding: 20px 0;
             margin: 0;
-            color: #3b5998;
-            font-size: 35px;
-            text-align: center;
-        }
-        article p{
-            padding: 0 50px;
             font-size: 18px;
-            text-align: justify;
+            text-align: center
         }
-        /* Special Section for the footer */
-        #section-contact{
-            padding: 30px 20px;
-            background-color: #3b5998;
+        .overlay-handle {
+            padding: 55px 0;
+        }
+        nav ul {
             color: aliceblue;
-        }
-        #section-contact h1{
-            padding-left: 20px;
-            text-align: left;
-            font-size: 30px;
-            color: aliceblue;
-        }
-        #section-contact p{
-            margin: 0;
+            font-size: 12px;
             padding: 0;
-            padding-left: 20px;
+            max-height: 0;
+            background: #4d669a;
+            border-bottom: none;
+        }
+        nav ul li {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 15px;
             text-align: left;
-            font-size: 13px;
         }
-        #map-frame{
-            align-content: center;
-            padding: 30px 20px;
+        nav ul li:hover {
+            color: white;
+            background: #3b5998;
         }
-
-        /*   移动端css样式    */
-        /*   CSS settings for Mobile Side    */
-        @media screen and (max-width: 800px){
-            header{
-                background: #3b5998;
-                color: aliceblue;
-                padding: 20px 0;
-                margin: 0;
-                font-size: 18px;
-                text-align: center
-            }
-            .overlay-handle{
-                padding: 55px 0;
-            }
-            nav ul{
-                color: aliceblue;
-                font-size: 12px;
-                padding: 0;
-                max-height: 0;
-                background: #4d669a;
-                border-bottom: none;
-            }
-            nav ul li{
-                box-sizing: border-box;
-                width: 100%;
-                padding: 15px;
-                text-align: left;
-            }
-            nav ul li:hover{
-                color: white;
-                background: #3b5998;
-            }
-            .showing{
-                max-height: 30em;
-            }
-            .handle{
-                display: block;
-            }
-            article h1{
-                font-size: 30px
-            }
-            article p{
-                padding: 0 20px;
-            }
-            img{
-                display: none;
-            }
-
+        .showing {
+            max-height: 30em;
         }
-    </style>    
+        .handle {
+            display: block;
+        }
+        article h1 {
+            font-size: 30px
+        }
+        article p {
+            padding: 0 20px;
+        }
+        img {
+            display: none;
+        }
+    }
 
-    <body>
-        <div class="header-wrapper">
-            <header>合祺物流官网-样式</header>
-            <nav>
-                <ul>
-                    <a id="btn-index"><li>首页</li></a>
-                    <a id="btn-about"><li>关于合祺</li></a>
-                    <a id="btn-business"><li>公司业务</li></a>
-<!--                    <a href="#"><li>人才招聘</li></a>-->
-                    <a id="btn-contact"><li>联系我们</li></a>
-                </ul>
-                <div class="handle">菜单<i class="fa fa-bars fa-lg" aria-hidden="true"></i></div>
-            </nav>
-        </div>
-        <div class="overlay-handle"></div>
-        <section id="section-about">
-            <article>
-                <h1>关于合祺</h1>
-                <p>重庆合祺物流有限责任公司办公室地址位于长江上游地区经济中心、金融中心重庆，重庆 重庆市渝中区朝东路28号烟草大楼二楼附二楼，于2015年05月04日在重庆工商局注册成立，注册资本为1000（万元），在公司发展壮大的2年里，我们始终为客户提供最好的产品、良好的技术支持、健全的售后服务，我公司主要经营普通货运（取得相关行政许可后，按许可证核定的范围和期限从事经营)
-                    <br><br>★ 货运代理『以上范围法律、法规、国务院决定禁止经营的不得经营；法律、法规、国务院决定规定应经审批而未获审批前不得经营』
-                    <br><br>★ 我们有最好的产品和专业的销售和技术团队，目前团队人数有20人，我公司是重庆货运物流黄页行业内知名企业，如果您对我公司的产品服务有兴趣，期待您在线留言或者来电咨询
-                </p>
-            </article>
-        </section>
-        <section id="section-business">
-            <article>
-                <h1>公司业务</h1>
-                <table>
-                    <tr>
-                        <td>
-                            <p>重庆合祺物流有限责任公司办公室地址位于长江上游地区经济中心、金融中心重庆，重庆 重庆市渝中区朝东路28号烟草大楼二楼附二楼，于2015年05月04日在重庆工商局注册成立，注册资本为1000（万元），在公司发展壮大的2年里，我们始终为客户提供最好的产品、良好的技术支持、健全的售后服务，我公司主要经营普通货运（取得相关行政许可后，按许可证核定的范围和期限从事经营）</p>
-                        </td>
-                        <td>
-                            <img src="imgs/wuliu-boxes.jpg" width=500/>
-                        </td>
-                    </tr>
-                </table>
+</style>
 
-            </article>
-        </section>
+<body>
+    <div class="header-wrapper">
+        <header>合祺物流官网-样式</header>
+        <nav>
+            <ul>
+                <a id="btn-index">
+                    <li>首页</li>
+                </a>
+                <a id="btn-about">
+                    <li>关于合祺</li>
+                </a>
+                <a id="btn-business">
+                    <li>公司业务</li>
+                </a>
+                <!--                    <a href="#"><li>人才招聘</li></a>-->
+                <a id="btn-contact">
+                    <li>联系我们</li>
+                </a>
+            </ul>
+            <div class="handle">菜单<i class="fa fa-bars fa-lg" aria-hidden="true"></i></div>
+        </nav>
+    </div>
+    <div class="overlay-handle"></div>
+    <section id="section-about">
+        <article>
+            <h1>关于合祺</h1>
+            <p>重庆合祺物流有限责任公司办公室地址位于长江上游地区经济中心、金融中心重庆，重庆 重庆市渝中区朝东路28号烟草大楼二楼附二楼，于2015年05月04日在重庆工商局注册成立，注册资本为1000（万元），在公司发展壮大的2年里，我们始终为客户提供最好的产品、良好的技术支持、健全的售后服务，我公司主要经营普通货运（取得相关行政许可后，按许可证核定的范围和期限从事经营)
+                <br><br>★ 货运代理『以上范围法律、法规、国务院决定禁止经营的不得经营；法律、法规、国务院决定规定应经审批而未获审批前不得经营』
+                <br><br>★ 我们有最好的产品和专业的销售和技术团队，目前团队人数有20人，我公司是重庆货运物流黄页行业内知名企业，如果您对我公司的产品服务有兴趣，期待您在线留言或者来电咨询
+            </p>
+        </article>
+    </section>
+    <section id="section-business">
+        <article>
+            <h1>公司业务</h1>
+            <table>
+                <tr>
+                    <td>
+                        <p>重庆合祺物流有限责任公司办公室地址位于长江上游地区经济中心、金融中心重庆，重庆 重庆市渝中区朝东路28号烟草大楼二楼附二楼，于2015年05月04日在重庆工商局注册成立，注册资本为1000（万元），在公司发展壮大的2年里，我们始终为客户提供最好的产品、良好的技术支持、健全的售后服务，我公司主要经营普通货运（取得相关行政许可后，按许可证核定的范围和期限从事经营）</p>
+                    </td>
+                    <td>
+                        <img src="imgs/wuliu-boxes.jpg" width=500/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+    </section>
 
-        <section id="section-contact">
-            <article>
-                <h1>联系我们</h1>
-                <p><b>地址：</b>重庆市渝中区朝东路28号烟草大楼二楼附二楼</p>
-                <p><b>验证编码：</b>404100</p>
-                <p><b>联系电话：</b>+86 xxx xxxx xxxx</p>
-                <div id="map-frame">
-                    <iframe width="100%" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.390695596125!2d106.58538231553628!3d29.56323364809767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3693347f54098f0d%3A0x25735b7062a9ffea!2s28+Chao+Dong+Lu%2C+ChaoTianMen%2C+Yuzhong+Qu%2C+Chongqing+Shi%2C+China%2C+400065!5e0!3m2!1sen!2sau!4v1498914786452" allowfullscreen></iframe>
-                </div>
-            </article>
-        </section>
-        <script>
-            var upperOffset = $('nav')[0].scrollHeight + $('header')[0].scrollHeight;
-            var scrollingSpeed = 300;
-            
-            $(".handle").on('click', function(){
-                $('nav ul').toggleClass('showing');
-            })
-            $("nav ul").on('click',function(){
-                $('nav ul').toggleClass('showing');
-            })
-            $("#btn-index").on('click', function(event) {
-                $("html, body").animate({
-                    scrollTop: 0
-                }, scrollingSpeed);
-            });
-            $("#btn-about").on('click', function(event) {
-                $("html, body").animate({
-                    scrollTop: $("#section-about").offset().top - upperOffset
-                }, scrollingSpeed);
-            });
-            $("#btn-business").on('click', function(event) {
-                $("html, body").animate({
-                    scrollTop: $("#section-business").offset().top - upperOffset
-                }, scrollingSpeed);
-            });
-            $("#btn-contact").on('click', function(event) {
-                $("html, body").animate({
-                    scrollTop: $("#section-contact").offset().top - upperOffset
-                }, scrollingSpeed);
-            });
-        </script>
+    <section id="section-contact">
+        <article>
+            <h1>联系我们</h1>
+            <p><b>地址：</b>重庆市渝中区朝东路28号烟草大楼二楼附二楼</p>
+            <p><b>验证编码：</b>404100</p>
+            <p><b>联系电话：</b>+86 xxx xxxx xxxx</p>
+            <div id="map-frame">
+                <iframe width="100%" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.390695596125!2d106.58538231553628!3d29.56323364809767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3693347f54098f0d%3A0x25735b7062a9ffea!2s28+Chao+Dong+Lu%2C+ChaoTianMen%2C+Yuzhong+Qu%2C+Chongqing+Shi%2C+China%2C+400065!5e0!3m2!1sen!2sau!4v1498914786452" allowfullscreen></iframe>
+            </div>
+        </article>
+    </section>
+    <script>
+        var upperOffset = $('nav')[0].scrollHeight + $('header')[0].scrollHeight;
+        var scrollingSpeed = 300;
 
-    </body>
+        $(".handle").on('click', function() {
+            $('nav ul').toggleClass('showing');
+        })
+        $("nav ul").on('click', function() {
+            $('nav ul').toggleClass('showing');
+        })
+        $("#btn-index").on('click', function(event) {
+            $("html, body").animate({
+                scrollTop: 0
+            }, scrollingSpeed);
+        });
+        $("#btn-about").on('click', function(event) {
+            $("html, body").animate({
+                scrollTop: $("#section-about").offset().top - upperOffset
+            }, scrollingSpeed);
+        });
+        $("#btn-business").on('click', function(event) {
+            $("html, body").animate({
+                scrollTop: $("#section-business").offset().top - upperOffset
+            }, scrollingSpeed);
+        });
+        $("#btn-contact").on('click', function(event) {
+            $("html, body").animate({
+                scrollTop: $("#section-contact").offset().top - upperOffset
+            }, scrollingSpeed);
+        });
+
+    </script>
+</body>
+
 </html>
