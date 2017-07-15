@@ -53,7 +53,7 @@ h1{
     float: left;
     text-align: center;
     font-size: 18px;
-    padding: 13px 20px 8px 20px;
+    padding: 13px 17px 8px 17px;
     border-radius: 3px;
     height: 100%;
     color: #212121;
@@ -68,9 +68,27 @@ h1{
     color: white;
     cursor: pointer;
 }
-
 .head_btn:active {
     background-color: #395d8d;
+}
+
+.head_btn_links {
+    float: right;
+    color: #212121;
+    margin-top: 20px;
+    height: 50%;
+    padding: 5px;
+    padding-bottom: 33px;
+}
+.head_btn_links a{
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+    color: #212121;
+}
+.head_btn_links:hover a{
+    color: #436ea5;
 }
 
 .my_btn {
@@ -132,7 +150,7 @@ h1{
         margin: 15px 0;
     }
     .header{
-        padding: 2px;
+        padding: 2px 5px;
         align-items: center;
     }
     .content h1 {

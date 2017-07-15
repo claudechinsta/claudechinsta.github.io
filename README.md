@@ -1,6 +1,5 @@
-# Cluster and Cloud Computing 2017 Project
-## Instruction
+# Welcome to my Github Page
 
-This is the front-end of this peoject
-Author: Claude Chen
-Created Date: 28 April 2017
+This is my homepage at Github
+
+-- Claude Chen
