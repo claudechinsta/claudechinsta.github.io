@@ -1,14 +1,14 @@
 /*
-* File Name:    loginPopup.css
-* Author:       Claude Chen
-* Created Date: 19 Jan 2017
-* Description:  CSS setting for login popup
+* File Name:    styleSheets.css
+* Author:       Boya Chen
+* Created Date: Apr 2017
+* Description:  CSS setting for 
 */
 
 #popupSent {
     margin: 0 auto;
     margin-bottom: 20px;
-    font-family: "pt sans", Helvetica, Arial, sans-serif;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 15px;
     text-align: justify;
     width: 200px;
@@ -34,19 +34,24 @@
     background: #f2f2f2;
     cursor: pointer;
 }
+.wikibtn:active {
+    background: #d4d4d4;
+}
+
 .mapboxgl-popup {
-    z-index: 1000;
+    z-index: 300px;
 }
 .mapboxgl-popup-content {
+    min-width: 300px;
     font-family: 'Pt Sans', Arial, Helvetica, sans-serif;
     font-size: 13px;
-    /*z-index: 3;*/
     text-align: center;
     color: black;
 }
 .mapboxgl-popup-content h3{
     font-family: 'Lobster Two', Helvetica, Arial, sans-serif;
 }
+
 .menuback {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -70,6 +75,7 @@
     background: rgba(137, 166, 185, 0.7);
     cursor: pointer;
 }
+
 #info {
     font-family: 'Fjalla One', Arial, Helvetica, sans-serif;
     transition: all 0.5s ease;
@@ -90,13 +96,15 @@
     color: #2f79b9;
     background: rgba(0,0,0,0);
 }
+
+
 .legend {
     background-color: #fff;
     /*opacity: 0.8;*/
     transition: opacity 0.1s ease-in-out;
     border-radius: 5px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    font: 13px 'Fjalla One', Arial, Helvetica, sans-serif;
+    font: 11px 'Roboto', Arial, Helvetica, sans-serif;
     padding: 14px;
     position: absolute;
     left: 10px;
@@ -115,6 +123,8 @@
     margin-right: 5px;
     margin-top: 10px;
 }
+
+
 #helpPanel {
     overflow-y: scroll;
     display: none;
@@ -137,9 +147,8 @@
     padding: 0 20px;
     text-align: justify;
 }
-
 #searchBar{
-    font-family: 'pt sans', Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     position: absolute;
     z-index: 9999;
     top: -50px;
