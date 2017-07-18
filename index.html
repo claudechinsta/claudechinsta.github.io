@@ -1,141 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Soulsmatic Productions</title>
-        <!--JQuery-->
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <!--------------->
-        <!--bootstrap 4-->
-        <!--------------->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-        <!--  Font Awesome  -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!--Customised CSS-->
-        <link href='index_css/index_style.css' rel='stylesheet' />
-        <!-- Import the Google Font Stylesheet -->
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <script>
-            $(document).ready(function() {
-                // Add smooth scrolling to all links
-                $("#btn_index").on('click', function(event) {
-                    $("html, body").animate({
-                        scrollTop: 0
-                    }, 300);
-                });
-                $("#btn_music").on('click', function(event) {
-                    $("html, body").animate({
-                        scrollTop: $("#content-music").offset().top - 20
-                    }, 300);
-                });
-                $("#btn_project").on('click', function(event) {
-                    $("html, body").animate({
-                        scrollTop: $("#content-project").offset().top - 20
-                    }, 300);
-                });
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulsmatic Productions</title>
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!--------------->
+    <!--bootstrap 4-->
+    <!--------------->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!--  Font Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Customised CSS-->
+    <link href='index_css/index_style.css' rel='stylesheet' />
+    <!-- Import the Google Font Stylesheet -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script>
+        $(document).ready(function() {
+            // Add smooth scrolling to all links
+            $("#btn_index").on('click', function(event) {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 300);
             });
+            $("#btn_music").on('click', function(event) {
+                $("html, body").animate({
+                    scrollTop: $("#content-music").offset().top - 20
+                }, 300);
+            });
+            $("#btn_project").on('click', function(event) {
+                $("html, body").animate({
+                    scrollTop: $("#content-project").offset().top - 20
+                }, 300);
+            });
+        });
 
-        </script>
-        <style>
-            #content-inner h1,
-            h2,
-            h3 {
-                font-size: 40px;
-                padding: 20px;
-            }
-            .content-inner-proj {
-                display: inline-block;
-                margin: 30px;
-            }
+    </script>
+    <style>
+        #content-inner h1,
+        h2,
+        h3 {
+            font-size: 40px;
+            padding: 20px;
+        }
+        
+        .content-inner-proj {
+            display: inline-block;
+            margin: 30px;
+        }
+        
+        #content-inner article {
+            display: inline-block;
+            clear: left;
+            align-items: center;
+            text-align: center;
+            margin: 30px;
+        }
+        
+        .footer {
+            color: #666;
+            font-size: 8px;
+            text-align: center;
+            padding: 10px;
+        }
 
-            #content-inner article {
-                display: inline-block;
-                clear: left;
-                align-items: center;
-                text-align: center;
-                margin: 30px;
-            }
+    </style>
+</head>
 
-            .footer {
-                color: #666;
-                font-size: 8px;
-                text-align: center;
-                padding: 10px;
-            }
-
-
-        </style>
-    </head>
-
-    <body>
-        <!--Top Bar-->
-        <div class="header" id="header-nav">
-            <div class="head_btn" id="btn_index">
-                <b>主页</b>
-                <div style="font-size: 12px">INDEX</div>
-            </div>
-            <div class="head_btn" id="btn_music">
-                <b>音乐</b>
-                <div style="font-size: 12px">MUSIC</div>
-            </div>
-            <div class="head_btn" id="btn_project">
-                <b>项目</b>
-                <div style="font-size: 12px">PROJECT</div>
-            </div>
-            <div title="Email" class="head_btn_links"><a class="head_link" href="mailto:claudechinsta@gmail.com">
-                <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
-                </a></div>
-            <div title="Linkedin" class="head_btn_links"><a class="head_link" href="https://www.linkedin.com/in/boya-chen-5b3151116/">
-                <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
-                </a></div>
-            <div title="Twitter" class="head_btn_links"><a class="head_link" href="https://twitter.com/claudechinsta">
-                <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
-                </a></div>
-            <div title="Facebook" class="head_btn_links"><a class="head_link" href="https://www.facebook.com/claudechinsta">
-                <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
-                </a></div>
-            <div title="Weibo" class="head_btn_links"><a class="head_link" href="http://weibo.com/chinsta">
-                <i class="fa fa-weibo fa-lg" aria-hidden="true"></i>
-                </a></div>
+<body>
+    <!--Top Bar-->
+    <div class="header" id="header-nav">
+        <div class="head_btn" id="btn_index">
+            <b>主页</b>
+            <div style="font-size: 12px">INDEX</div>
         </div>
-        <div class="content" id="content-topOverlay"></div>
-        <div class="content" id="content-inner">
-            <h1>Welcome to My Homepage</h1>
-            <div>
-                <a href="https://github.com/claudechinsta"><img id="img_logo" src="imgs/github-mark.png" alt="logo-icon" width="500"></a>
-            </div>
-
-            <article>
-                <p>
-                    <br><h5>Boya (Claude) Chen A.k.a Chinsta</h5>
+        <div class="head_btn" id="btn_music">
+            <b>音乐</b>
+            <div style="font-size: 12px">MUSIC</div>
+        </div>
+        <div class="head_btn" id="btn_project">
+            <b>项目</b>
+            <div style="font-size: 12px">PROJECT</div>
+        </div>
+        <div title="Email" class="head_btn_links">
+            <a class="head_link" href="mailto:claudechinsta@gmail.com">
+                <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div title="Linkedin" class="head_btn_links">
+            <a class="head_link" href="https://www.linkedin.com/in/boya-chen-5b3151116/" target="_blank">
+                <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div title="Twitter" class="head_btn_links">
+            <a class="head_link" href="https://twitter.com/claudechinsta" target="_blank">
+                <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div title="Facebook" class="head_btn_links">
+            <a class="head_link" href="https://www.facebook.com/claudechinsta" target="_blank">
+                <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div title="Weibo" class="head_btn_links">
+            <a class="head_link" href="http://weibo.com/chinsta" target="_blank">
+                <i class="fa fa-weibo fa-lg" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+    <div class="content" id="content-topOverlay"></div>
+    <div class="content" id="content-inner">
+        <h1>Welcome to My Homepage</h1>
+        <div>
+            <a href="https://github.com/claudechinsta"><img id="img_logo" src="imgs/github-mark.png" alt="logo-icon" width="500"></a>
+        </div>
+        <article>
+            <h5>Boya (Claude) Chen A.k.a Chinsta</h5>
+            <p>
                 <br><i>Front-end development, Graphic design, Software development, <br>Data mining, Machine learning, Music production</i>
                 <br>
                 <br>From Chongqing, China, Now studying at Melbourne, Australia
-                <br>Master of Information Technology | University of Melbourne
-                <br><b>E-mail:</b> claudechinsta@gmail.com | boyac@student.unimelb.edu.au
+                <br>Master of Information Technology | <wbr>University of Melbourne
+                <br><b>E-mail:</b> claudechinsta@gmail.com |<wbr>boyac@student.unimelb.edu.au
                 <br><a href="http://sites.google.com/view/claudechen">More about me</a>
-                <br><br><br>
-                <br><h5>陈博雅</h5>
+                <br><br>
+            </p>
+            <h5>陈博雅</h5>
+            <p>
                 <br><i>前端开发，平面设计，软件开发，数据挖掘，机器学习，音乐制作。</i>
                 <br>
                 <br>来自重庆，现在于澳大利亚墨尔本居住与学习
-                <br>正在墨尔本大学攻读Master of Information Technology
-                <br><b>E-mail:</b> claudechinsta@gmail.com | boyac@student.unimelb.edu.au
+                <br>墨尔本大学攻读Master of Information Technology
+                <br><b>E-mail:</b> claudechinsta@gmail.com | <wbr>boyac@student.unimelb.edu.au
                 <br><a href="http://sites.google.com/view/claudechen">更多</a>
-                </p>
-            </article>
-        </div>
-    <hr/>
-
+            </p>
+        </article>
+    </div>
+    <hr>
     <div class="content" id="content-music">
         <div class="content-inner">
             <h1>Music Productions</h1>
@@ -148,40 +158,34 @@
             <div class="my_btn" onclick="location.href='http://chinsta.bandcamp.com'">Bandcamp</div>
             <div class="my_btn" onclick="location.href='https://soundcloud.com/chinstamusic'">SoundCloud</div>
             <h4 style="padding: 20px 0">Newest Single and Album</h4>
-            <div title="点击进入网易云音乐"><a href="http://music.163.com/#/album?id=35693439"><img src="http://p4.music.126.net/Tla4K7bqzH52mKM_qa87dg==/109951162961963631.jpg?param=310y310"></a></div>
+            <div title="点击进入网易云音乐">
+                <a href="http://music.163.com/#/album?id=35693439"><img src="http://p4.music.126.net/Tla4K7bqzH52mKM_qa87dg==/109951162961963631.jpg?param=310y310"></a>
+            </div>
             <div>
                 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=487713408&auto=0&height=66"></iframe>
             </div>
         </div>
     </div>
-
     <hr/>
-
     <div class="content" id="content-project">
         <div class="content-inner">
             <h1>IT Projects</h1>
             <h4>IT 项目</h4>
             <div class="content-inner-proj">
-                <img class="thumbnail_proj" src="imgs/proj_1.png" alt="Smiley face" width="200" onclick="location.href='./proj_australian_city_analysis'">
+                <a href="./proj_australian_city_analysis" target="_blank"><img class="thumbnail_proj" src="imgs/proj_1*2.png" alt="City" width="200"></a>
                 <div class="thumbnail_proj_label">Australian City Analytics</div>
                 <div class="thumbnail_proj_label">澳大利亚城市数据分析</div>
                 <div class="thumbnail_proj_label">2017</div>
             </div>
-
             <div class="content-inner-proj">
-                <img class="thumbnail_proj" src="imgs/proj_2.png" alt="Smiley face" width="200" onclick="location.href='./proj_wiki_text_clf/'">
+                <a href="./proj_wiki_text_clf/" target="_blank"><img class="thumbnail_proj" src="imgs/proj_2*2.png" alt="Wiki" width="200"></a>
                 <div class="thumbnail_proj_label">Wikipedia Text Classifier</div>
                 <div class="thumbnail_proj_label">基于Wikipedia的文本分类</div>
                 <div class="thumbnail_proj_label">2017</div>
             </div>
-
         </div>
     </div>
-
-    <div class="footer">
-        <a>Copyright © 2017 Soulsmatic Productions All Rights Reserved.</a>
-    </div>
-
-    </body>
+    <div class="footer"><a>Copyright © 2017 Soulsmatic Productions All Rights Reserved.</a></div>
+</body>
 
 </html>

@@ -28,13 +28,13 @@ let colorStops_topics = [
 ];
 let colorStops_sentiment = [
     [-1,    '#040605'],
-    [0.5,    "#a1afa1"],
-    [0.6,    "#6400ff"],
-    [0.7,    "#ff5e52"],
-    [0.8,    '#fcff4a'],
-    [0.85,    '#ff3aef'],
-    [0.9,    '#4dffa3'],
-    [0.95,    '#007eff']
+    [0.5,    "#ff2323"],
+    [0.6,    "#ff5656"],
+    [0.7,    "#ff7b7b"],
+    [0.8,    '#b3c7ff'],
+    [0.85,    '#789cff'],
+    [0.9,    '#4275ff'],
+    [0.95,    '#1957fd']
 ];
 
 let layerList = ["layer_source", "layer_time", "layer_topics", "layer_sent"];
@@ -46,7 +46,7 @@ function init(map){
     // map.scrollZoom.disable();
     map.on('mousemove', function (e) {
         document.getElementById('info').style.display = 'block';
-        document.getElementById('info').innerHTML = "<h4> Analysis of Tweets in Victoria</h4>" +
+        document.getElementById('info').innerHTML = "<h4>Analysis of Tweets in Victoria</h4>" +
             "<h5>Statistical Area Level 2</h5>";
         // console.log(e)
     });
