@@ -15,7 +15,7 @@
     <!--  Font Awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Customised CSS-->
-    <link href='index_css/index_style.css' rel='stylesheet' />
+    <link href='index_stylesheet.css' rel='stylesheet' />
     <!-- Import the Google Font Stylesheet -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -26,6 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script>
         $(document).ready(function() {
+            let offsetValue = 50;
             // Add smooth scrolling to all links
             $("#btn_index").on('click', function(event) {
                 $("html, body").animate({
@@ -34,12 +35,17 @@
             });
             $("#btn_music").on('click', function(event) {
                 $("html, body").animate({
-                    scrollTop: $("#content-music").offset().top - 20
+                    scrollTop: $("#content-music").offset().top - offsetValue
+                }, 300);
+            });
+            $("#btn_design").on('click', function(event) {
+                $("html, body").animate({
+                    scrollTop: $("#content-design").offset().top - offsetValue
                 }, 300);
             });
             $("#btn_project").on('click', function(event) {
                 $("html, body").animate({
-                    scrollTop: $("#content-project").offset().top - 20
+                    scrollTop: $("#content-project").offset().top - offsetValue
                 }, 300);
             });
         });
@@ -58,7 +64,8 @@
             margin: 30px;
         }
         
-        #content-inner article {
+        article {
+            max-width: 400px;
             display: inline-block;
             clear: left;
             align-items: center;
@@ -80,16 +87,20 @@
     <!--Top Bar-->
     <div class="header" id="header-nav">
         <div class="head_btn" id="btn_index">
-            <b>主页</b>
-            <div style="font-size: 12px">INDEX</div>
+            <span class="head_btn_cntxt">主页</span>
+            <div class="head_btn_smltxt">INDEX</div>
         </div>
         <div class="head_btn" id="btn_music">
-            <b>音乐</b>
-            <div style="font-size: 12px">MUSIC</div>
+            <span class="head_btn_cntxt">音乐</span>
+            <div class="head_btn_smltxt">MUSIC</div>
+        </div>
+        <div class="head_btn" id="btn_design">
+            <span class="head_btn_cntxt">设计</span>
+            <div class="head_btn_smltxt">DESIGN</div>
         </div>
         <div class="head_btn" id="btn_project">
-            <b>项目</b>
-            <div style="font-size: 12px">PROJECT</div>
+            <span class="head_btn_cntxt">项目</span>
+            <div class="head_btn_smltxt">PROJECT</div>
         </div>
         <div title="Email" class="head_btn_links">
             <a class="head_link" href="mailto:claudechinsta@gmail.com">
@@ -130,7 +141,7 @@
                 <br>
                 <br>From Chongqing, China, Now studying at Melbourne, Australia
                 <br>Master of Information Technology | <wbr>University of Melbourne
-                <br><b>E-mail:</b> claudechinsta@gmail.com |<wbr>boyac@student.unimelb.edu.au
+                <br><b>E-mail:</b> claudechinsta@gmail.com | <wbr>boyac@student.unimelb.edu.au
                 <br><a href="http://sites.google.com/view/claudechen">More about me</a>
                 <br><br>
             </p>
@@ -167,6 +178,21 @@
         </div>
     </div>
     <hr/>
+    <div class="content" id="content-design">
+        <div class="content-inner">
+            <h1>Design</h1>
+            <h4>设计</h4>
+            <article>
+                <p>
+                I love design! Since I started produced music in 2012, I've designed few album covers for my own music. I also had experience in Web UI design. I'm obsessed with the combination of art and technology.
+                </p>
+            </article>
+            <div class="design_profile">
+                <img src="imgs/albums_multiple.png" width="80%" alt="">
+            </div>
+        </div>
+    </div>
+    <hr>
     <div class="content" id="content-project">
         <div class="content-inner">
             <h1>IT Projects</h1>
