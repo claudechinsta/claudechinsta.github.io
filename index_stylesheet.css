@@ -103,7 +103,7 @@ h1 {
 }
 
 .my_btn {
-    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+    font-family: "Quicksand", Helvetica, Arial, sans-serif;
     color: #436ea5;
     font-size: 15px;
     padding-top: 5px;
@@ -130,7 +130,7 @@ h1 {
     }
 }
 
-/* ----------------------- Content - Design ------------------------- */
+/* ----------------------- Section - Design ------------------------- */
 
 .design_profile{
     margin-left: auto;
@@ -140,6 +140,8 @@ h1 {
 
 /* ------------------------------------------------ */
 
+
+/* ----------------------- Section - Project  ------------------------- */
 
 /* Logo Animation */
 
@@ -152,23 +154,27 @@ h1 {
 /* Css Stylesheets for Project Page*/
 
 .thumbnail_proj {
-    box-shadow: 0 0 1px #404040;
-    transition: all 0.2s ease;
-    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    border-radius: 100px;
+    border: 5px solid #f2f2f2;
     margin: 10px;
 }
 
 .thumbnail_proj:hover {
-    transform: scale(1.04);
-    filter: brightness(105%);
-    box-shadow: 0 5px 20px #636363;
+    transform: scale(1.01);
+    filter: brightness(102%);
+    box-shadow: 5px 5px 10px #a8a8a8;
     cursor: pointer;
+}
+.thumbnail_proj:active {
+    transform: scale(0.99);
+    filter: brightness(99%);
 }
 
 .thumbnail_proj_label {
     margin-top: 5px;
-    font-size: 12px;
-    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-family: "Quicksand", Helvetica, Arial, sans-serif;
 }
 
 

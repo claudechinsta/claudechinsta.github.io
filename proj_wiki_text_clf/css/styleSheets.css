@@ -8,7 +8,7 @@
 #popupSent {
     margin: 0 auto;
     margin-bottom: 20px;
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-family: "Quicksand", Helvetica, Arial, sans-serif;
     font-size: 15px;
     text-align: justify;
     width: 200px;
@@ -25,7 +25,7 @@
     padding-top: 2px;
     padding-bottom: 2px;
     border-radius: 2px;
-    font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+    font-family: "Quicksand", Helvetica, Arial, sans-serif;
     font-size: small;
     color: #215482;
     transition: all 0.1s linear;
@@ -36,6 +36,7 @@
 }
 .wikibtn:active {
     background: #d4d4d4;
+    transform: scale(0.99);
 }
 
 .mapboxgl-popup {
@@ -43,7 +44,7 @@
 }
 .mapboxgl-popup-content {
     min-width: 300px;
-    font-family: 'Pt Sans', Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
     font-size: 13px;
     text-align: center;
     color: black;
@@ -77,7 +78,7 @@
 }
 
 #info {
-    font-family: 'Fjalla One', Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
     transition: all 0.5s ease;
     position: absolute;
     left: 10px;
@@ -104,7 +105,7 @@
     transition: opacity 0.1s ease-in-out;
     border-radius: 5px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    font: 11px 'Roboto', Arial, Helvetica, sans-serif;
+    font: 11px 'Quicksand', Arial, Helvetica, sans-serif;
     padding: 14px;
     position: absolute;
     left: 10px;
@@ -128,7 +129,7 @@
 #helpPanel {
     overflow-y: scroll;
     display: none;
-    font: 13px 'Fjalla One', Arial, Helvetica, sans-serif;
+    font: 13px 'Quicksand', Arial, Helvetica, sans-serif;
     text-align: center;
     width: 350px;
     height: 450px;
@@ -142,13 +143,13 @@
     top: 54px;
 }
 #instruction_content{
-    font-family: "pt sans", Helvetica, Arial, sans-serif;
+    font-family: "Quicksand", Helvetica, Arial, sans-serif;
     font-size: 14px;
     padding: 0 20px;
     text-align: justify;
 }
 #searchBar{
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
     position: absolute;
     z-index: 9999;
     top: -50px;
@@ -157,5 +158,5 @@
     height: 20px;
 }
 .input-group button{
-    font-family: 'Fjalla One', Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
 }

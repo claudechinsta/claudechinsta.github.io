@@ -3,7 +3,7 @@
 
 <head>
     <meta charset = "UTF-8">
-    <title>LGA - Tweets Knowledge Base - Analysis of Tweets activity in Victoria</title>
+    <title>SA2 - Tweets Knowledge Base - Analysis of Tweets activity in Victoria</title>
 </head>
 
 <!--<script src="js/jquery.min.js"></script>-->
@@ -11,15 +11,11 @@
 <script src="js/jquery-migrate-3.0.0.js"></script>
 
 <link href="css/bootstrap.css" rel="stylesheet"/>
-<link href="css/menu_btn_popup.css" rel="stylesheet">
+<link href="css/main-stylesheets.css" rel="stylesheet">
 
 <!-- Import the Google Font Stylesheet -->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 <!-- Mapbox GL JS -->
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
@@ -32,7 +28,7 @@
 
 <!-- CouchDB, nano.js -->
 <script src="js/bootstrap.min.js"></script>
-<script src="js/mapboxControl_2.js"></script>
+<script src="js/mapboxControl.js"></script>
 
 <style type="text/css">
     #wrapper {
@@ -50,6 +46,14 @@
         border-radius: 50%;
         cursor: pointer;
         padding: 0;
+    }
+    .loading--panel{
+        background: white;
+        font-family: "Quicksand";
+        position: absolute;
+        padding: 10px 40px;
+        top: 80px;
+        left: 80px;
     }
 </style>
 
@@ -72,7 +76,7 @@
             minZoom: 6,
             style: 'mapbox://styles/mapbox/bright-v9',
         });
-        window.onload = init(map);
+//        window.onload = init(map);
     </script>
 </div>
 
@@ -80,10 +84,10 @@
 <div id="menu-box">
     <div id="menuSubBtn">
         <div style="height: 20px"></div>
-        <button id="menuback" class="btn btn-default" onclick="location='../index_proj.html">INDEX</button>
+        <button id="menuback" class="btn btn-default" onclick="location='../'">HOME</button>
         <h5>Area</h5>
-        <button id="menuTopic1" class="btn btn-default" onclick="location='./index.html'">SA2</button>
-        <button id="menuTopic2" class="btn btn-default" onclick="location='./index_2.html'">LGA</button>
+        <button id="menuTopic1" class="btn btn-default" onclick="location='#'">SA2</button>
+        <button id="menuTopic2" class="btn btn-default" onclick="location='./aca_lga.html'">LGA</button>
         <h5>Switch Layers</h5>
         <button id="menuSwitchLayer1" class="btn btn-default" onclick="toggleBound(0)">Source</button>
         <button id="menuSwitchLayer2" class="btn btn-default" onclick="toggleBound(1)">Time</button>
@@ -99,7 +103,7 @@
 <div id='legend' class='legend'>
     <h4>Major Source</h4>
     <div><span style='background-color: #559fff'></span>Instagram</div>
-    <div><span style='background-color: #ffe600'></span>Android&iPhone</div>
+    <div><span style='background-color: #ffe600'></span>Android&Iphone</div>
 </div>
 <pre id='info'></pre>
 

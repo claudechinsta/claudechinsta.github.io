@@ -7,16 +7,16 @@
 /* Menu button*/
 /* You can customize to your needs  */
 .mapboxgl-popup-content {
-    font: 11px 'Roboto', Arial, Helvetica, sans-serif;
+    font: 11px 'Quicksand', Arial, Helvetica, sans-serif;
     z-index: 2;
     color: black;
 }
 .mapboxgl-popup-content h4,h5 {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-family: "Quicksand", Helvetica, Arial, sans-serif;
 }
 
 #menu-box {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     text-align: center;
     padding: 0 20px;
     border: solid 1px #f5f5f5;
@@ -43,7 +43,7 @@
 
 .legend {
     font-size: 12px;
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-family: "Quicksand", Helvetica, Arial, sans-serif;
     background-color: #fff;
     opacity: 0.8;
     transition: opacity 0.1s ease-in-out;
@@ -79,7 +79,7 @@
 }
 
 #info {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 11px;
     display: none;
     position: absolute;

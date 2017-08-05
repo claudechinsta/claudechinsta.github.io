@@ -48,6 +48,43 @@
                     scrollTop: $("#content-project").offset().top - offsetValue
                 }, 300);
             });
+
+            var projects = [{
+                    "projName": "Australian City Analytics",
+                    "projNameCN": "澳大利亚推特大数据平台",
+                    "projYear": 2017,
+                    "imgSrc": "imgs/proj_1*2.png",
+                    "projSrc": "./proj_australian_city_analysis/aca_sa2.html"
+                },
+                {
+                    "projName": "Wikipedia Text Classifier",
+                    "projNameCN": "基于Wikipedia的文本分类及数据可视化",
+                    "projYear": 2017,
+                    "imgSrc": "imgs/proj_2*2.png",
+                    "projSrc": "./proj_wiki_text_clf"
+                },
+                {
+                    "projName": "Quicker - Currency Exchange Rates",
+                    "projNameCN": "Quicker - 汇率快查Chrome扩展应用",
+                    "projYear": 2017,
+                    "imgSrc": "imgs/quicker.jpg",
+                    "projSrc": "https://chrome.google.com/webstore/detail/ogmmijheaeigiheggkpjnnkfkkheiefh"
+                }
+            ];
+            var desc = "Below is the project showcase with link to demo websites."
+
+            $("#proj-container").html("<h1>IT Projects</h1><h4>IT 项目</h4><article><p>" + desc + "</p></article>");
+            projects.forEach(projItem => {
+                htmlContent =
+                    '<div class="content-inner-proj">' +
+                    '<a href="' + projItem.projSrc + '" target="_blank"><img class="thumbnail_proj" src="' +
+                    projItem.imgSrc + '" alt="City" width="200"></a>' +
+                    '<div class="thumbnail_proj_label"><b>' + projItem.projName + '</b></div>' +
+                    '<div class="thumbnail_proj_label">' + projItem.projNameCN + '</div>' +
+                    '<div class="thumbnail_proj_label">' + projItem.projYear + '</div>' + '</div>';
+                $("#proj-container").append(htmlContent);
+
+            })
         });
 
     </script>
@@ -65,16 +102,15 @@
         
         .content-inner-proj {
             display: inline-block;
-            margin: 30px;
+            margin: 20px 30px;
         }
         
         article {
-            max-width: 400px;
-            display: inline-block;
-            clear: left;
-            align-items: center;
+            max-width: 500px;
+            padding: 0 20px;
+            display: block;
             text-align: center;
-            margin: 30px;
+            margin: 30px auto;
         }
         
         .footer {
@@ -165,29 +201,19 @@
     </div>
     <hr>
     <div class="content" id="content-project">
-        <div class="content-inner">
-            <h1>IT Projects</h1>
-            <h4>IT 项目</h4>
-            <div class="content-inner-proj">
-                <a href="./proj_australian_city_analysis" target="_blank"><img class="thumbnail_proj" src="imgs/proj_1*2.png" alt="City" width="200"></a>
-                <div class="thumbnail_proj_label">Australian City Analytics</div>
-                <div class="thumbnail_proj_label">澳大利亚城市数据分析</div>
-                <div class="thumbnail_proj_label">2017</div>
-            </div>
-            <div class="content-inner-proj">
-                <a href="./proj_wiki_text_clf/" target="_blank"><img class="thumbnail_proj" src="imgs/proj_2*2.png" alt="Wiki" width="200"></a>
-                <div class="thumbnail_proj_label">Wikipedia Text Classifier</div>
-                <div class="thumbnail_proj_label">基于Wikipedia的文本分类</div>
-                <div class="thumbnail_proj_label">2017</div>
-            </div>
-        </div>
+        <div class="content-inner" id="proj-container"></div>
     </div>
     <hr>
     <div class="content" id="content-music">
         <div class="content-inner">
             <h1>Music Productions</h1>
             <h4>音乐作品</h4>
-            <div style="height: 10px;"></div>
+            <article>
+                <p>
+                    I produced hip-hop music from 2012, and released couple of albums and EP since then. I love Jazz, hiphop and Ambient music and be heavily influenced by Nujabes and a lot of indie musicians. I love produce music and spread them to the world!
+                    <br><br> You can listen to my stuffs at below sites:
+                </p>
+            </article>
             <div class="my_btn" onclick="location.href='https://play.spotify.com/artist/5xuhSWFgY8VIzptSR69QTf?play=true&utm_source=open.spotify.com&utm_medium=open'">Spotify</div>
             <!--<div class = "btn_back" onclick="location.href='http://music.163.com/#/artist?id=818622'">Netease Music</div>-->
             <div class="my_btn" onclick="location.href='http://music.163.com/#/artist?id=818622'">Netease Music</div>

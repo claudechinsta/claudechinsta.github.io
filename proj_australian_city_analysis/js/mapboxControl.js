@@ -46,7 +46,8 @@ function init(map){
     // map.scrollZoom.disable();
     map.on('mousemove', function (e) {
         document.getElementById('info').style.display = 'block';
-        document.getElementById('info').innerHTML = "<h4>Analysis of Tweets in Victoria</h4>" +
+        document.getElementById('info').innerHTML = 
+            "<h3>Analysis of Tweets in Victoria</h3>" +
             "<h5>Statistical Area Level 2</h5>";
         // console.log(e)
     });
@@ -74,14 +75,15 @@ function init(map){
         let boundUrl = boundList[boundType]['url'];
         let boundIndex = boundList[boundType]['index'];
         let boundName = boundList[boundType]['name'];
+        
+        $("#info").html("Loading");
 
+        // 1 | Loading CouchDB View Data
+        // 2 | Loading AURIN data
+        // 3 | Loading Bound data
         $.getJSON(viewUrl, function (view) {
             $.getJSON(aurinUrl, function (aurin_sa2) {
                 $.getJSON(boundUrl, function (bound_features) {
-
-                    // console.log(view_sent);
-                    // console.log(view);
-                    // console.log(bound_features);
 
                     // 1 - READ AND REFORMAT VIEW DATA
                     let viewObj = {};
@@ -90,13 +92,11 @@ function init(map){
                         viewObj[row.key] = row.value;
                     });
 
-
                     // 2 - LOAD AURIN DATA
                     let aurinSa2Obj = {};
                     aurin_sa2.rows.forEach(function (row) {
                         aurinSa2Obj[row.doc.sa_code] = row.doc;
                     });
-                    // console.log(aurinSa2Obj);
 
                     // Insert data from Other sources into the Boundaries Geojson
                     bound_features.forEach(function (feat) {
