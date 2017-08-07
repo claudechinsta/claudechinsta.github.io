@@ -5,7 +5,7 @@
 }
 
 h1 {
-    font-family: "Lobster"
+    font-family: "Quicksand"
 }
 
 .content {
@@ -205,7 +205,7 @@ h1 {
     }
     #img_logo {
         position: relative;
-        width: 50%;
+        width: 350px;
     }
 }
 
