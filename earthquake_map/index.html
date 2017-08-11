@@ -1,0 +1,171 @@
+<html>
+<title>Earthquake Now</title>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Quicksand";
+            background: #2a2a2a;
+        }
+        
+        .head {
+            padding: 5px 0 20px 0;
+            color: #ededed;
+            text-align: center
+        }
+        
+        .head h {
+            font-size: 12px;
+        }
+        
+        .map_wrapper {
+            height: 400px;
+        }
+        
+        #map {
+            margin: 0 auto;
+            width: 80%;
+            height: 100%;
+/*            box-shadow: 0 0 10px rgb(18, 18, 18);*/
+        }
+        
+        .mapboxgl-popup-content {
+            text-align: center;
+            padding: 10px;
+            font-family: "Quicksand";
+        }
+        
+        .mapboxgl-popup-content h {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .mapboxgl-popup-content b{
+            font-size: 13px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="head">
+        <h1>Earthquake of the world</h1>
+        <h>Developed by Claude Chen</h>
+    </div>
+    <div class="map_wrapper">
+        <div id="map"></div>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoiY2hpbnN0YSIsImEiOiJjaW15ZnFyN3cwNDN5dm9sdWJ2am5xNmdlIn0.vG5mqJyfSX3JBSQ3UQ6ORw';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/light-v9',
+                pitch: 25,
+                zoom: 1,
+                minZoom: 1,
+                center: [109.6754523, 19.019904]
+            });
+
+            $(document).ready(function() {
+                
+                $(".mapboxgl-ctrl-bottom-right").css("display", "none");
+                
+//                var yesterday = new Date()
+//                var queryDate = yesterday.getFullYear() + "-" + yesterday.getMonth() +"-"+ yesterday.getDay()
+                queryDate = "2017-08-08"
+                
+                var url = "https://earthquake.usgs.gov/fdsnws/event/1/"
+                var method = "";
+                var para = "query?format=geojson&starttime="+queryDate+"&minmagnitude=4";
+                url = url + para;
+
+                console.log(url);
+
+                $.get(url, function(earthquakeData) {
+                    
+                    var radiusRate = 1.5;
+                    
+                    earthquakeData.features.forEach(feat => {
+                        feat.properties['displayRadius'] = radiusRate * feat.properties.mag;
+                    })
+
+                    /*
+                    alert:null
+                    cdi:null
+                    code:"2000a69d"
+                    detail:"https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us2000a69d&format=geojson"
+                    dmin:3.255
+                    felt:null
+                    gap:74
+                    ids:",us2000a69d,"
+                    mag:5
+                    magType:"mb"
+                    mmi:null
+                    net:"us"
+                    nst:null
+                    place:"119km ESE of Pangai, Tonga"
+                    rms:1.27
+                    sig:385
+                    sources:",us,"
+                    status:"reviewed"
+                    time:1502261875520
+                    title:"M 5.0 - 119km ESE of Pangai, Tonga"
+                    tsunami:0
+                    type:"earthquake"
+                    types:",geoserve,origin,phase-data,"
+                    tz:-720
+                    updated:1502262985040
+                    url:"https://earthquake.usgs.gov/earthquakes/eventpage/us2000a69d"
+                    */
+                    
+                    
+                    console.log(earthquakeData)
+                    map.on('load', function() {
+                        map.addLayer({
+                            "id": "earthquake",
+                            "type": "circle",
+                            "source": {
+                                "type": "geojson",
+                                "data": earthquakeData
+                            },
+                            'paint': {
+                                // make circles larger as the user zooms from z12 to z22
+                                'circle-radius': {
+                                    property: "displayRadius",
+                                    type: 'identity'
+                                },
+                                // color circles by ethnicity, using data-driven styles
+                                'circle-color': "rgba(227, 55, 101, 0.69)"
+                            }
+                        });
+                    });
+                    var popup = new mapboxgl.Popup({
+                        closeButton: false,
+                        closeOnClick: false
+                    });
+                    map.on('mouseenter', 'earthquake', function(e) {
+                        var d = new Date(parseInt(e.features[0].properties.time));
+                        map.getCanvas().style.cursor = 'pointer';
+                        popup.setLngLat(e.features[0].geometry.coordinates)
+                            .setHTML("<p><b>Time</b><br>" + d.toLocaleString() + "</p>" +
+                                "<p><b>Place</b><br>" + e.features[0].properties.place + "</p>" +
+                                "<p><b>Magnitude</b><br>" + e.features[0].properties.mag + "</p>")
+                            .addTo(map);
+                    });
+                    map.on('mouseleave', 'earthquake', function() {
+                        map.getCanvas().style.cursor = '';
+                        popup.remove();
+                    });
+                });
+            })
+
+        </script>
+    </div>
+</body>
+
+</html>
