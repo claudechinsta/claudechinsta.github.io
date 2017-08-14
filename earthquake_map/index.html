@@ -6,16 +6,17 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <style>
         body {
-            font-family: "Quicksand";
+            font-family: "Roboto";
             background: #2a2a2a;
         }
         
         .head {
             padding: 5px 0 20px 0;
-            color: #ededed;
+            color: #b9b9b9;
             text-align: center
         }
         
@@ -31,7 +32,7 @@
             margin: 0 auto;
             width: 80%;
             height: 100%;
-/*            box-shadow: 0 0 10px rgb(18, 18, 18);*/
+            /*            box-shadow: 0 0 10px rgb(18, 18, 18);*/
         }
         
         .mapboxgl-popup-content {
@@ -45,17 +46,18 @@
             padding: 0;
         }
         
-        .mapboxgl-popup-content b{
+        .mapboxgl-popup-content b {
             font-size: 13px;
         }
 
     </style>
-
 </head>
+
+
 
 <body>
     <div class="head">
-        <h1>Earthquake of the world</h1>
+        <h1>5 Days Earthquake</h1>
         <h>Developed by Claude Chen</h>
     </div>
     <div class="map_wrapper">
@@ -72,24 +74,28 @@
             });
 
             $(document).ready(function() {
-                
+
                 $(".mapboxgl-ctrl-bottom-right").css("display", "none");
-                
-//                var yesterday = new Date()
-//                var queryDate = yesterday.getFullYear() + "-" + yesterday.getMonth() +"-"+ yesterday.getDay()
-                queryDate = "2017-08-08"
-                
+
+                var d = new Date();
+                d.setDate(d.getDate() - 8);
+                let day = d.toLocaleDateString().substr(0,2);
+                let mon = d.toLocaleDateString().substr(3,2);
+                let yea = d.toLocaleDateString().substr(6,4);
+                                
+                queryDate = yea+"-"+mon+"-"+day
+
                 var url = "https://earthquake.usgs.gov/fdsnws/event/1/"
                 var method = "";
-                var para = "query?format=geojson&starttime="+queryDate+"&minmagnitude=4";
+                var para = "query?format=geojson&starttime=" + queryDate + "&minmagnitude=4";
                 url = url + para;
 
                 console.log(url);
 
                 $.get(url, function(earthquakeData) {
-                    
-                    var radiusRate = 1.5;
-                    
+
+                    var radiusRate = 2;
+
                     earthquakeData.features.forEach(feat => {
                         feat.properties['displayRadius'] = radiusRate * feat.properties.mag;
                     })
@@ -122,8 +128,8 @@
                     updated:1502262985040
                     url:"https://earthquake.usgs.gov/earthquakes/eventpage/us2000a69d"
                     */
-                    
-                    
+
+
                     console.log(earthquakeData)
                     map.on('load', function() {
                         map.addLayer({
