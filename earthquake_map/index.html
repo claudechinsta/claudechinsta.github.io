@@ -25,7 +25,7 @@
         }
         
         .map_wrapper {
-            height: 400px;
+            height: 80%;
         }
         
         #map {
@@ -72,6 +72,10 @@
                 minZoom: 1,
                 center: [109.6754523, 19.019904]
             });
+            
+            var colorStops = [
+                
+            ]
 
             $(document).ready(function() {
 
@@ -98,6 +102,7 @@
 
                     earthquakeData.features.forEach(feat => {
                         feat.properties['displayRadius'] = radiusRate * feat.properties.mag;
+                        feat.properties['magScale'] = feat.properties.mag * 10;
                     })
 
                     /*
@@ -128,8 +133,7 @@
                     updated:1502262985040
                     url:"https://earthquake.usgs.gov/earthquakes/eventpage/us2000a69d"
                     */
-
-
+                    
                     console.log(earthquakeData)
                     map.on('load', function() {
                         map.addLayer({
@@ -146,7 +150,20 @@
                                     type: 'identity'
                                 },
                                 // color circles by ethnicity, using data-driven styles
-                                'circle-color': "rgba(227, 55, 101, 0.69)"
+                                'circle-color': {
+                                    property: "magScale",
+                                    type: 'interval',
+                                    stops: [
+                                        [40, "rgba(230, 214, 218, 0.8)"],
+                                        [42, "rgba(217, 141, 161, 0.8)"],
+                                        [45, "rgba(219, 85, 122, 0.8)"],
+                                        [48, "rgba(219, 53, 99, 0.8)"],
+                                        [50, "rgba(255, 0, 70, 0.8)"]
+                                    ]
+                                    
+                                }
+                                
+                                
                             }
                         });
                     });
