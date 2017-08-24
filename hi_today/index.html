@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <title>Hi today!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- External Resource -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!--  Viewcontroller  -->
+
+
+    <!--  ChartJS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            background: #ddf1ff;
+        }
+        
+        .panelWrapper {
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr 1fr;
+            grid-template-areas: "title title" "panel1 panel2" "panel3 panel4";
+        }
+        
+        .panelWrapperInner {
+            padding: 30px;
+        }
+        
+        .title {
+            grid-area: title;
+        }
+        
+        .title h1 {
+            font-size: 40px;
+            margin: 0;
+            padding: 10px;
+            padding-left: 30px;
+            font-family: "Roboto";
+        }
+        
+        .panel {
+            min-width: 400px;
+            margin: 5px;
+            background: #ffffff;
+            border: solid 1px #ddd;
+        }
+        
+        #panel1 {
+            grid-area: panel1;
+            /*            padding: 20px;*/
+        }
+        
+        #chart1 {
+            position: relative;
+            height: auto;
+            width: auto
+        }
+        
+        #panel2 {
+            grid-area: panel2 padding: 20px;
+        }
+        
+        #panel3 {
+            grid-area: panel3 padding: 20px;
+        }
+        
+        #panel4 {
+            grid-area: panel4 padding: 20px;
+        }
+        
+        @media screen and (max-width: 480px) {
+            .panel {
+                min-width: none;
+            }
+            .panelWrapper {
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: auto 200px 200px 200px 200px;
+                grid-template-areas: "title" "panel1" "panel2" "panel3" "panel4";
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="panelWrapper">
+        <div class="title">
+            <h1>Hi today!</h1>
+        </div>
+        <div class="panel" id="panel1">
+            <div class="canvasWrapper">
+                <!--                <canvas id="chart1"></canvas>-->
+                <h1>hello</h1>
+            </div>
+            <script src="./viewController.js"></script>
+        </div>
+        <div class="panel" id="panel2"></div>
+        <div class="panel" id="panel3"></div>
+        <div class="panel" id="panel4"></div>
+    </div>
+</body>
+
+</html>

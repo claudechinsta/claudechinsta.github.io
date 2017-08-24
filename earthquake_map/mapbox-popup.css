@@ -1,0 +1,44 @@
+.map-popup {
+    width: 200px;
+    padding: 10px;
+}
+
+.upperSpace {
+    display: block;
+}
+
+.mag-part {
+    float: left;
+    width: 50%;
+}
+
+.bigFont {
+    margin-top: 20px;
+    font-size: 60px;
+}
+
+.largeFont{
+    font-size: 18px;
+    margin: 5px 0 10px 0;
+}
+
+.midFont {
+    /*    margin-top: 22px;*/
+    font-size: 13px;
+}
+
+.date-part {
+    float: right;
+    width: 50%;
+}
+
+.subTitle {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.location-part {
+    margin-top: 100px;
+    text-align: left;
+    display: block;
+}

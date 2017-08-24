@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "http-server": "watch-http-server -a 0.0.0.0 -p 8080"
-      
+    "http-server": "watch-http-server -a 0.0.0.0 -p 8080 -d" 
   },
   "repository": {
     "type": "git",
