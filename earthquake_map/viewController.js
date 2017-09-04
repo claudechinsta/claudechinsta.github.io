@@ -80,7 +80,7 @@ $(document).ready(function () {
     // some initialization actions.
     buttonsFuncionalize();
     $(".mapboxgl-ctrl-bottom-right").css("display", "none");
-
+    
     var d = new Date();
     d.setDate(d.getDate() - 50);
     let day = d.toLocaleDateString().substr(0, 2);
@@ -195,13 +195,6 @@ $(document).ready(function () {
                 popup.setLngLat(e.features[0].geometry.coordinates)
                     .setHTML(shownHTML)
                     .addTo(map);
-
-
-
-
-
-
-
         });
         // Events when cursor leaves the markers
         map.on('mouseleave', 'earthquake', function () {

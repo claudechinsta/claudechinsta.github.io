@@ -22,7 +22,7 @@
         .wrapper {
             display: grid;
             height: 100%;
-            grid-template-areas: "sidebar map_wrapper";
+            grid-template-areas: "sidebar panel_wrapper";
             grid-template-columns: 200px auto;
         }
         
@@ -88,8 +88,8 @@
             vertical-align: 3px;
         }
         
-        .map_wrapper {
-            grid-area: map_wrapper;
+        .panel_wrapper {
+            grid-area: panel_wrapper;
         }
         
         #map {
@@ -133,7 +133,7 @@
             <div class="sideBtn"><img src="./images/dashboard.svg" width="20" /><span>Dashboard</span></div>
             <div class="sideBtn"><img src="./images/translation.svg" width="20" /><span>About</span></div>
         </div>
-        <div class="map_wrapper">
+        <div class="panel_wrapper">
             <div id="map"></div>
             <script src="./viewController.js"></script>
         </div>

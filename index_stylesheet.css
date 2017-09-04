@@ -118,15 +118,16 @@ h1 {
 }
 
 .my_btn:hover {
-    color: #3966a0;
+    color: #0e2846;
     cursor: pointer;
-    background: #f4f4f4;
+    transition: all 0.3s ease-in-out;
+/*    background: #f4f4f4;*/
     animation: my_btn_move 0.2s ease;
 }
 
 @keyframes my_btn_move{
     50%{
-        transform: scale(1.02, 1.02)
+        transform: scale(1.1, 1.1)
     }
 }
 
