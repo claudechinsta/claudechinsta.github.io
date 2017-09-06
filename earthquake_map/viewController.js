@@ -168,17 +168,6 @@ function getEarthquakeData(dateInterval) {
         });
     });
     
-    
-    
-    // $.get(url, function(earthquakeData){
-    
-    // var radiusRate = 1.5;
-    
-    // earthquakeData.features.forEach(feat => {
-    //     feat.properties['displayRadius'] = radiusRate * feat.properties.mag;
-    //     feat.properties['magScale'] = feat.properties.mag * 10;
-    // })
-    
     /*
     alert:null
     cdi:null
@@ -208,13 +197,6 @@ function getEarthquakeData(dateInterval) {
     url:"https://earthquake.usgs.gov/earthquakes/eventpage/us2000a69d"
     */
     
-    // if (map.getLayer("earthquake") != undefined){
-    //     map.removeLayer("earthquake")
-    // }
-    
-    
-    // })
-    
 }
 
 // ---------------------------------------- Ready -------------------------------------------
@@ -239,7 +221,12 @@ $(document).ready(function () {
                 window.alert("Please input days between 0 to 100");
             }
         }
-        
+        $("#dateDisplaying").css("opacity","0");
+    })
+
+    $("#dateInput").on("input", function(){
+        $("#dateDisplaying").css("opacity","1");
+        $("#dateDisplaying").html("Last "+this.value+" days")
     })
     
     // Other maps setup
