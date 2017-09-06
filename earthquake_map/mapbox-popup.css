@@ -42,3 +42,25 @@
     text-align: left;
     display: block;
 }
+.footerStatus {
+    font-size: 12px;
+    position: absolute;
+    z-index: 999;
+    padding: 20px;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(153, 153, 153, 0.9);
+    font-family: "roboto";
+    border-radius: 5px;
+}
+.footerStatus h1{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+#dateInput{
+    background: none;
+    border: none;
+    font-size: 30px;
+    width: 50px;
+}
