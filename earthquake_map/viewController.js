@@ -96,7 +96,10 @@ function getEarthquakeData(dateInterval) {
                             [5.0,   10],
                             [5.5,   13],
                             [6,     14],
-                            [6.5,   16]
+                            [6.5,   16],
+                            [7,   20],
+                            [8,   25]
+                        
                         ]
                     },
                     // color circles by ethnicity, using data-driven styles
@@ -174,6 +177,7 @@ $(document).ready(function () {
     $("#dateInput")[0].value = dateInterval;
     
     // Change Date Interval
+    // Refresh data after selected days interval
     $("#dateInput").on("change", function(){
         var newDateInterval = parseInt(this.value);
         if (newDateInterval!=NaN){
