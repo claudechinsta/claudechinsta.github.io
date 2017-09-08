@@ -1,3 +1,101 @@
+body {
+    font-family: "Quicksand";
+    margin: 0;
+    padding: 0;
+    background: #ebebeb;
+}
+
+.wrapper {
+    display: grid;
+    height: 100%;
+    grid-template-areas: "sidebar panel_wrapper";
+    grid-template-columns: 200px auto;
+}
+
+.overlayHeader {
+    height: 60px;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 9999;
+    background: #3c3c3c;
+    text-align: center;
+}
+
+.navItem {
+    height: 100%;
+    float: left;
+    vertical-align: middle;
+    color: white;
+    justify-content: center;
+}
+
+.navbar h {
+    font-size: 12px;
+}
+/*   ----------------------------     */
+
+.sidebar {
+    grid-area: sidebar;
+    background: #3e3e3e;
+}
+
+.sideLogo {
+    font-family: "Indie Flower";
+    margin: 30px 15px 60px 30px;
+    font-size: 25px;
+    color: white;
+}
+
+.sideBtn {
+    color: white;
+    margin: 5px 0px 5px 10px;
+    padding: 12px 15px;
+    background: #3e3e3e;
+    border-radius: 3px 0 0 3px;
+    transition: all 0.1s ease;
+}
+
+.sideBtn:hover {
+    background: #4d4d4d;
+    cursor: pointer;
+}
+
+.sideBtn:active {
+    transform: scale(.99, .99);
+    background: #363636;
+}
+
+.sideBtn span {
+    margin-left: 10px;
+    vertical-align: 3px;
+}
+
+.panel_wrapper {
+    grid-area: panel_wrapper;
+}
+
+#map {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    /*            box-shadow: 0 0 10px rgb(18, 18, 18);*/
+}
+/*   --------------     */
+
+
+/* mapbox css customisation */
+
+.mapboxgl-popup-content {
+    font-family: "Quicksand";
+}
+
+/* -------------------------------------- */
+
 .map-popup {
     width: 200px;
     padding: 10px;

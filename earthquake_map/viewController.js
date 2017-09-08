@@ -36,7 +36,7 @@ var url = getRealtimeUrl(dateInterval);
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v9',
+    style: 'mapbox://styles/mapbox/bright-v9',
     zoom: 1,
     minZoom: 1,
     center: [109.6754523, 19.019904]
@@ -61,8 +61,9 @@ function getRealtimeUrl(dataInterval){
     let mon = d.toLocaleDateString().substr(3, 2);
     let yea = d.toLocaleDateString().substr(6, 4);
     queryDate = yea + "-" + mon + "-" + day
-    let url = "https://earthquake.usgs.gov/fdsnws/event/1/"
-    var para = "query?format=geojson&starttime=" + queryDate + "&minmagnitude=4";
+    let url = "https://earthquake.usgs.gov/fdsnws/event/1/";
+    let minMag = "4";
+    var para = "query?format=geojson&starttime=" + queryDate + "&minmagnitude="+minMag;
     url = url + para;
     return url
 }
@@ -90,12 +91,12 @@ function getEarthquakeData(dateInterval) {
                         property: "mag",
                         type: 'exponential',
                         stops: [
-                            [4,     3],
-                            [4.5,   5],
-                            [5.0,   7],
-                            [5.5,   10],
-                            [6,     15],
-                            [6.5,   18]
+                            [4,     6],
+                            [4.5,   8],
+                            [5.0,   10],
+                            [5.5,   13],
+                            [6,     14],
+                            [6.5,   16]
                         ]
                     },
                     // color circles by ethnicity, using data-driven styles
@@ -113,10 +114,6 @@ function getEarthquakeData(dateInterval) {
                         ]
                     }
                 }
-                // "layout": {
-                //     "icon-image": "quake",
-                //     "icon-size": 0.03
-                // }
             });
             
             var popup = new mapboxgl.Popup({
@@ -124,14 +121,13 @@ function getEarthquakeData(dateInterval) {
                 closeOnClick: false
             });
             
+            // Adding Popups
             map.on('mouseenter', 'earthquake', function (e) {
-                var d = new Date(parseInt(e.features[0].properties.time));
                 map.getCanvas().style.cursor = 'pointer';
-                
+                var d = new Date(parseInt(e.features[0].properties.time));
                 var coord = e.features[0].geometry.coordinates
-                var googleAPI = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coord[1] + "," + coord[0] + "&key=AIzaSyDPnyJbnRJFI_XzGB8HtU2pB86dYZQ8ZNI"
-                
-                
+                // var googleAPI = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + 
+                    // coord[1] + "," + coord[0] + "&key=AIzaSyDPnyJbnRJFI_XzGB8HtU2pB86dYZQ8ZNI"
                 
                 var shownHTML = '<div class="map-popup"> \
                 <div class="largeFont">Quick Info</div> \
@@ -152,9 +148,10 @@ function getEarthquakeData(dateInterval) {
                 </div> \
                 </div>';
                 
-                popup.setLngLat(e.features[0].geometry.coordinates)
-                .setHTML(shownHTML)
-                .addTo(map);
+                popup
+                    .setLngLat(e.features[0].geometry.coordinates)
+                    .setHTML(shownHTML)
+                    .addTo(map);
             });
             // Events when cursor leaves the markers
             map.on('mouseleave', 'earthquake', function () {
@@ -162,14 +159,7 @@ function getEarthquakeData(dateInterval) {
                 popup.remove();
             });
         });
-        
-        
     });
-    
-    /*
-    
-    */
-    
 }
 
 // ---------------------------------------- Ready -------------------------------------------
@@ -193,15 +183,15 @@ $(document).ready(function () {
             
         }
         $("#dateDisplaying")
-            .css("opacity","0.1")
-            .css("background","rgba(255, 255, 255, 0)");
+        .css("opacity","0.1")
+        .css("background","rgba(255, 255, 255, 0)");
     })
     
     $("#dateInput").on("input", function(){
         $("#dateDisplaying")
-            .css("opacity","1")
-            .css("background", "rgba(255, 255, 255, 0.9)")
-            .html("Last "+this.value+" days");
+        .css("opacity","1")
+        .css("background", "rgba(255, 255, 255, 0.9)")
+        .html("Last "+this.value+" days");
     })
     
     // Other maps setup
