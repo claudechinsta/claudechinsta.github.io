@@ -36,7 +36,7 @@ var url = getRealtimeUrl(dateInterval);
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/bright-v9',
+    style: 'mapbox://styles/mapbox/light-v9',
     zoom: 1,
     minZoom: 1,
     center: [109.6754523, 19.019904]
@@ -56,11 +56,16 @@ function getRealtimeUrl(dataInterval){
     Get the realtime and request URL    
     */
     var d = new Date();
+    // console.log("now "+d)
     d.setDate(d.getDate() - dataInterval);
-    let day = d.toLocaleDateString().substr(0, 2);
-    let mon = d.toLocaleDateString().substr(3, 2);
-    let yea = d.toLocaleDateString().substr(6, 4);
+    // console.log("before "+d)
+    // console.log("before "+d.getMonth())
+    // console.log("before "+d.getDate())
+    let day = d.getDate();
+    let mon = d.getMonth()+1;
+    let yea = d.getFullYear();
     queryDate = yea + "-" + mon + "-" + day
+    console.log(queryDate)
     let url = "https://earthquake.usgs.gov/fdsnws/event/1/";
     let minMag = "4";
     var para = "query?format=geojson&starttime=" + queryDate + "&minmagnitude="+minMag;
@@ -181,10 +186,8 @@ $(document).ready(function () {
     $("#dateInput").on("change", function(){
         var newDateInterval = parseInt(this.value);
         if (newDateInterval!=NaN){
-            
             url = getRealtimeUrl(newDateInterval)
             map.getSource('earthquake').setData(url);
-            
         }
         $("#dateDisplaying")
         .css("opacity","0.1")
