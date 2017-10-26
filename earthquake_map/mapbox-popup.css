@@ -9,7 +9,7 @@ body {
     display: grid;
     height: 100%;
     grid-template-areas: "sidebar panel_wrapper";
-    grid-template-columns: 200px auto;
+    grid-template-columns: 0px auto;
 }
 
 .overlayHeader {
@@ -39,13 +39,14 @@ body {
 /*   ----------------------------     */
 
 .sidebar {
+    z-index: 100;
     grid-area: sidebar;
     background: #3e3e3e;
 }
 
 .sideLogo {
-    font-family: "Indie Flower";
-    margin: 30px 15px 60px 30px;
+    font-family: "Quicksand";
+    margin: 30px 15px 30px 20px;
     font-size: 25px;
     color: white;
 }
@@ -95,6 +96,18 @@ body {
 }
 
 /* -------------------------------------- */
+/* Seeting Panel */
+.sidePanel{
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    background: #fff;
+    z-index: 2;
+    transform: translateX(200);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* -------------------------------------- */
 
 .map-popup {
     width: 200px;
@@ -140,6 +153,7 @@ body {
     text-align: left;
     display: block;
 }
+
 .footerStatus {
     font-size: 12px;
     position: absolute;
@@ -158,9 +172,9 @@ body {
     position: absolute;
     z-index: 999;
     padding: 20px;
-    top: 50px;
+    top: 10px;
     right: 10px;
-    background: rgba(255, 255, 255, 0);
+    background: #ffffff00;
     opacity: 0.1;
     font-family: "Quicksand";
     border-radius: 5px;
@@ -172,6 +186,7 @@ body {
     padding: 0;
     margin-bottom: 10px;
 }
+
 #dateInput{
     background: none;
     border: none;

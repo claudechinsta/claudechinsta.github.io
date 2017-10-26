@@ -29,45 +29,53 @@ url:"https://earthquake.usgs.gov/earthquakes/eventpage/us2000a69d"
 */
 
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiY2hpbnN0YSIsImEiOiJjaW15ZnFyN3cwNDN5dm9sdWJ2am5xNmdlIn0.vG5mqJyfSX3JBSQ3UQ6ORw';
+let circleRadiusStops = [
+        [1,     3],
+        [2,     4],
+        [3,     5],
+        [4,     6],
+        [4.5,   8],
+        [5.0,   10],
+        [5.5,   13],
+        [6,     14],
+        [6.5,   16],
+        [7,   20],
+        [8,   25]
+];
+var circleColorStops = [
+    [4,'rgba(255, 0, 70, 0.4)'],
+    [4.5,'rgba(240, 0, 70, 0.45)'],
+    [5.0, 'rgba(200, 0, 70, 0.5)'],
+    [5.5, 'rgba(180, 0, 70, 0.55)'],
+    [6, 'rgba(160, 0, 70, 0.6)'],
+    [6.5, 'rgba(140, 0, 70, 0.8)']
+];
 
-var dateInterval = 10;
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2hpbnN0YSIsImEiOiJjaW15ZnFyN3cwNDN5dm9sdWJ2am5xNmdlIn0.vG5mqJyfSX3JBSQ3UQ6ORw';
+var dateInterval = 1;
 var url = getRealtimeUrl(dateInterval);
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v9',
+    style: 'mapbox://styles/mapbox/dark-v9',
     zoom: 1,
     minZoom: 1,
     center: [109.6754523, 19.019904]
 });
 
-var colorMapping = [
-    [40, "rgba(230, 214, 218, 0.8)"],
-    [42, "rgba(217, 141, 161, 0.8)"],
-    [45, "rgba(219, 85, 122, 0.8)"],
-    [48, "rgba(219, 53, 99, 0.8)"],
-    [50, "rgba(255, 0, 70, 0.8)"]
-];
-
-
 function getRealtimeUrl(dataInterval){
     /*
-    Get the realtime and request URL    
+        Get the realtime and request URL    
     */
     var d = new Date();
-    // console.log("now "+d)
     d.setDate(d.getDate() - dataInterval);
-    // console.log("before "+d)
-    // console.log("before "+d.getMonth())
-    // console.log("before "+d.getDate())
     let day = d.getDate();
     let mon = d.getMonth()+1;
     let yea = d.getFullYear();
     queryDate = yea + "-" + mon + "-" + day
     console.log(queryDate)
     let url = "https://earthquake.usgs.gov/fdsnws/event/1/";
-    let minMag = "4";
+    let minMag = "3";
     var para = "query?format=geojson&starttime=" + queryDate + "&minmagnitude="+minMag;
     url = url + para;
     return url
@@ -80,11 +88,7 @@ function getEarthquakeData(dateInterval) {
         map.loadImage('images/earth_icn.png', function(error, icon) {
             if (error) throw error;
             map.addImage('quake', icon);
-            
-            console.log("updated!"+url);
-            
             map.addSource('earthquake', { type: 'geojson', data: url });
-            
             map.addLayer({
                 "id": "earthquake",
                 "type": "circle",
@@ -95,31 +99,14 @@ function getEarthquakeData(dateInterval) {
                     'circle-radius': {
                         property: "mag",
                         type: 'exponential',
-                        stops: [
-                            [4,     6],
-                            [4.5,   8],
-                            [5.0,   10],
-                            [5.5,   13],
-                            [6,     14],
-                            [6.5,   16],
-                            [7,   20],
-                            [8,   25]
-                        
-                        ]
+                        stops: circleRadiusStops
                     },
                     // color circles by ethnicity, using data-driven styles
                     // 'circle-color': 'rgba(255, 0, 70, 0.8)'
                     'circle-color': {
                         property: "mag",
                         type: 'exponential',
-                        stops: [
-                            [4,'rgba(255, 0, 70, 0.4)'],
-                            [4.5,'rgba(240, 0, 70, 0.45)'],
-                            [5.0, 'rgba(200, 0, 70, 0.5)'],
-                            [5.5, 'rgba(180, 0, 70, 0.55)'],
-                            [6, 'rgba(160, 0, 70, 0.6)'],
-                            [6.5, 'rgba(140, 0, 70, 0.8)']
-                        ]
+                        stops: circleColorStops
                     }
                 }
             });
@@ -170,6 +157,15 @@ function getEarthquakeData(dateInterval) {
     });
 }
 
+// function buttonsFuncionalize(){
+//     $("#sideBtnSettings").on("click", function(){
+//         var sLeft = $("#settingPanel").css("transform").replace(/[^-\d\.]/g, '');
+//         var sLeft = parseInt(sLeft) > 0 ? "0" : "100px"
+//         console.log(sLeft)
+//         $("#settingPanel").css("left", sLeft)
+//     });
+// }
+
 // ---------------------------------------- Ready -------------------------------------------
 
 $(document).ready(function () {
@@ -186,8 +182,10 @@ $(document).ready(function () {
     $("#dateInput").on("change", function(){
         var newDateInterval = parseInt(this.value);
         if (newDateInterval!=NaN){
-            url = getRealtimeUrl(newDateInterval)
+            url = getRealtimeUrl(newDateInterval);
+            console.log("Start Loading ...")
             map.getSource('earthquake').setData(url);
+            console.log("Start Completed!")
         }
         $("#dateDisplaying")
         .css("opacity","0.1")
@@ -196,9 +194,9 @@ $(document).ready(function () {
     
     $("#dateInput").on("input", function(){
         $("#dateDisplaying")
-        .css("opacity","1")
-        .css("background", "rgba(255, 255, 255, 0.9)")
-        .html("Last "+this.value+" days");
+            .css("opacity","1")
+            .css("background", "rgba(255, 255, 255, 0.9)")
+            .html("Last " + this.value + (this.value == 1 ? " day" : " days"));
     })
     
     // Other maps setup
