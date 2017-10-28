@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- External Resource -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
-            font-family: "Roboto";
+            font-family: "Lato";
             text-align: center;
         }
 
@@ -103,7 +103,7 @@
         <hr>
         <div class="rent_calculator">
             <h2>Weekly Rent</h2>
-            <input type="text" id="week_rent">
+            <input type="number" pattern="[0-9]*" inputmode="numeric" id="week_rent">
             <h2>Monthly Rent (per person)</h2>
             <h3 id="month_rent"><div style="color: #888">---</div></h3>
             <h2>Monthly Rent (total)</h2>
