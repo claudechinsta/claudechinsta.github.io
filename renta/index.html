@@ -2,23 +2,18 @@
 
 <head>
     <title>Hi today!</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
+    crossorigin="anonymous"></script>
+    <script src="./viewController.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- External Resource -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-    <!--  Viewcontroller  -->
-
-
-    <!--  ChartJS  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
-
     <style>
         body {
             margin: 0;
-            background: #ddf1ff;
         }
         
         .panelWrapper {
@@ -39,9 +34,8 @@
         
         .title h1 {
             font-size: 40px;
-            margin: 0;
-            padding: 10px;
-            padding-left: 30px;
+            margin: 20px 0;
+            text-align: center;
             font-family: "Roboto";
         }
         
@@ -50,6 +44,10 @@
             margin: 5px;
             background: #ffffff;
             border: solid 1px #ddd;
+        }
+        
+        .canvasWrapper {
+            padding: 0 20px;
         }
         
         #panel1 {
@@ -87,20 +85,25 @@
             }
         }
 
+        #month_rent {
+            
+        }
+
     </style>
 </head>
 
 <body>
     <div class="panelWrapper">
         <div class="title">
-            <h1>Hi today!</h1>
+            <h1>Renta</h1>
         </div>
         <div class="panel" id="panel1">
             <div class="canvasWrapper">
                 <!--                <canvas id="chart1"></canvas>-->
-                <h1>hello</h1>
+                <h3>Week Rent:</h3><input type="text" id="week_rent">
+                <h3>Month Rent:</h3>
+                <h3 id="month_rent"></h3>
             </div>
-            <script src="./viewController.js"></script>
         </div>
         <div class="panel" id="panel2"></div>
         <div class="panel" id="panel3"></div>
