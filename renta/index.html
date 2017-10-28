@@ -13,82 +13,18 @@
     <style>
         body {
             margin: 0;
-        }
-
-        .panelWrapper {
-            height: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto 1fr 1fr;
-            grid-template-areas: "title title" "panel1 panel2" "panel3 panel4";
-        }
-
-        .panelWrapperInner {
-            padding: 30px;
-        }
-
-        .title {
-            grid-area: title;
-        }
-
-        .title h1 {
-            font-size: 40px;
-            margin: 20px 0;
-            text-align: center;
             font-family: "Roboto";
+            text-align: center;
         }
 
-        .panel {
-            min-width: 400px;
-            margin: 5px;
-            background: #ffffff;
-            border: solid 1px #ddd;
+        .title{
+            font-size: 50px;
+            text-align: center;
+            padding: 30px 0;
         }
 
-        .canvasWrapper {
-            padding: 0 20px;
-        }
-
-        #panel1 {
-            grid-area: panel1;
-            /*            padding: 20px;*/
-        }
-
-        #chart1 {
-            position: relative;
-            height: auto;
-            width: auto
-        }
-
-        #panel2 {
-            grid-area: panel2 padding: 20px;
-        }
-
-        #panel3 {
-            grid-area: panel3 padding: 20px;
-        }
-
-        #panel4 {
-            grid-area: panel4 padding: 20px;
-        }
-
-        @media screen and (max-width: 480px) {
-            .panel {
-                min-width: none;
-            }
-            .panelWrapper {
-                display: grid;
-                grid-template-columns: auto;
-                grid-template-rows: auto;
-                grid-template-areas: "title" "panel1" "panel2" "panel3" "panel4";
-            }
-        }
-
-
-        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
-
-        body {
-            font: normal normal 13px/16px "Open Sans", sans-serif;
+        .rent_calculator{
+            text-align: center;
         }
 
         .container {
@@ -101,10 +37,23 @@
         }
 
         input {
-            padding: 4px 15px 4px 5px;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            font-size: 20px;
+            text-align: center;
+            border: none;
+            border-bottom: 2px solid rgb(221, 209, 215);
+            outline: none;
+            transition: 0.3s ease-in-out;
+        }
+
+        input:focus, input:hover{
+            outline: none;
+            border-bottom: 2px solid rgb(37, 28, 33);
         }
 
         #button {
+            font-family: "Roboto";
             display: inline-block;
             background-color: #fc999b;
             color: #ffffff;
@@ -119,13 +68,19 @@
             opacity: .8;
         }
 
+        #month_rent {
+            font-size: 30px;
+        }
+
         ol {
+            text-align: left;
             padding-left: 20px;
         }
 
         ol li {
             padding: 5px;
             color: #000;
+            background: #ebebeb;
         }
 
         ol li:nth-child(even) {
@@ -144,18 +99,18 @@
 
 <body>
     <div class="panelWrapper">
-        <div class="title">
-            <h1>Renta</h1>
+        <div class="title">Renta</div>
+        <hr>
+        <div class="rent_calculator">
+            <h2>Weekly Rent</h2>
+            <input type="text" id="week_rent">
+            <h2>Monthly Rent (per person)</h2>
+            <h3 id="month_rent"><div style="color: #888">---</div></h3>
+            <h2>Monthly Rent (total)</h2>
+            <h3 id="month_rent_total"><div style="color: #888">---</div></h3>
         </div>
-        <div class="panel" id="panel1">
-            <div class="canvasWrapper">
-                <!--                <canvas id="chart1"></canvas>-->
-                <h3>Week Rent:</h3>
-                <input type="text" id="week_rent">
-                <h3>Month Rent:</h3>
-                <h3 id="month_rent"></h3>
-            </div>
-        </div>
+        <hr>
+        <h1>Properties</h1>
         <div class="panel" id="panel2">
             <div class="container">
                 <form name="toDoList">
