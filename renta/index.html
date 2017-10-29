@@ -3,7 +3,7 @@
 <head>
     <title>Renta</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
     <script src="./viewController.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- External Resource -->
@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+    
     <style>
         body {
             margin: 0;
@@ -20,19 +20,19 @@
             font-weight: normal;
             text-align: center;
         }
-
+        
         h1 {
             font-size: 25px;
         }
-
+        
         h2 {
             font-size: 18px;
         }
-
+        
         h1, h2 {
             font-weight: normal;
         }
-
+        
         .title {
             font-family: "Raleway";
             color: #eee;
@@ -40,16 +40,16 @@
             padding: 20px 0;
             background: rgb(114, 117, 161);
         }
-
+        
         .rent_calculator {
             text-align: center;
         }
-
+        
         .container {
             width: auto;
             padding: 10px;
         }
-
+        
         .prop_item{
             max-width: 500px;
             color: white;
@@ -60,29 +60,29 @@
             outline: none;
             transition: all 0.2s ease-in-out;
         }
-
+        
         .prop_item a{
             text-decoration: none;
             color: #ddd;
         }
-
+        
         .prop_address {
             font-size: 20px;
         }
-
+        
         .prop_btn{
             text-align: center;
             margin-top: 10px;
         }
-
+        
         .prop_btn:hover {
             cursor: pointer;
         }
-
+        
         #prop_list {
             text-align: left;
         }
-
+        
         input {
             font-family: "Dosis";
             width: 100px;
@@ -96,23 +96,23 @@
             outline: none;
             transition: 0.2s ease;
         }
-
+        
         input:focus {
             width: 200px;
             outline: none;
             border-bottom: 1px solid rgb(37, 28, 33);
         }
-
+        
         #month_rent {
             font-size: 30px;
             color: rgb(99, 101, 131);
         }
-
+        
         #month_rent_total {
             font-size: 20px;
             color: rgb(99, 101, 131);
         }
-
+        
         #button {
             max-width: 520px;
             font-family: "Roboto";
@@ -124,35 +124,39 @@
             padding: 5px 0px;
             transition: 0.1s ease;
         }
-
+        
         #button:hover {
             cursor: pointer;
             opacity: .8;
         }
-
+        
         #button:active {
             opacity: .9;
         }
- 
+        
         ol {
             text-align: left;
             padding-left: 20px;
-
+            
         }
-
+        
         ol li {
             padding-top: 5px;
             color: #000;
             border-bottom: 1px solid rgb(221, 221, 221);
         }
-
-
+        
+        
         .strike {
             text-decoration: line-through;
         }
-
+        
         li:hover {
             cursor: pointer;
+        }
+
+        .footer{
+            height: 400px;
         }
     </style>
 </head>
@@ -182,12 +186,12 @@
                     <div class="prop_url">
                         <a href="https://www.realestate.com.au/rent/in-fitzroy,+vic+3065/list-1" target="_blank">
                             https://www.realestate.com.au/rent/in-fitzroy,+vic+3065/list-1</a></div>
-                        <div class="prop_btn">VISITED</div>
+                            <div class="prop_btn">VISITED</div>
+                    </div>
                 </div>
+                <div id="button">ADD</div>
             </div>
-            <div id="button">ADD</div>
         </div>
-    </div>
-</body>
-
+        <div class="footer"></div>
+    </body>    
 </html>
