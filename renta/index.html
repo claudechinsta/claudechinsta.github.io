@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Hi today!</title>
+    <title>Renta</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <script src="./viewController.js"></script>
@@ -10,35 +10,38 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
-            font-family: "Saira Semi Condensed";
+            font-family: "Dosis";
+            font-weight: normal;
             text-align: center;
         }
 
-        hr {
-            padding: 0 20px;
-            margin: 0;
-        }
-        
         h1 {
             font-size: 25px;
         }
+
         h2 {
             font-size: 18px;
         }
 
-        .title{
+        h1, h2 {
+            font-weight: normal;
+        }
+
+        .title {
             font-family: "Raleway";
             color: #eee;
-            font-size: 30px;
-            padding: 10px 0;
+            font-size: 35px;
+            padding: 20px 0;
             background: rgb(114, 117, 161);
         }
 
-        .rent_calculator{
+        .rent_calculator {
             text-align: center;
         }
 
@@ -47,11 +50,41 @@
             padding: 10px;
         }
 
-        form {
-            display: inline-block;
+        .prop_item{
+            max-width: 500px;
+            color: white;
+            border-radius: 5px;
+            background: rgb(114, 117, 161);
+            padding: 10px;
+            margin: 5px auto;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .prop_item a{
+            text-decoration: none;
+            color: #ddd;
+        }
+
+        .prop_address {
+            font-size: 20px;
+        }
+
+        .prop_btn{
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .prop_btn:hover {
+            cursor: pointer;
+        }
+
+        #prop_list {
+            text-align: left;
         }
 
         input {
+            font-family: "Dosis";
             width: 100px;
             padding-top: 15px;
             padding-bottom: 7px;
@@ -61,28 +94,35 @@
             border-bottom: 1px solid rgb(221, 209, 215);
             border-radius: 0;
             outline: none;
-            transition: 0.4s ease;
+            transition: 0.2s ease;
         }
 
-        input:focus{
-            width: 250px;
+        input:focus {
+            width: 200px;
             outline: none;
             border-bottom: 1px solid rgb(37, 28, 33);
         }
 
         #month_rent {
             font-size: 30px;
+            color: rgb(99, 101, 131);
+        }
+
+        #month_rent_total {
+            font-size: 20px;
+            color: rgb(99, 101, 131);
         }
 
         #button {
+            max-width: 520px;
             font-family: "Roboto";
-            display: inline-block;
-            background-color: #fc999b;
+            margin: 0 auto;
+            background-color: rgb(99, 101, 131);
             color: #ffffff;
-            border-radius: 5px;
+            border-radius: 4px;
             text-align: center;
-            margin-top: 2px;
-            padding: 5px 15px;
+            padding: 5px 0px;
+            transition: 0.1s ease;
         }
 
         #button:hover {
@@ -90,22 +130,22 @@
             opacity: .8;
         }
 
-
-
+        #button:active {
+            opacity: .9;
+        }
+ 
         ol {
             text-align: left;
             padding-left: 20px;
+
         }
 
         ol li {
-            padding: 5px;
+            padding-top: 5px;
             color: #000;
-            background: #ebebeb;
+            border-bottom: 1px solid rgb(221, 221, 221);
         }
 
-        ol li:nth-child(even) {
-            background: #dfdfdf;
-        }
 
         .strike {
             text-decoration: line-through;
@@ -120,29 +160,33 @@
 <body>
     <div class="panelWrapper">
         <div class="title">Renta</div>
-        <hr>
         <div class="rent_calculator">
             <h1>Weekly Rent</h1>
             <input type="number" pattern="[0-9]*" inputmode="numeric" id="week_rent">
             <h2>Monthly Rent (per person)</h2>
-            <h3 id="month_rent"><div style="color: #888">---</div></h3>
+            <h3 id="month_rent">
+                <div style="color: #888">---</div>
+            </h3>
             <h2>Monthly Rent (total)</h2>
-            <h3 id="month_rent_total"><div style="color: #888">---</div></h3>
+            <h3 id="month_rent_total">
+                <div style="color: #888">---</div>
+            </h3>
         </div>
         <hr>
         <h1>Properties</h1>
-        <div class="panel" id="panel2">
-            <div class="container">
-                <form name="toDoList">
-                    <input type="text" name="ListItem" />
-                </form>
-                <div id="button">Add</div>
-                <br/>
-                <ol></ol>
+        <div class="container">
+            <div id="prop_list">
+                <div class="prop_item">
+                    <div contenteditable="true" class="prop_address">405/69 Victoria Street, Fitzroy, Vic 3065</div>
+                    <div contenteditable="true" class="prop_date">2017-10-29 09:00 AM</div>
+                    <div class="prop_url">
+                        <a href="https://www.realestate.com.au/rent/in-fitzroy,+vic+3065/list-1" target="_blank">
+                            https://www.realestate.com.au/rent/in-fitzroy,+vic+3065/list-1</a></div>
+                        <div class="prop_btn">VISITED</div>
+                </div>
             </div>
+            <div id="button">ADD</div>
         </div>
-        <div class="panel" id="panel3"></div>
-        <div class="panel" id="panel4"></div>
     </div>
 </body>
 

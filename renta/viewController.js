@@ -9,6 +9,19 @@ $(document).ready(function () {
         $("#month_rent_total").html( (price / 7 * 365 / 12).toFixed(2) )
     }
 
+
+    $('.prop_item').on('click', '.prop_btn', function(){
+
+        var greyColor = "rgb(180, 180, 180)"
+        console.log($(this).parent().css("background-color"))
+        if($(this).parent().css("background-color")!=greyColor){
+            $(this).parent().css("background", greyColor)
+        }else{
+            $(this).parent().css("background", "rgb(114, 117, 161)")
+        }
+    })
+
+
     function updateContent(){
         localStorage.setItem("content", $('ol').html())
     }
@@ -18,24 +31,15 @@ $(document).ready(function () {
         .on("change", function () {updatePrice()});
 
     $('#button').click(function () {
-        var toAdd = $('input[name=ListItem]').val();
-        if (toAdd != "") {
-            $('ol').append('<li>' + toAdd + '</li>');
-            updateContent()
-        }
+        $('#prop_list').append("<div class='prop_item' >" +
+        "<div class='prop_address'>405/69 Victoria Street, Fitzroy, Vic 3065</div>" +
+        "<div class='prop_date'>2017-10-29</div>" +
+        "<div class='prop_url'>" +
+        "<a href='https://www.realestate.com.au/rent/in-fitzroy,+vic+3065/list-1' target='_blank'>https://www.realestate.com.au/rent/in-fitzroy,+vic+3065/list-1</a></div>" +
+        "<div class='prop_btn'>VISITED</div>" +
+        "</div>")
     });
 
-    // $("input[name=ListItem]").keyup(function(event) {
-    //     console.log(event.keyCode)
-    //     if (event.keyCode == 13) {
-    //         $("#button").click();
-    //     }
-    // });
-
-    $(document).on('dblclick', 'li', function () {
-        $(this).toggleClass('strike').fadeOut('slow');
-        updateContent()
-    });
 
     $('input').focus(function () {
         $(this).val('');
