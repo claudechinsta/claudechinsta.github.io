@@ -1,11 +1,12 @@
 <html>
-
 <head>
     <title>Renta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
     <script src="./viewController.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- External Resource -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -34,10 +35,10 @@
         }
         
         .title {
-            font-family: "Raleway";
+            font-family: "Dosis";
             color: #eee;
             font-size: 35px;
-            padding: 20px 0;
+            padding: 15px 0;
             background: rgb(114, 117, 161);
         }
         
@@ -51,12 +52,15 @@
         }
         
         .prop_item{
+            box-shadow: 0 0 0 5px rgb(0,0,0,0.3);
             max-width: 500px;
+            /* min-height: 200px; */
             color: white;
-            border-radius: 5px;
+            /* border-radius: 10px; */
             background: rgb(114, 117, 161);
-            padding: 10px;
-            margin: 5px auto;
+            padding: 20px;
+            padding-bottom: 10px;
+            margin: 10px auto;
             outline: none;
             transition: all 0.2s ease-in-out;
         }
@@ -69,16 +73,21 @@
         .prop_address {
             font-size: 20px;
         }
+
+        .prop_date {
+            margin: 8px 0;
+        }
         
         .prop_btn{
             text-align: center;
             margin-top: 10px;
+            transition: all 0.2s ease;
         }
         
         .prop_btn:hover {
             cursor: pointer;
         }
-        
+
         #prop_list {
             text-align: left;
         }
@@ -114,12 +123,12 @@
         }
         
         #button {
-            max-width: 520px;
+            max-width: 540px;
             font-family: "Roboto";
             margin: 0 auto;
             background-color: rgb(99, 101, 131);
             color: #ffffff;
-            border-radius: 4px;
+            /* border-radius: 6px; */
             text-align: center;
             padding: 5px 0px;
             transition: 0.1s ease;
@@ -158,6 +167,25 @@
         .footer{
             height: 400px;
         }
+
+        [contenteditable="true"].single-line {
+            padding-bottom: 3px;
+            outline: none;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: all 0.2s ease-in-out;
+            border-bottom: 1px solid rgba(230, 232, 255, 0);
+        } 
+        [contenteditable="true"].single-line:focus {
+            border-bottom: 1px solid rgba(230, 232, 255, 0.8);
+        } 
+        [contenteditable="true"].single-line br {
+            display:none;
+        }
+        [contenteditable="true"].single-line * {
+            display:inline;
+            white-space:nowrap;
+        }
     </style>
 </head>
 
@@ -180,17 +208,9 @@
         <h1>Properties</h1>
         <div class="container">
             <div id="prop_list">
-                <div class="prop_item">
-                    <div contenteditable="true" class="prop_address">405/69 Victoria Street, Fitzroy, Vic 3065</div>
-                    <div contenteditable="true" class="prop_date">2017-10-29 09:00 AM</div>
-                    <div class="prop_url">
-                        <a href="https://www.realestate.com.au/rent/in-fitzroy,+vic+3065/list-1" target="_blank">
-                            https://www.realestate.com.au/rent/in-fitzroy,+vic+3065/list-1</a></div>
-                            <div class="prop_btn">VISITED</div>
-                    </div>
-                </div>
-                <div id="button">ADD</div>
+                
             </div>
+            <div id="button">ADD</div>
         </div>
         <div class="footer"></div>
     </body>    

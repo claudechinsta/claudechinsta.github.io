@@ -4,12 +4,7 @@
     margin: 0 auto;
 }
 
-h1 {
-    font-family: "Lobster two"
-}
-
 .content {
-    /*max-width: 800px;*/
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     color: #323131;
     text-align: center;
@@ -24,6 +19,41 @@ h1 {
 
 .content-inner {
     padding-top: 40px;
+}
+
+/* ------------------------- MODIFICATION TO SOME DEFAULT ELEMENT -------------------------- */
+
+hr {
+    width: 90%;
+}
+
+h1 {
+    font-family: "Lobster two"
+}
+
+#content-inner h1, h2, h3 {
+    font-size: 40px;
+    padding: 20px;
+}
+
+.content-inner-proj {
+    display: inline-block;
+    margin: 20px 30px;
+}
+
+article {
+    max-width: 500px;
+    padding: 0 20px;
+    display: block;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.footer {
+    color: #666;
+    font-size: 8px;
+    text-align: center;
+    padding: 10px;
 }
 
 
@@ -57,7 +87,7 @@ h1 {
     text-align: center;
     font-size: 18px;
     padding: 13px 17px 8px 17px;
-    border-radius: 3px;
+    border-radius: 4px;
     height: 100%;
     color: #212121;
     -webkit-transition: all 0.1s ease;
@@ -78,7 +108,14 @@ h1 {
 }
 
 .head_btn_smltxt {
-    font-size: 12px;
+    padding: 0;
+    font-family: "Roboto";
+    font-size: 13px;
+}
+
+.head_btn_cntxt {
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .head_btn_links {
@@ -103,7 +140,7 @@ h1 {
 }
 
 .my_btn {
-    font-family: "Quicksand", Helvetica, Arial, sans-serif;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
     color: #436ea5;
     font-size: 15px;
     padding-top: 5px;
@@ -121,14 +158,6 @@ h1 {
     color: #0e2846;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-/*    background: #f4f4f4;*/
-    animation: my_btn_move 0.2s ease;
-}
-
-@keyframes my_btn_move{
-    50%{
-        transform: scale(1.1, 1.1)
-    }
 }
 
 /* ----------------------- Section - Design ------------------------- */
@@ -138,9 +167,6 @@ h1 {
     margin-right: auto;
     max-width: 1000px;
 }
-
-/* ------------------------------------------------ */
-
 
 /* ----------------------- Section - Project  ------------------------- */
 

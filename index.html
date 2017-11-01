@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Customised CSS-->
     <link href='index_stylesheet.css' rel='stylesheet' />
+    <script src="./index.js"></script>
     <!-- Import the Google Font Stylesheet -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -25,164 +26,61 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <script>
-        $(document).ready(function() {
-            let offsetValue = 50;
-            // Add smooth scrolling to all links
-            $("#btn_index").on('click', function(event) {
-                $("html, body").animate({
-                    scrollTop: 0
-                }, 300);
-            });
-            $("#btn_music").on('click', function(event) {
-                $("html, body").animate({
-                    scrollTop: $("#content-music").offset().top - offsetValue
-                }, 300);
-            });
-            $("#btn_design").on('click', function(event) {
-                $("html, body").animate({
-                    scrollTop: $("#content-design").offset().top - offsetValue
-                }, 300);
-            });
-            $("#btn_project").on('click', function(event) {
-                $("html, body").animate({
-                    scrollTop: $("#content-project").offset().top - offsetValue
-                }, 300);
-            });
-
-            var projects = [{
-                    "projName": "Australian City Analytics",
-                    "projNameCN": "澳大利亚推特大数据平台",
-                    "projYear": 2017,
-                    "imgSrc": "imgs/proj_1*2.png",
-                    "projSrc": "./proj_australian_city_analysis/aca_sa2.html"
-                },
-                {
-                    "projName": "Wikipedia Text Classifier",
-                    "projNameCN": "基于Wikipedia的文本分类及数据可视化",
-                    "projYear": 2017,
-                    "imgSrc": "imgs/proj_2*2.png",
-                    "projSrc": "./proj_wiki_text_clf"
-                },
-                {
-                    "projName": "Quicker - Currency Exchange Rates",
-                    "projNameCN": "Quicker - 汇率快查Chrome扩展应用",
-                    "projYear": 2017,
-                    "imgSrc": "imgs/quicker.jpg",
-                    "projSrc": "https://chrome.google.com/webstore/detail/ogmmijheaeigiheggkpjnnkfkkheiefh"
-                },
-                {
-                    "projName": "100 Days Earthquake (Demo)",
-                    "projNameCN": "100日地震",
-                    "projYear": 2017,
-                    "imgSrc": "imgs/earth.png",
-                    "projSrc": "./earthquake_map"
-                }
-            ];
-            
-            var desc = "Below is the project showcase with links to demo websites."
-
-            $("#proj-container").html("<h1>IT Projects</h1><h4>IT 项目</h4><article><p>" + desc + "</p></article>");
-            projects.forEach(projItem => {
-                htmlContent =
-                    '<div class="content-inner-proj">' +
-                    '<a href="' + projItem.projSrc + '" target="_blank"><img class="thumbnail_proj" src="' +
-                    projItem.imgSrc + '" alt="City" width="200"></a>' +
-                    '<div class="thumbnail_proj_label"><b>' + projItem.projName + '</b></div>' +
-                    '<div class="thumbnail_proj_label">' + projItem.projNameCN + '</div>' +
-                    '<div class="thumbnail_proj_label">' + projItem.projYear + '</div>' + '</div>';
-                $("#proj-container").append(htmlContent);
-
-            })
-        });
-
-    </script>
-    <style>
-        hr {
-            width: 90%;
-        }
-        
-        #content-inner h1,
-        h2,
-        h3 {
-            font-size: 40px;
-            padding: 20px;
-        }
-        
-        .content-inner-proj {
-            display: inline-block;
-            margin: 20px 30px;
-        }
-        
-        article {
-            max-width: 500px;
-            padding: 0 20px;
-            display: block;
-            text-align: center;
-            margin: 30px auto;
-        }
-        
-        .footer {
-            color: #666;
-            font-size: 8px;
-            text-align: center;
-            padding: 10px;
-        }
-
-    </style>
 </head>
 
 <body>
     <!--Top Bar-->
     <div class="header" id="header-nav">
         <div class="head_btn" id="btn_index">
-            <span class="head_btn_cntxt">主页</span>
-            <div class="head_btn_smltxt">HOME</div>
+            <div class="head_btn_smltxt">HOME</div><span class="head_btn_cntxt">主页</span>
         </div>
         <div class="head_btn" id="btn_project">
-            <span class="head_btn_cntxt">项目</span>
-            <div class="head_btn_smltxt">PROJECT</div>
+            <div class="head_btn_smltxt">PROJECT</div><span class="head_btn_cntxt">项目</span>
         </div>
         <div class="head_btn" id="btn_music">
-            <span class="head_btn_cntxt">音乐</span>
-            <div class="head_btn_smltxt">MUSIC</div>
+            <div class="head_btn_smltxt">MUSIC</div><span class="head_btn_cntxt">音乐</span>
         </div>
         <div class="head_btn" id="btn_design">
-            <span class="head_btn_cntxt">设计</span>
-            <div class="head_btn_smltxt">DESIGN</div>
+            <div class="head_btn_smltxt">DESIGN</div><span class="head_btn_cntxt">设计</span>
         </div>
-
-        <div title="Email" class="head_btn_links">
-            <a class="head_link" href="mailto:claudechinsta@gmail.com">
-                <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
-            </a>
+        
+        <div class="links_area">
+            <div title="Email" class="head_btn_links">
+                <a class="head_link" href="mailto:claudechinsta@gmail.com">
+                    <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div title="Linkedin" class="head_btn_links">
+                <a class="head_link" href="https://www.linkedin.com/in/claude-chen-5b3151116/" target="_blank">
+                    <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div title="Github" class="head_btn_links">
+                <a class="head_link" href="https://github.com/claudechinsta/" target="_blank">
+                    <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div title="Facebook" class="head_btn_links">
+                <a class="head_link" href="https://www.facebook.com/claudechinsta" target="_blank">
+                    <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div title="Weibo" class="head_btn_links">
+                <a class="head_link" href="http://weibo.com/chinsta" target="_blank">
+                    <i class="fa fa-weibo fa-lg" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
-        <div title="Linkedin" class="head_btn_links">
-            <a class="head_link" href="https://www.linkedin.com/in/claude-chen-5b3151116/" target="_blank">
-                <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
-            </a>
-        </div>
-        <div title="Github" class="head_btn_links">
-            <a class="head_link" href="https://github.com/claudechinsta/" target="_blank">
-                <i class="fa fa-github fa-lg" aria-hidden="true"></i>
-            </a>
-        </div>
-        <div title="Facebook" class="head_btn_links">
-            <a class="head_link" href="https://www.facebook.com/claudechinsta" target="_blank">
-                <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
-            </a>
-        </div>
-        <div title="Weibo" class="head_btn_links">
-            <a class="head_link" href="http://weibo.com/chinsta" target="_blank">
-                <i class="fa fa-weibo fa-lg" aria-hidden="true"></i>
-            </a>
-        </div>
+        
+        
     </div>
     <div class="content" id="content-topOverlay"></div>
     <div class="content" id="content-inner">
         <h1>Welcome to My Homepage</h1>
         <div>
-            <a href="https://github.com/claudechinsta"><img id="img_logo" src="imgs/github-mark.png" alt="logo-icon" width="500"></a>
+            <a href="https://github.com/claudechinsta">
+                <img id="img_logo" src="imgs/github-mark.png" alt="logo-icon" width="500">
+            </a>
         </div>
         <article>
             <h5>Boya (Claude) Chen A.k.a Chinsta</h5>
@@ -193,19 +91,9 @@
                 <br>Master of Information Technology | <wbr>University of Melbourne
                 <br><b>E-mail:</b> claudechinsta@gmail.com | <wbr>boyac@student.unimelb.edu.au
                 <br><a href="http://sites.google.com/view/claudechen" target="_blank">More about me</a>
-                <br><br>
-            </p>
-            <!--
-            <h5>陈博雅</h5>
-            <p>
-                <br><i>前端开发，平面设计，软件开发，数据挖掘，机器学习，音乐制作。</i>
                 <br>
-                <br>来自重庆，现在于澳大利亚墨尔本居住与学习
-                <br>墨尔本大学攻读Master of Information Technology
-                <br><b>E-mail:</b> claudechinsta@gmail.com | <wbr>boyac@student.unimelb.edu.au
-                <br><a href="http://sites.google.com/view/claudechen">更多</a>
+                <br>
             </p>
-            -->
         </article>
     </div>
     <hr>
@@ -244,7 +132,7 @@
                 <p>
                     I love design! Since I started produced music in 2012, I've designed few album covers for my own music. I also had experience in Web UI design. I'm obsessed with the combination of art and technology.
                 </p>
-                 <i>/* Portofolio page in Development */</i>
+                <i>/* Portofolio page in Development */</i>
             </article>
             <div class="design_profile">
                 <img src="imgs/albums_multiple.png" width="80%" alt="">
@@ -257,3 +145,4 @@
 </body>
 
 </html>
+        
