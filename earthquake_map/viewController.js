@@ -188,7 +188,8 @@ $(document).ready(function () {
             console.log("Start Completed!")
         }
         $("#dateDisplaying")
-        .css("opacity","0.1")
+        .css("opacity","0.3")
+        .css("color", "#fff")
         .css("background","rgba(255, 255, 255, 0)");
     })
     
@@ -196,6 +197,7 @@ $(document).ready(function () {
         $("#dateDisplaying")
             .css("opacity","1")
             .css("background", "rgba(255, 255, 255, 0.9)")
+            .css("color", "#000")
             .html("Last " + this.value + (this.value == 1 ? " day" : " days"));
     })
     
