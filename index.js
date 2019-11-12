@@ -26,23 +26,23 @@ $(document).ready(function() {
         "projName": "Australian City Analytics",
         "projNameCN": "澳大利亚推特大数据平台",
         "projYear": 2017,
-        "imgSrc": "imgs/proj_1*2.png",
+        "imgSrc": "imgs/proj_1.png",
         "projSrc": "./proj_australian_city_analysis/aca_sa2.html"
     },
     {
         "projName": "Wikipedia Text Classifier",
         "projNameCN": "基于Wikipedia的文本分类及数据可视化",
         "projYear": 2017,
-        "imgSrc": "imgs/proj_2*2.png",
+        "imgSrc": "imgs/proj_2.png",
         "projSrc": "./proj_wiki_text_clf"
     },
-    {
-        "projName": "Quicker - Currency Exchange Rates",
-        "projNameCN": "Quicker - 汇率快查Chrome扩展应用",
-        "projYear": 2017,
-        "imgSrc": "imgs/quicker.jpg",
-        "projSrc": "https://chrome.google.com/webstore/detail/ogmmijheaeigiheggkpjnnkfkkheiefh"
-    },
+    // {
+    //     "projName": "Quicker - Currency Exchange Rates",
+    //     "projNameCN": "Quicker - 汇率快查Chrome扩展应用",
+    //     "projYear": 2017,
+    //     "imgSrc": "imgs/quicker.jpg",
+    //     "projSrc": "https://chrome.google.com/webstore/detail/ogmmijheaeigiheggkpjnnkfkkheiefh"
+    // },
     {
         "projName": "100 Days Earthquake (Demo)",
         "projNameCN": "100日地震",
