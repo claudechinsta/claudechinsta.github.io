@@ -4,7 +4,7 @@ $(document).ready(function () {
     $(window).scroll(function() {
         if ($(document).scrollTop() > 0) {
             $('.header')
-                .css('background', '#eee')
+                .css('background', 'rgb(245,245,245)')
                 .css('height', '100px');
         }else {
             $('.header')

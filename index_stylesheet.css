@@ -29,10 +29,11 @@
 .content {
     color: #323131;
     text-align: center;
+    margin-top: 80px;
 }
 
 #content-topOverlay {
-    height: 200px;
+    height: 150px;
 }
 
 .content-inner {
@@ -57,7 +58,7 @@ h1 {
     font-family: var(--main-font);
     font-weight: 800;
     font-size: 50px;
-    margin: 90px 0;
+    margin-top: 40px;
     line-height: normal;
 }
 
@@ -84,7 +85,7 @@ p {
 }
 
 article {
-    margin: 80px 0;
+    margin: 30px 0;
     display: block;
     text-align: center;
     font-size: 17px;
@@ -222,7 +223,7 @@ article {
 /* Logo Animation */
 
 #img_logo {
-
+    margin-bottom: 60px;
 }
 
 
