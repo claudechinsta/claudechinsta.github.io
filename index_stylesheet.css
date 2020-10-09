@@ -16,6 +16,7 @@
 :root{
     --main-font: "Poppins";
     --main-font-cn: "Noto Sans SC";
+    --smooth-shadow: 5px 5px 30px #a8a8a8;
 }
 
 
@@ -90,10 +91,14 @@ article {
 }
 
 .footer {
-    color: #666;
+    color: rgb(54, 54, 54);
     font-size: 8px;
     text-align: center;
-    padding: 10px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -159,7 +164,7 @@ article {
 
 .head_btn_cntxt {
     font-family: var(--main-font-cn);
-    font-weight: 800;
+    font-weight: bold;
     font-size: 18px;
 }
 
@@ -225,15 +230,16 @@ article {
 
 .thumbnail_proj {
     transition: all 0.2s ease-in-out;
-    border-radius: 100px;
-    border: 5px solid #f2f2f2;
-    margin: 10px;
+    border-radius: 35px;
+    border: 0px solid #ffffff;
+    margin: 40px 10px;
 }
 
 .thumbnail_proj:hover {
     transform: scale(1.01);
     filter: brightness(102%);
-    box-shadow: 5px 5px 10px #a8a8a8;
+    box-shadow: 5px 5px 30px #a8a8a8;
+    border: 5px solid #e7e7e7;
     cursor: pointer;
 }
 .thumbnail_proj:active {
