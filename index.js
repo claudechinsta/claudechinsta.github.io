@@ -1,4 +1,18 @@
 $(document).ready(function () {
+
+    // Scroll and change style to nav bar
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 0) {
+            $('.header')
+                .css('background', '#eee')
+                .css('height', '100px');
+        }else {
+            $('.header')
+                .css('background', '#fff')
+                .css('height', '180px');
+        }
+    });
+
     let offsetValue = 50;
     // Add smooth scrolling to all links
     $("#btn_index").on("click", function (event) {
@@ -60,7 +74,7 @@ $(document).ready(function () {
 
     var desc = "I am full-stake developer specialize in web development, visualization, data management and devops.";
 
-    $("#proj-container").html("<h1>IT Projects</h1><h4>IT 项目</h4><article><p>" + desc + "</p></article>");
+    $("#proj-container").html("<h1>IT Projects</h1><article><p>" + desc + "</p></article>");
     projects.forEach((projItem) => {
         htmlContent =
             '<div class="content-inner-proj">' +
@@ -81,4 +95,5 @@ $(document).ready(function () {
             "</div>";
         $("#proj-container").append(htmlContent);
     });
+
 });

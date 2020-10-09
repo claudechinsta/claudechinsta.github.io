@@ -1,35 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+SC");
+
+/* <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> */
+
+:root{
+    --main-font: "Poppins";
+    --main-font-cn: "Noto Sans SC";
+}
+
 
 .container-fluid {
     width: 100%;
     max-width: 800px;
-    margin: 0 auto;
+    padding: 0 30px;
 }
 
 .content {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
     color: #323131;
     text-align: center;
-    padding: 30px 0;
 }
 
-.content-topOverlay {
-    padding: 0;
-    margin: 0;
-    margin: 30px 0;
+#content-topOverlay {
+    height: 200px;
 }
 
 .content-inner {
     padding-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ------------------------- MODIFICATION TO SOME DEFAULT ELEMENT -------------------------- */
+
+
+body {
+    font-family: var(--main-font);
+}
 
 hr {
     width: 90%;
 }
 
 h1 {
-    font-family: "Pacifico";
+    font-family: var(--main-font);
+    font-weight: 800;
+    font-size: 50px;
+    margin: 90px 0;
     line-height: normal;
 }
 
@@ -39,6 +66,10 @@ p {
 
 .main_title {
     margin: 30px 0;
+}
+
+.header_under {
+    height: 80px;
 }
 
 #content-inner h1, h2, h3 {
@@ -52,14 +83,10 @@ p {
 }
 
 article {
-    font-family: "Source Sans Pro";
-    max-width: 500px;
-    padding: 0 20px;
+    margin: 80px 0;
     display: block;
     text-align: center;
-    margin: 30px auto;
     font-size: 17px;
-    
 }
 
 .footer {
@@ -73,15 +100,25 @@ article {
 /* ------------------------ TOP BAR ------------------------ */
 
 .header {
+    display: flex;
+    justify-content:space-between;
+    height: 180px;
+    align-items:center;
     z-index: 99999;
     position: fixed;
-    font-family: "Fjalla One";
     width: 100%;
-    height: 80px;
-    background: rgba(247, 247, 247, 0.95);
-    padding: 5px 40px;
-    border-bottom: 1px solid #dddddd;
+    padding: 5px 60px;
+    background: #fff;
+    transition: background .5s, height .5s;
 }
+
+.button-area,
+.link-area
+{
+    display: flex;
+    align-items: center;
+}
+
 
 .header h5 {
     margin-top: 5px;
@@ -96,13 +133,12 @@ article {
 }
 
 .head_btn {
-    float: left;
     text-align: center;
     font-size: 18px;
-    padding: 13px 17px 8px 17px;
+    padding: 0 30px;
     border-radius: 4px;
     height: 100%;
-    color: #212121;
+    color: #3c3c3c;
     -webkit-transition: all 0.1s ease;
     -moz-transition: all 0.1s ease;
     -o-transition: all 0.1s ease;
@@ -110,29 +146,24 @@ article {
 }
 
 .head_btn:hover {
-    background-color: #436ea5;
-    color: white;
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
-.head_btn:active {
-    background-color: #395d8d;
-    transform: scale(0.98, 0.98)
-}
-
 .head_btn_smltxt {
-    padding: 0;
-    font-family: "Roboto";
-    font-size: 13px;
+    font-family: var(--main-font);
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: -3px;
 }
 
 .head_btn_cntxt {
-    font-weight: bold;
-    font-size: 16px;
+    font-family: var(--main-font-cn);
+    font-weight: 800;
+    font-size: 18px;
 }
 
 .head_btn_links {
-    float: right;
     color: #212121;
     margin-top: 20px;
     height: 50%;
@@ -153,7 +184,7 @@ article {
 }
 
 .my_btn {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-family: var(--main-font);
     color: #436ea5;
     font-size: 15px;
     padding-top: 5px;
@@ -186,8 +217,7 @@ article {
 /* Logo Animation */
 
 #img_logo {
-    animation: myframes 2s ease-in-out 0s infinite;
-    ;
+
 }
 
 
@@ -214,7 +244,6 @@ article {
 .thumbnail_proj_label {
     margin-top: 5px;
     font-size: 13px;
-    font-family: "Quicksand", Helvetica, Arial, sans-serif;
 }
 
 
@@ -224,8 +253,8 @@ article {
 /* Responsive Settings */
 
 @media screen and (max-width: 700px) {
-    .content-topOverlay {
-        margin: 15px 0;
+    #content-topOverlay {
+        margin: 50px;
     }
     .header {
         padding: 2px 5px 2px 25px;
@@ -253,10 +282,4 @@ article {
     50% {
         transform: translate(0px, 10px);
     }
-}
-
-
-/* Font */
-.font_cn {
-    font-family: "Noto Sans SC";
 }
