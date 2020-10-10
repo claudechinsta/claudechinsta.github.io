@@ -1,6 +1,5 @@
 <html>
-<title>Earthquake Now</title>
-
+<title>Claude Chen | Earthquake Now</title>
 <head>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
@@ -19,14 +18,13 @@
     </div>
 -->
     <div class="wrapper">
-        <!-- <div class="sidebar"> -->
-            <!-- <div class="sideLogo">100 days earthquake</div> -->
+        <div class="sidebar">
+            <div class="sidelink"><a href="/">Return to homepage</a></div>
             <!-- <div class="sideBtn" id="sideBtnAround"><img src="./images/placeholder.svg" width="20" /><span>Around me</span></div>
             <div class="sideBtn"><img src="./images/dashboard.svg" width="20" /><span>Dashboard</span></div>
             <div class="sideBtn"><img src="./images/translation.svg" width="20" /><span>About</span></div> -->
             <!-- <div class="sideBtn" id="sideBtnSettings"><img src="./images/settings.svg" width="20" /><span>Settings</span></div> -->
-            
-        <!-- </div> -->
+        </div>
         <div class="panel_wrapper">
             <div id="map"></div>
             <script src="./viewController.js"></script>
@@ -34,7 +32,8 @@
     </div>
     <div class="dateDisplay" id="dateDisplaying">Last 1 day</div>
     <div class="footerStatus">
-        1 Days <input id="dateInput" type="range" min="1" max="100"> 100 Days
+        <span class="label">1 Days</span> <input id="dateInput" type="range" min="1" max="100"> <span class="label">100
+            Days</span>
     </div>
 
 </body>

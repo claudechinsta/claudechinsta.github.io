@@ -45,7 +45,7 @@ function init(map) {
     map.on('mousemove', function (e) {
 
         document.getElementById('info').style.display = 'block';
-        document.getElementById('info').innerHTML = "<h4>Wikipedia Text Classification</h4>";
+        document.getElementById('info').innerHTML = "<h4>Wikipedia Text Classification - by Claude Chen</h4>";
         // console.log(e)
     });
     map.on('load', function () {

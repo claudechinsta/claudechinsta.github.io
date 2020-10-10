@@ -73,7 +73,6 @@ function getRealtimeUrl(dataInterval){
     let mon = d.getMonth()+1;
     let yea = d.getFullYear();
     queryDate = yea + "-" + mon + "-" + day
-    console.log(queryDate)
     let url = "https://earthquake.usgs.gov/fdsnws/event/1/";
     let minMag = "3";
     var para = "query?format=geojson&starttime=" + queryDate + "&minmagnitude="+minMag;
@@ -183,21 +182,18 @@ $(document).ready(function () {
         var newDateInterval = parseInt(this.value);
         if (newDateInterval!=NaN){
             url = getRealtimeUrl(newDateInterval);
-            console.log("Start Loading ...")
             map.getSource('earthquake').setData(url);
-            console.log("Start Completed!")
         }
         $("#dateDisplaying")
-        .css("opacity","0.3")
-        .css("color", "#fff")
-        .css("background","rgba(255, 255, 255, 0)");
+            .css("opacity","0.3")
+            .css("color", "#fff")
+            .css("background","rgba(255, 255, 255, 0)");
     })
     
     $("#dateInput").on("input", function(){
         $("#dateDisplaying")
             .css("opacity","1")
-            .css("background", "rgba(255, 255, 255, 0.9)")
-            .css("color", "#000")
+            .css("color", "#fff")
             .html("Last " + this.value + (this.value == 1 ? " day" : " days"));
     })
     

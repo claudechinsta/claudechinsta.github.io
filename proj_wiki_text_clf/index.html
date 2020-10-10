@@ -2,7 +2,7 @@
 <html lang = "en">
 <head>
     <meta charset = "UTF-8">
-    <title>Wikipedia Text Classification</title>
+    <title>Claude Chen | Wikipedia Text Classification</title>
 </head>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -83,14 +83,17 @@
 </div>
 
 <!--MENU CONTENT-->
-<div class="menuback" onclick="location='../'">HOME</div>
-<div class="menuback" style="margin-right: 55px" onclick="toggleHelp()">INFO</div>
-<div class="menuback" style="margin-right: 105px" onclick="toggleSearch()">SEARCH</div>
+<div class="button-zone">
+    <div class="button" onclick="toggleSearch()">Search</div>
+    <div class="button" onclick="toggleHelp()">Info</div>
+    <div class="button" onclick="location='../'">Home</div>
+</div>
+
 <div id="searchBar">
     <div class="input-group">
         <input id="searchContent" type="text" class="form-control" placeholder="Search for... e.g., 'melbourne university'">
         <span class="input-group-btn">
-        <button id="searchBtn" class="btn btn-default" type="button">Go</button>
+        <button id="searchBtn" class="btn btn-default" type="button">Search</button>
       </span>
     </div>
     <script>
@@ -101,7 +104,7 @@
     </script>
 </div>
 <div id="helpPanel">
-    <h3>QUICK INSTRUCTION</h3>
+    <h3>Quick Instruction</h3>
     <div id="instruction_content">
         <p>This Web-app is the demo for my research project, the "Geolocation Knowledge Base - Text classification",
         in 2017.</p>
