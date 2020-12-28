@@ -6,17 +6,20 @@
 */
 /* Menu button*/
 /* You can customize to your needs  */
+
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
 .mapboxgl-popup-content {
-    font: 11px 'Quicksand', Arial, Helvetica, sans-serif;
+    font: 11px 'Poppins', Arial, Helvetica, sans-serif;
     z-index: 2;
     color: black;
 }
 .mapboxgl-popup-content h4,h5 {
-    font-family: "Quicksand", Helvetica, Arial, sans-serif;
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
 }
 
 #menu-box {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     padding: 0 20px;
     border: solid 1px #f5f5f5;
@@ -43,7 +46,7 @@
 
 .legend {
     font-size: 12px;
-    font-family: "Quicksand", Helvetica, Arial, sans-serif;
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
     background-color: #fff;
     opacity: 0.8;
     transition: opacity 0.1s ease-in-out;
@@ -79,7 +82,7 @@
 }
 
 #info {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 11px;
     display: none;
     position: absolute;
