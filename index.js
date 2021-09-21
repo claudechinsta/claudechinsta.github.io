@@ -31,10 +31,10 @@ $(document).ready(function () {
             300
         );
     });
-    $("#btn_design").on("click", function (event) {
+    $("#btn_skillset").on("click", function (event) {
         $("html, body").animate(
             {
-                scrollTop: $("#content-design").offset().top - offsetValue,
+                scrollTop: $("#content-skills").offset().top - offsetValue,
             },
             300
         );
