@@ -66,6 +66,11 @@ body {
     color: #fff;
 }
 
+.sidebar .sidetitle {
+    margin: 10px;
+    color: #fff;
+}
+
 .sideBtn {
     color: white;
     margin: 5px 0px 5px 10px;
@@ -113,6 +118,7 @@ body {
 /* -------------------------------------- */
 /* Seeting Panel */
 .sidePanel{
+    font-size: 20px;
     position: absolute;
     width: 200px;
     height: 100%;
@@ -125,8 +131,9 @@ body {
 /* -------------------------------------- */
 
 .map-popup {
-    width: 200px;
+
     padding: 10px;
+    border-radius: 20px;
 }
 
 .upperSpace {
@@ -134,12 +141,12 @@ body {
 }
 
 .mag-part {
-    float: left;
-    width: 50%;
+
 }
 
 .bigFont {
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    margin: 20px 0;
     font-size: 60px;
 }
 
@@ -153,8 +160,7 @@ body {
 }
 
 .date-part {
-    float: right;
-    width: 50%;
+
 }
 
 .subTitle {
@@ -163,25 +169,26 @@ body {
 }
 
 .location-part {
-    margin-top: 100px;
-    text-align: left;
-    display: block;
+
 }
 
 .footerStatus {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 20px;
     position: absolute;
     z-index: 999;
-    padding: 10px;
+    padding: 20px;
     bottom: 20px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid #C7C7C7;
+    background: rgba(255, 255, 255, 0.5);
     vertical-align: center;
     border-radius: 10px;
+    transition: all .2s;
+}
+.footerStatus:hover {
+    background: rgba(255, 255, 255, 1);
 }
 .dateDisplay{
     font-size: 70px;
@@ -209,4 +216,9 @@ body {
     border: none;
     font-size: 30px;
     width: 200px;
+}
+
+
+.dateDate {
+    white-space: nowrap;
 }

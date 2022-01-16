@@ -118,29 +118,25 @@ function getEarthquakeData(dateInterval) {
             // Adding Popups
             map.on('mouseenter', 'earthquake', function (e) {
                 map.getCanvas().style.cursor = 'pointer';
-                var d = new Date(parseInt(e.features[0].properties.time));
-                var coord = e.features[0].geometry.coordinates
-                // var googleAPI = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + 
-                    // coord[1] + "," + coord[0] + "&key=AIzaSyDPnyJbnRJFI_XzGB8HtU2pB86dYZQ8ZNI"
-                
-                var shownHTML = '<div class="map-popup"> \
-                <div class="largeFont">Quick Info</div> \
-                <div class="upperSpace"> \
-                <div class="mag-part"> \
-                <div class="subTitle">Magnitude</div> \
-                <div class="bigFont" id="megDeg">' + e.features[0].properties.mag.toFixed(1) + '</div> \
-                </div> \
-                <div class="date-part"> \
-                <div class="subTitle">Time</div> \
-                <div class="dateDate midFont">' + d.toLocaleString().substr(0, 10) + '<br>' +
-                d.toLocaleString().substr(12, 8) + '</div> \
-                </div> \
-                </div> \
-                <div class="location-part"> \
-                <div class="subTitle">Location</div> \
-                <div class="locationInfo">' + e.features[0].properties.place + '</div> \
-                </div> \
-                </div>';
+                // console.log(e.features[0].properties);
+                const parsedTime = moment(e.features[0].properties.time);
+                var shownHTML = `
+                <div class="map-popup">
+
+                    <div class="mag-part">
+                        <div class="subTitle">Magnitude</div>
+                        <div class="bigFont">${e.features[0].properties.mag.toFixed(1)}</div>
+                    </div>
+                    <div class="date-part">
+                        <div class="subTitle">Time</div>
+                        <div class="dateDate midFont">${parsedTime.format()}</div>
+                    </div>
+                    <div class="location-part">
+                        <div class="subTitle">Location</div>
+                        <div class="locationInfo">${e.features[0].properties.place}</div>
+                    </div>
+                </div>
+                `;
                 
                 popup
                     .setLngLat(e.features[0].geometry.coordinates)
