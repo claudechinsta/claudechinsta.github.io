@@ -1,15 +1,10 @@
 $(document).ready(function () {
-
     // Scroll and change style to nav bar
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(document).scrollTop() > 0) {
-            $('.header')
-                .css('background', 'rgb(245,245,245)')
-                .css('height', '100px');
-        }else {
-            $('.header')
-                .css('background', '#fff')
-                .css('height', '180px');
+            $(".header").css("background", "rgb(245,245,245)").css("height", "100px");
+        } else {
+            $(".header").css("background", "#fff").css("height", "180px");
         }
     });
 
@@ -74,7 +69,7 @@ $(document).ready(function () {
 
     var desc = "I am full-stake developer specialize in web development, visualization, data management and devops.";
 
-    $("#proj-container").html("<h1>IT Projects</h1><article><p>" + desc + "</p></article>");
+    $("#proj-container").html("<h1 class='big-title'>Project Showcase</h1><article><p>" + desc + "</p></article>");
     projects.forEach((projItem) => {
         htmlContent =
             '<div class="content-inner-proj">' +
@@ -95,5 +90,4 @@ $(document).ready(function () {
             "</div>";
         $("#proj-container").append(htmlContent);
     });
-
 });

@@ -1,23 +1,23 @@
 {
-  "name": "",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "claudechinsta-portfolio",
+  "version": "2.0.0",
+  "private": true,
   "scripts": {
-    "http-server": "watch-http-server -c-1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve out"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/claudechinsta/claudechinsta.github.io.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/claudechinsta/claudechinsta.github.io/issues"
-  },
-  "homepage": "https://github.com/claudechinsta/claudechinsta.github.io#readme",
   "dependencies": {
-    "http-server": "^0.10.0",
-    "watch-http-server": "^0.7.6"
+    "framer-motion": "^14.6.0",
+    "lenis": "^1.3.27",
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2"
   }
 }
