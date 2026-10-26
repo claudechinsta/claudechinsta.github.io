@@ -1,16 +1,17 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { skillRows } from "@/lib/data";
 import { MaskTitle, Reveal } from "./Reveal";
 
 function Row({ items, dir, duration }: { items: (typeof skillRows)[number]; dir: 1 | -1; duration: number }) {
-  const loop = [...items, ...items, ...items, ...items];
+  const [paused, setPaused] = useState(false);
+  const loop = Array.from({ length: 8 }, () => items).flat();
   return (
-    <div className="marquee">
+    <div className="marquee" onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)}>
       <div
-        className="marquee-track"
+        className={`marquee-track${paused ? " is-paused" : ""}`}
         style={{ animationDuration: `${duration}s`, animationDirection: dir === 1 ? "normal" : "reverse" }}
       >
         {loop.map((s, i) => (
@@ -18,7 +19,6 @@ function Row({ items, dir, duration }: { items: (typeof skillRows)[number]; dir:
             <div className="skill-icon">
               <img src={s.img} alt={s.name} loading="lazy" />
             </div>
-            <span>{s.name}</span>
           </div>
         ))}
       </div>
@@ -55,9 +55,7 @@ export default function Skills() {
         </ul>
       </div>
       <motion.div className="marquee-stack" style={{ rotate: tilt }}>
-        <Row items={skillRows[0]} dir={1} duration={50} />
-        <Row items={skillRows[1]} dir={-1} duration={42} />
-        <Row items={skillRows[2]} dir={1} duration={56} />
+        <Row items={skillRows.flat()} dir={1} duration={60} />
       </motion.div>
     </section>
   );

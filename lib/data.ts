@@ -72,7 +72,7 @@ export const projects = [
 
 export const music = {
   blurb:
-    "I've produced hip-hop since 2012 and released a handful of albums and EPs. I love jazz, hip-hop and ambient — heavily influenced by Nujabes and a lot of indie musicians. One love.",
+    "Producing hip-hop since 2012, I've released a handful of albums and EPs, each one shaped by the music I keep coming back to: jazz, hip-hop, and ambient. Nujabes is the clearest influence on how I build a track, with its warmth, its patience, and its way of making samples feel like they belong together. I'm also drawn to the independent musicians who take risks outside the mainstream, and their work keeps pushing mine in new directions. One love.",
   links: [
     { name: "Spotify", href: "https://play.spotify.com/artist/5xuhSWFgY8VIzptSR69QTf" },
     { name: "网易云音乐", href: "http://music.163.com/#/artist?id=818622" },
@@ -80,7 +80,7 @@ export const music = {
     { name: "SoundCloud", href: "https://soundcloud.com/chinstamusic" },
   ],
   embed:
-    "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/860149099&color=%237692FF&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false",
+    "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/860149099&color=%2368A6EE&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false",
 };
 
 export const albums = [
