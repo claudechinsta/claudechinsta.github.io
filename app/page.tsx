@@ -1,13 +1,12 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useEffect, useState } from "react";
 import About from "@/components/About";
 import Cursor from "@/components/Cursor";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Music from "@/components/Music";
 import Nav from "@/components/Nav";
-import Preloader from "@/components/Preloader";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -16,13 +15,20 @@ import { visible } from "@/lib/data";
 
 export default function Home() {
   const [ready, setReady] = useState(false);
-  const onDone = useCallback(() => setReady(true), []);
+
+  // the background shows first, then the content floats up
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setReady(true);
+      document.body.classList.remove("is-loading");
+    }, 2600);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <>
       <SmoothScroll />
       <Cursor />
-      <Preloader onDone={onDone} />
       <Nav ready={ready} />
       <main>
         <Hero ready={ready} />

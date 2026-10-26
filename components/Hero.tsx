@@ -41,8 +41,11 @@ export default function Hero({ ready }: { ready: boolean }) {
   return (
     <section className="hero" id="top" ref={ref}>
       <div className="hero-orbs" aria-hidden>
-        <div className="orb orb-a" />
-        <div className="orb orb-b" />
+        <div className="cell cell-1" />
+        <div className="cell cell-2" />
+        <div className="cell cell-3" />
+        <div className="cell cell-4" />
+        <div className="cell cell-5" />
       </div>
 
       <motion.h1 className="hero-title" style={{ y: titleY, scale: titleScale, opacity: fade }} aria-label={profile.name}>
@@ -51,7 +54,7 @@ export default function Hero({ ready }: { ready: boolean }) {
       </motion.h1>
 
       <motion.div className="hero-bottom" style={{ opacity: fade }}>
-        <div className="hero-role">
+        <div className="hero-role reveal-up">
           <span className="hero-role-prefix">I am a</span>
           <span className="hero-role-window">
             <AnimatePresence mode="wait">
